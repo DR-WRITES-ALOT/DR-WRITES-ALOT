@@ -152,36 +152,187 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 0 2rem;
+    padding: 100px 2rem 0;
     position: relative;
+    overflow: hidden;
 }
 
-.hero-content {
-    opacity: 0; /* For GSAP animation */
-    transform: translateY(30px);
+/* Dashboard Layout */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    opacity: 0; /* For GSAP */
+    position: relative;
+    z-index: 2;
 }
 
-.hero-title {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    line-height: 1.1;
+/* Base Widget Styling */
+.dashboard-widget, .ide-window {
+    background: rgba(17, 34, 64, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(100, 255, 218, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.highlight {
-    color: var(--accent-color);
+.dashboard-widget:hover, .ide-window:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 30px rgba(100, 255, 218, 0.3);
+    transform: translateY(-5px);
 }
 
-.hero-subtitle {
-    font-size: 1.5rem;
+/* Floating Animations for Playfulness */
+.status-widget {
+    animation: float-up-down 6s ease-in-out infinite;
+}
+.tech-widget {
+    animation: float-up-down 5s ease-in-out infinite 1s; /* Delayed start */
+}
+.ide-window {
+    animation: float-subtle 8s ease-in-out infinite;
+}
+
+@keyframes float-up-down {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes float-subtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Widget Header */
+.widget-header {
+    background: rgba(2, 12, 27, 0.7);
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--light-slate);
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot.green {
+    background-color: var(--accent-color);
+    box-shadow: 0 0 8px var(--accent-color);
+}
+
+.widget-body {
+    padding: 1.5rem;
+}
+.status-text {
     color: var(--slate);
-    margin-bottom: 2.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.tech-tag {
+    background: rgba(100, 255, 218, 0.1);
+    color: var(--accent-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(100, 255, 218, 0.3);
+}
+
+/* IDE / Terminal Window */
+.ide-window {
+    grid-column: 2 / 3;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ide-header {
+    background: #0d1117;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #30363d;
+}
+
+.ide-buttons {
+    display: flex;
+    gap: 6px;
+    margin-right: 1rem;
+}
+
+.mac-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.mac-btn.close { background: #ff5f56; }
+.mac-btn.minimize { background: #ffbd2e; }
+.mac-btn.maximize { background: #27c93f; }
+
+.ide-title {
+    color: #8b949e;
+    font-family: monospace;
+    font-size: 0.85rem;
+    flex-grow: 1;
+    text-align: center;
+    margin-right: 48px; /* Balance the buttons */
+}
+
+.ide-content {
+    background: #0d1117; /* GitHub dark theme background */
+    flex-grow: 1;
+    padding: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: #e6edf3;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.prompt {
+    color: #3fb950;
+    margin-right: 0.5rem;
+}
+
+/* Syntax Highlighting Classes (applied by JS) */
+.ide-keyword { color: #ff7b72; } /* Pink/Red */
+.ide-string { color: #a5d6ff; }  /* Light Blue */
+.ide-function { color: #d2a8ff; } /* Purple */
+.ide-comment { color: #8b949e; font-style: italic; } /* Gray */
+
+.cursor-blink {
+    display: inline-block;
+    width: 8px;
+    height: 1.1em;
+    background-color: var(--light-slate);
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 .btn {
@@ -195,6 +346,7 @@ nav {
     font-size: 1rem;
     font-weight: 600;
     transition: all 0.3s ease;
+    margin-top: 2rem;
 }
 
 .btn:hover {
@@ -344,18 +496,27 @@ footer {
 }
 
 /* Responsive */
+@media (max-width: 900px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding-top: 50px;
+    }
+    .ide-window {
+        grid-column: 1 / -1;
+        min-height: 300px;
+    }
+}
+
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
     .nav-links {
         display: none; /* Basic mobile nav hidden for simplicity, can be expanded */
     }
     .contact-cards {
         flex-direction: column;
         align-items: center;
+    }
+    .ide-content {
+        font-size: 0.9rem;
     }
 }
