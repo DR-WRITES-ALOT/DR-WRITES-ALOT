@@ -33,16 +33,96 @@ links.forEach(link => {
 // GSAP Animations
 gsap.registerPlugin(ScrollTrigger);
 
-// Hero Section Initial Animation
+// Hero Dashboard Initial Animation
 const tl = gsap.timeline();
 
-tl.to(".hero-content", {
-    y: 0,
+tl.to(".dashboard-container", {
     opacity: 1,
-    duration: 1,
-    ease: "power3.out",
+    duration: 0.5,
     delay: 0.2
-});
+})
+.from(".ide-window", {
+    y: 50,
+    scale: 0.9,
+    opacity: 0,
+    duration: 0.8,
+    ease: "back.out(1.5)"
+})
+.from(".status-widget", {
+    x: -50,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power2.out"
+}, "-=0.4")
+.from(".tech-widget", {
+    x: 50,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power2.out"
+}, "-=0.4")
+.add(() => startTypingAnimation(), "-=0.2"); // Start typing right after IDE appears
+
+// Typewriter Effect for IDE
+const typeTextElement = document.getElementById('typewriter-text');
+const codeLines = [
+    { text: "const ", class: "ide-keyword" },
+    { text: "developer", class: "ide-string" },
+    { text: " = ", class: "" },
+    { text: "{\n", class: "" },
+    { text: "  name: ", class: "" },
+    { text: "'Sreejith S H'", class: "ide-string" },
+    { text: ",\n  role: ", class: "" },
+    { text: "'Software Engineer'", class: "ide-string" },
+    { text: ",\n  passion: ", class: "" },
+    { text: "'Building cool stuff!'", class: "ide-string" },
+    { text: "\n};\n\n", class: "" },
+    { text: "// Let's build something awesome", class: "ide-comment" }
+];
+
+function startTypingAnimation() {
+    let currentLine = 0;
+    let currentChar = 0;
+    let currentSpan = null;
+
+    function typeNextChar() {
+        if (currentLine < codeLines.length) {
+            const lineData = codeLines[currentLine];
+
+            if (currentChar === 0) {
+                if (lineData.class) {
+                    currentSpan = document.createElement('span');
+                    currentSpan.className = lineData.class;
+                    typeTextElement.appendChild(currentSpan);
+                } else {
+                    currentSpan = document.createElement('span');
+                    typeTextElement.appendChild(currentSpan);
+                }
+            }
+
+            if (currentChar < lineData.text.length) {
+                let char = lineData.text[currentChar];
+
+                if (char === '\n') {
+                    currentSpan.appendChild(document.createElement('br'));
+                } else if (char === ' ') {
+                    currentSpan.innerHTML += '&nbsp;';
+                } else {
+                    currentSpan.appendChild(document.createTextNode(char));
+                }
+
+                currentChar++;
+
+                const typingSpeed = Math.random() * 50 + 20;
+                setTimeout(typeNextChar, typingSpeed);
+            } else {
+                currentLine++;
+                currentChar = 0;
+                setTimeout(typeNextChar, 100);
+            }
+        }
+    }
+    typeNextChar();
+}
 
 // Navbar background change on scroll
 window.addEventListener('scroll', () => {

@@ -23,11 +23,48 @@
         </ul>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Hi, I'm <span class="highlight">Sreejith S H</span></h1>
-            <p class="hero-subtitle">Software Engineer & Aspiring Full Stack Developer</p>
-            <a href="#contact" class="btn">Get In Touch</a>
+    <section id="home" class="hero dashboard-hero">
+        <div class="dashboard-container hero-content">
+            <!-- Widget 1: Status -->
+            <div class="dashboard-widget status-widget">
+                <div class="widget-header">
+                    <span class="dot green"></span> System Status
+                </div>
+                <div class="widget-body">
+                    <p class="status-text">All systems operational</p>
+                    <p class="status-text">Ready for deployment</p>
+                </div>
+            </div>
+
+            <!-- Main IDE / Terminal Window -->
+            <div class="ide-window">
+                <div class="ide-header">
+                    <div class="ide-buttons">
+                        <span class="mac-btn close"></span>
+                        <span class="mac-btn minimize"></span>
+                        <span class="mac-btn maximize"></span>
+                    </div>
+                    <div class="ide-title">guest@sreejith: ~/portfolio</div>
+                </div>
+                <div class="ide-content">
+                    <div class="code-lines">
+                        <span class="prompt">$</span> <span id="typewriter-text"></span><span class="cursor-blink">|</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Widget 2: Tech Stack / Stats -->
+            <div class="dashboard-widget tech-widget">
+                <div class="widget-header">
+                    <i class="fas fa-bolt"></i> Current Stack
+                </div>
+                <div class="widget-body tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">C/C++</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Full Stack</span>
+                </div>
+            </div>
         </div>
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
