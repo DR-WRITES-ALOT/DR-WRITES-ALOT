@@ -1,19 +1,22 @@
 import os
+import random
 import requests
-import json
-from datetime import datetime
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
 GITHUB_API_URL = "https://api.github.com"
-USERNAME = "SreejithSH"
+USERNAME = "DR-WRITES-ALOT"
+BG_COLOR = "#0D1117"
+CYAN = "#00FFFF"
+GREEN = "#00FF66"
 
 def get_github_stats():
     stats = {
-        "stars": 42,
-        "commits": 1337,
-        "repos": 15,
-        "followers": 10
+        "stars": 12,
+        "commits": 450,
+        "repos": 5,
+        "followers": 2,
+        "top_langs": ["C", "C++", "Python", "Java"]
     }
 
     if not GITHUB_TOKEN:
@@ -32,7 +35,7 @@ def get_github_stats():
             repos_data = repos_response.json()
             stats["stars"] = sum(repo.get("stargazers_count", 0) for repo in repos_data)
 
-        stats["commits"] = "1.2k+"
+        stats["commits"] = "800+"
 
     except Exception as e:
         print(f"Error fetching GitHub stats: {e}")
@@ -40,157 +43,179 @@ def get_github_stats():
     return stats
 
 def generate_hero_svg():
-    svg = f"""<svg width="840" height="200" xmlns="http://www.w3.org/2000/svg">
+    # A single-line, more compact ASCII format so it is visible and properly fits the SVG width
+    ascii_art = [
+        r" ___  ___    _ _ _ ___ _ _____ ___ ___    ___ _    ___ _____ ",
+        r"|   \| _ \  | | | | _ \_|_   _| __/ __|  / _ \ |  / _ \_   _|",
+        r"| |) |   /  | V V |   / | | | | _|\__ \ |  _  || | (_) || |  ",
+        r"|___/|_|_\   \_/_/|_|_\_| |_| |___|___/ |_| |_|___\___/ |_|  "
+    ]
+
+    svg = f"""<svg width="840" height="250" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @keyframes blink {{ 0%, 100% {{ opacity: 1; }} 50% {{ opacity: 0; }} }}
-      @keyframes type {{ from {{ width: 0; }} to {{ width: 100%; }} }}
-      .cursor {{ animation: blink 1s step-end infinite; fill: #64ffda; }}
-      .text {{ font-family: 'Courier New', Courier, monospace; font-size: 18px; fill: #e6edf3; }}
-      .prompt {{ fill: #3fb950; }}
-      .glow {{ filter: drop-shadow(0 0 8px rgba(100,255,218,0.6)); }}
-      .mac-btn {{ rx: 6; ry: 6; width: 12px; height: 12px; }}
+      .bg {{ fill: {BG_COLOR}; }}
+      .ascii {{ font-family: 'Courier New', Courier, monospace; font-size: 18px; font-weight: bold; fill: {GREEN}; letter-spacing: 2px; }}
+      .sub {{ font-family: 'Courier New', Courier, monospace; font-size: 20px; font-weight: bold; fill: {CYAN}; letter-spacing: 4px; }}
+      @keyframes reveal {{ 0% {{ opacity: 0; }} 100% {{ opacity: 1; }} }}
+      @keyframes float {{
+        0% {{ transform: translateY(-20px); opacity: 0; }}
+        50% {{ opacity: 1; }}
+        100% {{ transform: translateY(100px); opacity: 0; }}
+      }}
+      .reveal {{ animation: reveal 0.1s forwards; opacity: 0; filter: drop-shadow(0 0 5px {GREEN}); }}
+      .float-char {{ font-family: monospace; font-size: 12px; font-weight: bold; opacity: 0; }}
     </style>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0f18" />
-      <stop offset="100%" stop-color="#111827" />
-    </linearGradient>
   </defs>
+  <rect class="bg" width="100%" height="100%" rx="10" />
+"""
+    colors = [CYAN, GREEN, "#ff007f", "#ffff00", "#bd93f9"]
+    chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#%&"
+    for i in range(30):
+        x = random.randint(20, 800)
+        y = random.randint(20, 150)
+        char = random.choice(chars)
+        color = random.choice(colors)
+        delay = random.uniform(0, 3)
+        duration = random.uniform(2, 5)
+        svg += f'  <text x="{x}" y="{y}" fill="{color}" class="float-char" style="animation: float {duration}s linear {delay}s infinite;">{char}</text>\n'
 
-  <!-- Background -->
-  <rect width="840" height="200" rx="12" fill="url(#bgGrad)" stroke="#1f2937" stroke-width="2"/>
+    # Center the ASCII art horizontally and vertically within the SVG viewbox
+    svg += '  <g transform="translate(80, 70)">\n'
+    y_offset = 0
+    for line in ascii_art:
+        svg += f'    <text x="0" y="{y_offset}" class="ascii" text-anchor="start">\n'
+        for i, char in enumerate(line):
+            if char != ' ':
+                delay = (i * 0.02) + (y_offset * 0.005)
+                if char in '<>&':
+                    char = char.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+                svg += f'      <tspan class="reveal" style="animation-delay: {delay}s;">{char}</tspan>'
+            else:
+                svg += f'      <tspan> </tspan>'
+        svg += '    </text>\n'
+        y_offset += 20
+    svg += '  </g>\n'
 
-  <!-- Title bar -->
-  <rect width="840" height="40" rx="12" fill="#0d1117" />
-  <rect y="20" width="840" height="20" fill="#0d1117" /> <!-- Straight bottom edge for title bar -->
-  <line x1="0" y1="40" x2="840" y2="40" stroke="#30363d" stroke-width="1"/>
-
-  <!-- Mac Buttons -->
-  <rect class="mac-btn" x="16" y="14" fill="#ff5f56" />
-  <rect class="mac-btn" x="36" y="14" fill="#ffbd2e" />
-  <rect class="mac-btn" x="56" y="14" fill="#27c93f" />
-
-  <text x="420" y="25" fill="#8b949e" font-family="monospace" font-size="14" text-anchor="middle">guest@sreejith: ~/portfolio</text>
-
-  <!-- Content -->
-  <g transform="translate(30, 80)">
-    <text class="text glow" y="0"><tspan class="prompt">$</tspan> whoami</text>
-    <text class="text" y="30" fill="#a5d6ff">Sreejith S H - Full Stack Software Engineer</text>
-    <text class="text glow" y="70"><tspan class="prompt">$</tspan> status --current</text>
-    <text class="text" y="100">Building products and turning bugs into features <rect x="425" y="85" width="10" height="18" class="cursor"/></text>
-  </g>
-</svg>"""
+    subtitle = "Software Developer"
+    svg += '  <text x="420" y="220" class="sub" text-anchor="middle">\n'
+    for i, char in enumerate(subtitle):
+        delay = 2.0 + (i * 0.05)
+        if char in '<>&':
+            char = char.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+        svg += f'    <tspan class="reveal" style="animation-delay: {delay}s; filter: drop-shadow(0 0 5px {CYAN});">{char}</tspan>'
+    svg += '  </text>\n'
+    svg += "</svg>"
     with open("assets/hero.svg", "w") as f:
         f.write(svg)
 
-def generate_stats_svg(stats):
-    svg = f"""<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+
+def generate_terminal_svg():
+    svg = f"""<svg width="840" height="220" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .text {{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }}
-      .title {{ font-size: 16px; font-weight: bold; fill: #8b949e; }}
-      .stat-val {{ font-size: 28px; font-weight: 800; fill: #64ffda; filter: drop-shadow(0 0 5px rgba(100,255,218,0.4)); }}
-      .stat-label {{ font-size: 12px; fill: #8b949e; text-transform: uppercase; letter-spacing: 1px; }}
+      .bg {{ fill: #0a0a0f; }}
+      .text {{ font-family: 'Courier New', Courier, monospace; font-size: 15px; fill: #ffffff; }}
+      .prompt {{ fill: {GREEN}; font-weight: bold; filter: drop-shadow(0 0 2px {GREEN}); }}
+      .cmd {{ fill: #ffffff; }}
+      .keyword {{ fill: {CYAN}; filter: drop-shadow(0 0 2px {CYAN}); }}
+      .bracket {{ fill: #ff007f; font-weight: bold; }}
+      .mac-btn {{ rx: 6; ry: 6; width: 12px; height: 12px; }}
+      @keyframes blink {{ 0%, 100% {{ opacity: 1; }} 50% {{ opacity: 0; }} }}
+      .cursor {{ animation: blink 1s step-end infinite; fill: {CYAN}; }}
+      @keyframes typeLine {{ 0% {{ opacity: 0; }} 100% {{ opacity: 1; }} }}
+      .line1 {{ animation: typeLine 0.1s forwards; }}
+      .line2 {{ opacity: 0; animation: typeLine 0.1s 0.5s forwards; }}
+      .line3 {{ opacity: 0; animation: typeLine 0.1s 1.0s forwards; }}
+      .line4 {{ opacity: 0; animation: typeLine 0.1s 1.5s forwards; }}
+      .line5 {{ opacity: 0; animation: typeLine 0.1s 2.0s forwards; }}
+      .line6 {{ opacity: 0; animation: typeLine 0.1s 2.5s forwards; }}
     </style>
-    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#112240" />
-      <stop offset="100%" stop-color="#0a192f" />
-    </linearGradient>
+  </defs>
+  <rect width="840" height="220" rx="10" class="bg" stroke="#1f2937" stroke-width="2"/>
+  <rect width="840" height="35" rx="10" fill="#111827" />
+  <rect y="15" width="840" height="20" fill="#111827" />
+  <line x1="0" y1="35" x2="840" y2="35" stroke="#30363d" stroke-width="1"/>
+  <rect class="mac-btn" x="15" y="11" fill="#ff5f56" />
+  <rect class="mac-btn" x="35" y="11" fill="#ffbd2e" />
+  <rect class="mac-btn" x="55" y="11" fill="#27c93f" />
+  <text x="420" y="22" fill="#8b949e" font-family="monospace" font-size="13" text-anchor="middle">dr-writes-alot@linux: ~/profile</text>
+  <g transform="translate(20, 70)" class="text">
+    <text y="0" class="line1"><tspan class="prompt">dr-writes-alot@linux:~/profile $</tspan> <tspan class="cmd">./whoami --proof</tspan></text>
+    <text y="25" class="line2"><tspan class="bracket">[</tspan><tspan fill="#ffbd2e">*</tspan><tspan class="bracket">]</tspan> resolving identity ......... <tspan class="keyword">ok</tspan></text>
+    <text y="50" class="line3"><tspan class="keyword">role </tspan> : software-developer . dsa-practitioner . fullstack-learner</text>
+    <text y="75" class="line4"><tspan class="keyword">mode </tspan> : builds clean logic, learning scalable web architecture</text>
+    <text y="100" class="line5"><tspan class="keyword">stack</tspan> : C . C++ . Java . Python</text>
+    <text y="125" class="line6"><tspan class="bracket">[</tspan><tspan class="prompt">+</tspan><tspan class="bracket">]</tspan> access granted <rect x="155" y="113" width="10" height="15" class="cursor"/></text>
+  </g>
+</svg>"""
+    with open("assets/terminal.svg", "w") as f:
+        f.write(svg)
+
+
+def generate_stats_svg(stats):
+    svg = f"""<svg width="840" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg {{ fill: #0a0a0f; }}
+      .title {{ font-family: 'Courier New', Courier, monospace; font-size: 16px; font-weight: bold; fill: {GREEN}; filter: drop-shadow(0 0 3px {GREEN}); }}
+      .label {{ font-family: 'Courier New', Courier, monospace; font-size: 14px; fill: #8b949e; text-transform: uppercase; }}
+      .val {{ font-family: 'Courier New', Courier, monospace; font-size: 32px; font-weight: bold; fill: {CYAN}; filter: drop-shadow(0 0 5px {CYAN}); }}
+
+      @keyframes loadBar {{ 0% {{ transform: scaleX(0); }} 100% {{ transform: scaleX(1); }} }}
+      .progress {{ fill: {GREEN}; filter: drop-shadow(0 0 4px {GREEN}); transform-origin: left center; animation: loadBar 1.5s ease-out forwards; }}
+      .progress-bg {{ fill: #1f2937; }}
+
+      @keyframes pulse {{ 0% {{ opacity: 0.7; }} 50% {{ opacity: 1; }} 100% {{ opacity: 0.7; }} }}
+      .pulse {{ animation: pulse 2s infinite; }}
+    </style>
   </defs>
 
-  <rect width="400" height="200" rx="12" fill="url(#cardGrad)" stroke="#233554" stroke-width="2"/>
+  <rect width="840" height="200" rx="10" class="bg" stroke="#1f2937" stroke-width="2"/>
 
-  <rect x="20" y="20" width="8" height="8" rx="4" fill="#64ffda" filter="drop-shadow(0 0 4px #64ffda)"/>
-  <text x="40" y="28" class="text title" dominant-baseline="middle">System Statistics</text>
-  <line x1="20" y1="45" x2="380" y2="45" stroke="#233554" stroke-width="1"/>
+  <text x="20" y="30" class="title">SYSTEM_TELEMETRY.log</text>
+  <line x1="20" y1="40" x2="820" y2="40" stroke="#1f2937" stroke-width="2"/>
 
-  <!-- Stars -->
-  <g transform="translate(40, 90)">
-    <text class="text stat-val">{stats['stars']}</text>
-    <text y="20" class="text stat-label">Stars</text>
+  <!-- Stats Grid -->
+  <g transform="translate(60, 90)">
+    <text class="val pulse" x="0" y="0">{stats['stars']}</text>
+    <text class="label" x="0" y="25">Total Stars</text>
+
+    <text class="val pulse" x="180" y="0">{stats['commits']}</text>
+    <text class="label" x="180" y="25">Commits</text>
+
+    <text class="val pulse" x="360" y="0">{stats['repos']}</text>
+    <text class="label" x="360" y="25">Repositories</text>
+
+    <text class="val pulse" x="540" y="0">{stats['followers']}</text>
+    <text class="label" x="540" y="25">Followers</text>
   </g>
 
-  <!-- Commits -->
-  <g transform="translate(140, 90)">
-    <text class="text stat-val">{stats['commits']}</text>
-    <text y="20" class="text stat-label">Commits</text>
-  </g>
-
-  <!-- Repos -->
-  <g transform="translate(260, 90)">
-    <text class="text stat-val">{stats['repos']}</text>
-    <text y="20" class="text stat-label">Repos</text>
-  </g>
-
-  <!-- Followers -->
-  <g transform="translate(40, 160)">
-    <text class="text stat-val">{stats['followers']}</text>
-    <text y="20" class="text stat-label">Followers</text>
+  <!-- Language Progress Bar (Mockup showing distribution of the 4 langs) -->
+  <g transform="translate(60, 160)">
+    <text class="label" x="0" y="0">STACK DISTRIBUTION</text>
+    <rect class="progress-bg" x="180" y="-12" width="540" height="15" rx="5" />
+    <!-- Segmented progress bars for languages -->
+    <rect fill="{CYAN}" x="180" y="-12" width="200" height="15" filter="drop-shadow(0 0 1px {CYAN})" class="progress"/>
+    <rect fill="{GREEN}" x="380" y="-12" width="150" height="15" filter="drop-shadow(0 0 1px {GREEN})" class="progress"/>
+    <rect fill="#ffbd2e" x="530" y="-12" width="100" height="15" filter="drop-shadow(0 0 1px #ffbd2e)" class="progress"/>
+    <rect fill="#ff5f56" x="630" y="-12" width="90" height="15" rx="5" filter="drop-shadow(0 0 1px #ff5f56)" class="progress"/>
   </g>
 </svg>"""
     with open("assets/stats.svg", "w") as f:
         f.write(svg)
 
-def generate_skills_svg():
-    svg = f"""<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <style>
-      .text {{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }}
-      .title {{ font-size: 16px; font-weight: bold; fill: #8b949e; }}
-      .tag {{ font-size: 14px; font-weight: 600; fill: #64ffda; }}
-    </style>
-    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#112240" />
-      <stop offset="100%" stop-color="#0a192f" />
-    </linearGradient>
-  </defs>
-
-  <rect width="400" height="200" rx="12" fill="url(#cardGrad2)" stroke="#233554" stroke-width="2"/>
-
-  <rect x="20" y="20" width="8" height="8" rx="4" fill="#bd93f9" filter="drop-shadow(0 0 4px #bd93f9)"/>
-  <text x="40" y="28" class="text title" dominant-baseline="middle">Tech Stack</text>
-  <line x1="20" y1="45" x2="380" y2="45" stroke="#233554" stroke-width="1"/>
-
-  <g transform="translate(20, 70)">
-    <!-- Python -->
-    <rect x="0" y="0" width="90" height="30" rx="15" fill="rgba(100,255,218,0.1)" stroke="#64ffda" stroke-width="1"/>
-    <text x="45" y="20" class="text tag" text-anchor="middle">Python</text>
-
-    <!-- C/C++ -->
-    <rect x="100" y="0" width="80" height="30" rx="15" fill="rgba(100,255,218,0.1)" stroke="#64ffda" stroke-width="1"/>
-    <text x="140" y="20" class="text tag" text-anchor="middle">C/C++</text>
-
-    <!-- Java -->
-    <rect x="190" y="0" width="70" height="30" rx="15" fill="rgba(100,255,218,0.1)" stroke="#64ffda" stroke-width="1"/>
-    <text x="225" y="20" class="text tag" text-anchor="middle">Java</text>
-
-    <!-- Full Stack -->
-    <rect x="0" y="45" width="110" height="30" rx="15" fill="rgba(100,255,218,0.1)" stroke="#64ffda" stroke-width="1"/>
-    <text x="55" y="65" class="text tag" text-anchor="middle">Full Stack</text>
-
-    <!-- Git -->
-    <rect x="120" y="45" width="60" height="30" rx="15" fill="rgba(100,255,218,0.1)" stroke="#64ffda" stroke-width="1"/>
-    <text x="150" y="65" class="text tag" text-anchor="middle">Git</text>
-
-    <!-- React (implied by Full Stack usually, but cool to add) -->
-    <rect x="190" y="45" width="75" height="30" rx="15" fill="rgba(100,255,218,0.1)" stroke="#64ffda" stroke-width="1"/>
-    <text x="227.5" y="65" class="text tag" text-anchor="middle">React</text>
-  </g>
-</svg>"""
-    with open("assets/skills.svg", "w") as f:
-        f.write(svg)
-
 def main():
-    print("Starting profile generation...")
+    print("Starting matrix profile generation...")
     os.makedirs("assets", exist_ok=True)
 
     stats = get_github_stats()
 
     generate_hero_svg()
+    generate_terminal_svg()
     generate_stats_svg(stats)
-    generate_skills_svg()
 
-    print("Successfully generated SVGs in assets/")
+    print("Successfully generated Matrix SVGs in assets/")
 
 if __name__ == "__main__":
     main()
