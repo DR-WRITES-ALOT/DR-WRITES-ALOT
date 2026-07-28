@@ -1,0 +1,40 @@
+<svg width="840" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+      @keyframes type { from { width: 0; } to { width: 100%; } }
+      .cursor { animation: blink 1s step-end infinite; fill: #64ffda; }
+      .text { font-family: 'Courier New', Courier, monospace; font-size: 18px; fill: #e6edf3; }
+      .prompt { fill: #3fb950; }
+      .glow { filter: drop-shadow(0 0 8px rgba(100,255,218,0.6)); }
+      .mac-btn { rx: 6; ry: 6; width: 12px; height: 12px; }
+    </style>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="840" height="200" rx="12" fill="url(#bgGrad)" stroke="#1f2937" stroke-width="2"/>
+
+  <!-- Title bar -->
+  <rect width="840" height="40" rx="12" fill="#0d1117" />
+  <rect y="20" width="840" height="20" fill="#0d1117" /> <!-- Straight bottom edge for title bar -->
+  <line x1="0" y1="40" x2="840" y2="40" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Mac Buttons -->
+  <rect class="mac-btn" x="16" y="14" fill="#ff5f56" />
+  <rect class="mac-btn" x="36" y="14" fill="#ffbd2e" />
+  <rect class="mac-btn" x="56" y="14" fill="#27c93f" />
+
+  <text x="420" y="25" fill="#8b949e" font-family="monospace" font-size="14" text-anchor="middle">guest@sreejith: ~/portfolio</text>
+
+  <!-- Content -->
+  <g transform="translate(30, 80)">
+    <text class="text glow" y="0"><tspan class="prompt">$</tspan> whoami</text>
+    <text class="text" y="30" fill="#a5d6ff">Sreejith S H - Full Stack Software Engineer</text>
+    <text class="text glow" y="70"><tspan class="prompt">$</tspan> status --current</text>
+    <text class="text" y="100">Building products and turning bugs into features <rect x="425" y="85" width="10" height="18" class="cursor"/></text>
+  </g>
+</svg>
