@@ -1,45 +1,70 @@
-<!--
-  Sreejith S H — profile readme
-  The visuals are SVGs under assets/, generated dynamically by .github/workflows/profile-builder.yml
--->
+<div align="center">
 
+```text
+ ____  ____        __        ______  ___ _____ _____ ____        _    _     ___ _____
+|  _ \|  _ \       \ \      / /  _ \|_ _|_   _| ____/ ___|      / \  | |   / _ \_   _|
+| | | | |_) |  ____ \ \ /\ / /| |_) || |  | | |  _| \___ \     / _ \ | |  | | | || |
+| |_| |  _ <  |____| \ V  V / |  _ < | |  | | | |___ ___) |   / ___ \| |__| |_| || |
+|____/|_| \_\         \_/\_/  |_| \_\___| |_| |_____|____/   /_/   \_\_____\___/ |_|
+```
 <p align="center">
-  <img src="assets/hero.svg" width="840" alt="guest@sreejith: ~/portfolio">
+    <strong style="color: #00FF66;">Algorithmic Developer & Full-Stack Engineer in Training</strong>
 </p>
+
+</div>
 
 <br>
 
-<!-- ───────────────── telemetry (live) ───────────────── -->
-<p align="center">
-  <img src="assets/stats.svg" width="400" alt="live stats console">
-  &nbsp;
-  <img src="assets/skills.svg" width="400" alt="tech stack badges">
-</p>
-
+`// DR-WRITES-ALOT . algorithms + development`
 
 <br>
 
-<!-- ───────────────── whois / reach ───────────────── -->
-<h3 align="center">Initialize Connection</h3>
+`// IDENTITY_RESOLUTION . ./whoami --proof`
 
-<p align="center">
+```bash
+dr-writes-alot@linux:~/profile $ ./whoami --proof
+[*] resolving identity ......... ok
+role  : software-developer . dsa-practitioner . fullstack-learner
+mode  : builds clean logic, learning scalable web architecture
+stack : C . C++ . Java . Python
+[+] access granted
+```
+
+<br>
+
+`// SYSTEM_TELEMETRY . live-data-feed`
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=DR-WRITES-ALOT&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00FF66&text_color=00FFFF&icon_color=00FF66" alt="GitHub Stats" width="400" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DR-WRITES-ALOT&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00FF66&text_color=00FFFF" alt="Top Languages" width="400" />
+</div>
+
+<br>
+
+`// ACTIVITY_LOG . tail -f activity.log`
+
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=DR-WRITES-ALOT&bg_color=0D1117&color=00FFFF&line=00FF66&point=00FFFF&hide_border=true&title_color=00FF66" alt="Activity Graph" />
+</div>
+
+<br>
+
+`// CONTRIBUTION_MATRIX . ./scan --year`
+
+<div align="center">
+  <img src="https://ghchart.rshah.org/00FF66/DR-WRITES-ALOT" alt="DR-WRITES-ALOT's GitHub chart" />
+</div>
+
+<br>
+
+`// CONNECTION_PROTOCOL . initialize`
+
+<div align="center">
   <a href="mailto:sreejithsh09@gmail.com">
-    <img src="https://img.shields.io/badge/Email-sreejithsh09%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+    <img src="https://img.shields.io/badge/Email-0D1117?style=for-the-badge&logo=gmail&logoColor=00FF66&borderColor=00FF66" alt="Email">
   </a>
   &nbsp;
   <a href="https://www.linkedin.com/in/sreejith-s-h-810803243/">
-    <img src="https://img.shields.io/badge/LinkedIn-Sreejith_S_H-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+    <img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=00FF66&borderColor=00FF66" alt="LinkedIn">
   </a>
-  &nbsp;
-  <a href="https://www.instagram.com/sreejith_sh_/">
-    <img src="https://img.shields.io/badge/Instagram-@sreejith__sh__-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
-  </a>
-</p>
-
-<br>
-
-<p align="center">
-  <sub>
-  The terminal hero, stats dashboard, and skills badges above are auto-generated on a schedule by a GitHub Action (<a href=".github/workflows/profile-builder.yml"><code>.github/workflows/profile-builder.yml</code></a>) that renders its own SVGs in Python.
-  </sub>
-</p>
+</div>
