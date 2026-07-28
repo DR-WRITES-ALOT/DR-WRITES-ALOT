@@ -22,16 +22,16 @@
 
   <!-- Stats Grid -->
   <g transform="translate(60, 90)">
-    <text class="val pulse" x="0" y="0">12</text>
+    <text class="val pulse" x="0" y="0">0</text>
     <text class="label" x="0" y="25">Total Stars</text>
 
-    <text class="val pulse" x="180" y="0">450</text>
+    <text class="val pulse" x="180" y="0">800+</text>
     <text class="label" x="180" y="25">Commits</text>
 
-    <text class="val pulse" x="360" y="0">5</text>
+    <text class="val pulse" x="360" y="0">2</text>
     <text class="label" x="360" y="25">Repositories</text>
 
-    <text class="val pulse" x="540" y="0">2</text>
+    <text class="val pulse" x="540" y="0">0</text>
     <text class="label" x="540" y="25">Followers</text>
   </g>
 

@@ -15,36 +15,36 @@
     </style>
   </defs>
   <rect class="bg" width="100%" height="100%" rx="10" />
-  <text x="194" y="41" fill="#00FFFF" class="float-char" style="animation: float 2.7172994519862907s linear 1.77780323278958s infinite;">7</text>
-  <text x="784" y="138" fill="#ff007f" class="float-char" style="animation: float 2.557529341570177s linear 1.736124403699326s infinite;">B</text>
-  <text x="635" y="140" fill="#ffff00" class="float-char" style="animation: float 3.8600156971118476s linear 0.8945387910268907s infinite;">O</text>
-  <text x="451" y="143" fill="#bd93f9" class="float-char" style="animation: float 2.3302321855051953s linear 2.386811020559032s infinite;">J</text>
-  <text x="253" y="32" fill="#ffff00" class="float-char" style="animation: float 3.220768610661113s linear 0.6653606336757066s infinite;">L</text>
-  <text x="202" y="79" fill="#ff007f" class="float-char" style="animation: float 4.679588405236914s linear 1.621710940246273s infinite;">B</text>
-  <text x="615" y="101" fill="#00FF66" class="float-char" style="animation: float 4.324908833781766s linear 1.9110015028868261s infinite;">1</text>
-  <text x="615" y="130" fill="#00FFFF" class="float-char" style="animation: float 2.9188162359092646s linear 1.5188925329870764s infinite;">R</text>
-  <text x="532" y="66" fill="#ffff00" class="float-char" style="animation: float 2.7431283568955256s linear 2.610899404507507s infinite;">@</text>
-  <text x="122" y="39" fill="#00FF66" class="float-char" style="animation: float 2.6338026537620056s linear 1.6602122783950812s infinite;">@</text>
-  <text x="390" y="133" fill="#00FF66" class="float-char" style="animation: float 2.089701454706334s linear 2.2112495138089203s infinite;">H</text>
-  <text x="736" y="129" fill="#bd93f9" class="float-char" style="animation: float 4.837358335091496s linear 1.6174226011894555s infinite;">I</text>
-  <text x="398" y="102" fill="#00FF66" class="float-char" style="animation: float 3.6880293408984426s linear 0.7373417720446543s infinite;">E</text>
-  <text x="418" y="114" fill="#00FF66" class="float-char" style="animation: float 2.5935462781390006s linear 0.39721259661031005s infinite;">Y</text>
-  <text x="415" y="87" fill="#bd93f9" class="float-char" style="animation: float 3.006432084453861s linear 0.25194799839256043s infinite;">E</text>
-  <text x="449" y="65" fill="#00FFFF" class="float-char" style="animation: float 3.2133487780859697s linear 2.890424873402388s infinite;">P</text>
-  <text x="371" y="64" fill="#00FF66" class="float-char" style="animation: float 3.801453756744332s linear 1.022447034899899s infinite;">S</text>
-  <text x="246" y="71" fill="#ff007f" class="float-char" style="animation: float 4.335884339723537s linear 2.818563175667663s infinite;">9</text>
-  <text x="435" y="127" fill="#ff007f" class="float-char" style="animation: float 2.9718155770215824s linear 2.8804717985412966s infinite;">M</text>
-  <text x="224" y="55" fill="#bd93f9" class="float-char" style="animation: float 2.671384590496269s linear 1.527931733127117s infinite;">I</text>
-  <text x="325" y="96" fill="#ffff00" class="float-char" style="animation: float 4.756338238188567s linear 0.06536604231858367s infinite;">R</text>
-  <text x="488" y="63" fill="#00FFFF" class="float-char" style="animation: float 4.85996604013066s linear 1.7385723203545507s infinite;">8</text>
-  <text x="583" y="121" fill="#bd93f9" class="float-char" style="animation: float 4.335365961463943s linear 0.4614631853853117s infinite;">U</text>
-  <text x="664" y="39" fill="#bd93f9" class="float-char" style="animation: float 3.6352012224883317s linear 0.28636666936529853s infinite;">X</text>
-  <text x="243" y="27" fill="#00FF66" class="float-char" style="animation: float 2.677891342609931s linear 1.577091472553665s infinite;">7</text>
-  <text x="388" y="128" fill="#00FFFF" class="float-char" style="animation: float 3.1875245125150107s linear 2.0914146070770467s infinite;">N</text>
-  <text x="798" y="125" fill="#00FFFF" class="float-char" style="animation: float 4.074914347798367s linear 1.8249042739995778s infinite;">&</text>
-  <text x="224" y="95" fill="#ff007f" class="float-char" style="animation: float 2.8859904286708775s linear 0.9371197358730555s infinite;">I</text>
-  <text x="360" y="27" fill="#ffff00" class="float-char" style="animation: float 3.285496678750049s linear 2.585767769123404s infinite;">H</text>
-  <text x="621" y="137" fill="#00FFFF" class="float-char" style="animation: float 3.7290061580219174s linear 0.3594755097245861s infinite;">3</text>
+  <text x="93" y="110" fill="#bd93f9" class="float-char" style="animation: float 4.83341397542872s linear 0.4097030968582137s infinite;">8</text>
+  <text x="104" y="104" fill="#bd93f9" class="float-char" style="animation: float 4.695774230186585s linear 2.4096952620805676s infinite;">Y</text>
+  <text x="522" y="91" fill="#bd93f9" class="float-char" style="animation: float 2.948530495772447s linear 2.5798436259383544s infinite;">E</text>
+  <text x="782" y="76" fill="#ffff00" class="float-char" style="animation: float 4.312412010403421s linear 1.290106767789415s infinite;">I</text>
+  <text x="518" y="68" fill="#00FF66" class="float-char" style="animation: float 3.6061197200630013s linear 2.2859812686485377s infinite;">K</text>
+  <text x="439" y="47" fill="#ffff00" class="float-char" style="animation: float 3.707850164754344s linear 0.7430842834916933s infinite;">Z</text>
+  <text x="781" y="33" fill="#bd93f9" class="float-char" style="animation: float 4.795712494075946s linear 2.4611341275662584s infinite;">O</text>
+  <text x="565" y="87" fill="#ffff00" class="float-char" style="animation: float 4.3695923790663835s linear 2.329510504021268s infinite;">0</text>
+  <text x="592" y="50" fill="#00FFFF" class="float-char" style="animation: float 4.6338451156376905s linear 0.807984721761841s infinite;">4</text>
+  <text x="158" y="148" fill="#ff007f" class="float-char" style="animation: float 3.0017318637107797s linear 0.7535586316846833s infinite;">7</text>
+  <text x="358" y="20" fill="#ffff00" class="float-char" style="animation: float 3.1015808858869156s linear 0.6817549942741864s infinite;">&</text>
+  <text x="352" y="134" fill="#ffff00" class="float-char" style="animation: float 3.779036793447436s linear 2.8049987587377045s infinite;">U</text>
+  <text x="774" y="127" fill="#ffff00" class="float-char" style="animation: float 2.6950324465710356s linear 0.69557204494439s infinite;">F</text>
+  <text x="403" y="103" fill="#00FF66" class="float-char" style="animation: float 2.4952647806293817s linear 0.3774716888472429s infinite;">T</text>
+  <text x="219" y="70" fill="#00FFFF" class="float-char" style="animation: float 3.206154895663304s linear 0.018982524809598167s infinite;">J</text>
+  <text x="771" y="44" fill="#ff007f" class="float-char" style="animation: float 3.717642533559554s linear 2.9722193926955986s infinite;">G</text>
+  <text x="263" y="145" fill="#00FF66" class="float-char" style="animation: float 4.976747210215932s linear 1.8089627556526404s infinite;">M</text>
+  <text x="73" y="99" fill="#ffff00" class="float-char" style="animation: float 2.92130536107559s linear 0.28279301200988893s infinite;">1</text>
+  <text x="70" y="21" fill="#00FFFF" class="float-char" style="animation: float 4.558422630815087s linear 2.6186425003383036s infinite;">L</text>
+  <text x="167" y="25" fill="#ff007f" class="float-char" style="animation: float 4.079351963898058s linear 1.1247730950527948s infinite;">#</text>
+  <text x="333" y="73" fill="#00FFFF" class="float-char" style="animation: float 4.55576554160446s linear 2.008262695211396s infinite;">K</text>
+  <text x="762" y="20" fill="#ff007f" class="float-char" style="animation: float 4.796862245220239s linear 2.0690308707136142s infinite;">Z</text>
+  <text x="295" y="50" fill="#ff007f" class="float-char" style="animation: float 2.9945875495280667s linear 0.45377828045799407s infinite;">L</text>
+  <text x="348" y="146" fill="#ffff00" class="float-char" style="animation: float 3.882723231759825s linear 0.8980632040737767s infinite;">I</text>
+  <text x="232" y="73" fill="#00FFFF" class="float-char" style="animation: float 4.1090654680433s linear 1.4882997461456s infinite;">T</text>
+  <text x="429" y="81" fill="#ffff00" class="float-char" style="animation: float 4.64141544635855s linear 1.927157523990128s infinite;">#</text>
+  <text x="221" y="28" fill="#00FF66" class="float-char" style="animation: float 3.8713691040820524s linear 2.6986578469182834s infinite;">U</text>
+  <text x="84" y="118" fill="#ffff00" class="float-char" style="animation: float 3.2833032749665563s linear 1.207427993458574s infinite;">T</text>
+  <text x="678" y="68" fill="#bd93f9" class="float-char" style="animation: float 3.377935175495672s linear 0.37249468891711845s infinite;">D</text>
+  <text x="322" y="121" fill="#00FF66" class="float-char" style="animation: float 3.947465540446769s linear 2.686244534862223s infinite;">G</text>
   <g transform="translate(80, 70)">
     <text x="0" y="0" class="ascii" text-anchor="start">
       <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.02s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.04s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.06s;">_</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.12s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.14s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.16s;">_</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.26s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.3s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.34s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.38s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.4s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.42s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.46s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.5s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.52s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.54s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.56s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.58s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.62s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.64s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.66s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.7000000000000001s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.72s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.74s;">_</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.84s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.86s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.88s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.92s;">_</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.02s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.04s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.06s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.1s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.12s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.1400000000000001s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.16s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.18s;">_</tspan>      <tspan> </tspan>    </text>
