@@ -1,57 +1,34 @@
-<div align="center">
+<!--
+  DR-WRITES-ALOT — profile readme
+  The visuals are SVGs under assets/, generated dynamically by .github/workflows/profile-builder.yml
+-->
 
-```text
- ____  ____        __        ______  ___ _____ _____ ____        _    _     ___ _____
-|  _ \|  _ \       \ \      / /  _ \|_ _|_   _| ____/ ___|      / \  | |   / _ \_   _|
-| | | | |_) |  ____ \ \ /\ / /| |_) || |  | | |  _| \___ \     / _ \ | |  | | | || |
-| |_| |  _ <  |____| \ V  V / |  _ < | |  | | | |___ ___) |   / ___ \| |__| |_| || |
-|____/|_| \_\         \_/\_/  |_| \_\___| |_| |_____|____/   /_/   \_\_____\___/ |_|
-```
 <p align="center">
-    <strong style="color: #00FF66;">Algorithmic Developer & Full-Stack Engineer in Training</strong>
+  <img src="assets/hero.svg" width="840" alt="DR-WRITES-ALOT Algorithmic Developer">
 </p>
-
-</div>
-
-<br>
-
-`// DR-WRITES-ALOT . algorithms + development`
 
 <br>
 
 `// IDENTITY_RESOLUTION . ./whoami --proof`
 
-```bash
-dr-writes-alot@linux:~/profile $ ./whoami --proof
-[*] resolving identity ......... ok
-role  : software-developer . dsa-practitioner . fullstack-learner
-mode  : builds clean logic, learning scalable web architecture
-stack : C . C++ . Java . Python
-[+] access granted
-```
+<p align="center">
+  <img src="assets/terminal.svg" width="840" alt="dr-writes-alot@linux: ~/profile">
+</p>
 
 <br>
 
 `// SYSTEM_TELEMETRY . live-data-feed`
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=DR-WRITES-ALOT&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00FF66&text_color=00FFFF&icon_color=00FF66" alt="GitHub Stats" width="400" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DR-WRITES-ALOT&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00FF66&text_color=00FFFF" alt="Top Languages" width="400" />
-</div>
-
-<br>
-
-`// ACTIVITY_LOG . tail -f activity.log`
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=DR-WRITES-ALOT&bg_color=0D1117&color=00FFFF&line=00FF66&point=00FFFF&hide_border=true&title_color=00FF66" alt="Activity Graph" />
-</div>
+<p align="center">
+  <img src="assets/stats.svg" width="840" alt="GitHub Stats Dashboard">
+</p>
 
 <br>
 
 `// CONTRIBUTION_MATRIX . ./scan --year`
 
 <div align="center">
+  <!-- Keeping ghchart as it's the only reliable way to get a full year graph outside of local API limitations -->
   <img src="https://ghchart.rshah.org/00FF66/DR-WRITES-ALOT" alt="DR-WRITES-ALOT's GitHub chart" />
 </div>
 
@@ -68,3 +45,11 @@ stack : C . C++ . Java . Python
     <img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=00FF66&borderColor=00FF66" alt="LinkedIn">
   </a>
 </div>
+
+<br>
+
+<p align="center">
+  <sub>
+  The terminal hero, identity block, and stats dashboard are auto-generated on a schedule by a GitHub Action (<a href=".github/workflows/profile-builder.yml"><code>.github/workflows/profile-builder.yml</code></a>) that renders custom matrix-styled SVGs in Python.
+  </sub>
+</p>

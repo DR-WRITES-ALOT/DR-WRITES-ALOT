@@ -1,0 +1,38 @@
+<svg width="840" height="220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #0a0a0f; }
+      .text { font-family: 'Courier New', Courier, monospace; font-size: 15px; fill: #ffffff; }
+      .prompt { fill: #00FF66; font-weight: bold; filter: drop-shadow(0 0 2px #00FF66); }
+      .cmd { fill: #ffffff; }
+      .keyword { fill: #00FFFF; filter: drop-shadow(0 0 2px #00FFFF); }
+      .bracket { fill: #ff007f; font-weight: bold; }
+      .mac-btn { rx: 6; ry: 6; width: 12px; height: 12px; }
+      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+      .cursor { animation: blink 1s step-end infinite; fill: #00FFFF; }
+      @keyframes typeLine { 0% { opacity: 0; } 100% { opacity: 1; } }
+      .line1 { animation: typeLine 0.1s forwards; }
+      .line2 { opacity: 0; animation: typeLine 0.1s 0.5s forwards; }
+      .line3 { opacity: 0; animation: typeLine 0.1s 1.0s forwards; }
+      .line4 { opacity: 0; animation: typeLine 0.1s 1.5s forwards; }
+      .line5 { opacity: 0; animation: typeLine 0.1s 2.0s forwards; }
+      .line6 { opacity: 0; animation: typeLine 0.1s 2.5s forwards; }
+    </style>
+  </defs>
+  <rect width="840" height="220" rx="10" class="bg" stroke="#1f2937" stroke-width="2"/>
+  <rect width="840" height="35" rx="10" fill="#111827" />
+  <rect y="15" width="840" height="20" fill="#111827" />
+  <line x1="0" y1="35" x2="840" y2="35" stroke="#30363d" stroke-width="1"/>
+  <rect class="mac-btn" x="15" y="11" fill="#ff5f56" />
+  <rect class="mac-btn" x="35" y="11" fill="#ffbd2e" />
+  <rect class="mac-btn" x="55" y="11" fill="#27c93f" />
+  <text x="420" y="22" fill="#8b949e" font-family="monospace" font-size="13" text-anchor="middle">dr-writes-alot@linux: ~/profile</text>
+  <g transform="translate(20, 70)" class="text">
+    <text y="0" class="line1"><tspan class="prompt">dr-writes-alot@linux:~/profile $</tspan> <tspan class="cmd">./whoami --proof</tspan></text>
+    <text y="25" class="line2"><tspan class="bracket">[</tspan><tspan fill="#ffbd2e">*</tspan><tspan class="bracket">]</tspan> resolving identity ......... <tspan class="keyword">ok</tspan></text>
+    <text y="50" class="line3"><tspan class="keyword">role </tspan> : software-developer . dsa-practitioner . fullstack-learner</text>
+    <text y="75" class="line4"><tspan class="keyword">mode </tspan> : builds clean logic, learning scalable web architecture</text>
+    <text y="100" class="line5"><tspan class="keyword">stack</tspan> : C . C++ . Java . Python</text>
+    <text y="125" class="line6"><tspan class="bracket">[</tspan><tspan class="prompt">+</tspan><tspan class="bracket">]</tspan> access granted <rect x="155" y="113" width="10" height="15" class="cursor"/></text>
+  </g>
+</svg>
