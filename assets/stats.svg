@@ -6,8 +6,8 @@
       .label { font-family: 'Courier New', Courier, monospace; font-size: 14px; fill: #8b949e; text-transform: uppercase; }
       .val { font-family: 'Courier New', Courier, monospace; font-size: 32px; font-weight: bold; fill: #00FFFF; filter: drop-shadow(0 0 5px #00FFFF); }
 
-      @keyframes loadBar { 0% { width: 0; } 100% { width: 100%; } }
-      .progress { fill: #00FF66; filter: drop-shadow(0 0 4px #00FF66); animation: loadBar 1.5s ease-out forwards; }
+      @keyframes loadBar { 0% { transform: scaleX(0); } 100% { transform: scaleX(1); } }
+      .progress { fill: #00FF66; filter: drop-shadow(0 0 4px #00FF66); transform-origin: left center; animation: loadBar 1.5s ease-out forwards; }
       .progress-bg { fill: #1f2937; }
 
       @keyframes pulse { 0% { opacity: 0.7; } 50% { opacity: 1; } 100% { opacity: 0.7; } }
@@ -40,9 +40,9 @@
     <text class="label" x="0" y="0">STACK DISTRIBUTION</text>
     <rect class="progress-bg" x="180" y="-12" width="540" height="15" rx="5" />
     <!-- Segmented progress bars for languages -->
-    <rect fill="#00FFFF" x="180" y="-12" width="200" height="15" rx="5" filter="drop-shadow(0 0 2px #00FFFF)" class="progress"/>
-    <rect fill="#00FF66" x="380" y="-12" width="150" height="15" filter="drop-shadow(0 0 2px #00FF66)" class="progress"/>
-    <rect fill="#ffbd2e" x="530" y="-12" width="100" height="15" filter="drop-shadow(0 0 2px #ffbd2e)" class="progress"/>
-    <rect fill="#ff5f56" x="630" y="-12" width="90" height="15" rx="5" filter="drop-shadow(0 0 2px #ff5f56)" class="progress"/>
+    <rect fill="#00FFFF" x="180" y="-12" width="200" height="15" filter="drop-shadow(0 0 1px #00FFFF)" class="progress"/>
+    <rect fill="#00FF66" x="380" y="-12" width="150" height="15" filter="drop-shadow(0 0 1px #00FF66)" class="progress"/>
+    <rect fill="#ffbd2e" x="530" y="-12" width="100" height="15" filter="drop-shadow(0 0 1px #ffbd2e)" class="progress"/>
+    <rect fill="#ff5f56" x="630" y="-12" width="90" height="15" rx="5" filter="drop-shadow(0 0 1px #ff5f56)" class="progress"/>
   </g>
 </svg>

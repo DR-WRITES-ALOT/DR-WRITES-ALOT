@@ -80,7 +80,8 @@ def generate_hero_svg():
         duration = random.uniform(2, 5)
         svg += f'  <text x="{x}" y="{y}" fill="{color}" class="float-char" style="animation: float {duration}s linear {delay}s infinite;">{char}</text>\n'
 
-    svg += '  <g transform="translate(20, 70)">\n'
+    # Center the ASCII art horizontally and vertically within the SVG viewbox
+    svg += '  <g transform="translate(80, 70)">\n'
     y_offset = 0
     for line in ascii_art:
         svg += f'    <text x="0" y="{y_offset}" class="ascii" text-anchor="start">\n'
@@ -161,8 +162,8 @@ def generate_stats_svg(stats):
       .label {{ font-family: 'Courier New', Courier, monospace; font-size: 14px; fill: #8b949e; text-transform: uppercase; }}
       .val {{ font-family: 'Courier New', Courier, monospace; font-size: 32px; font-weight: bold; fill: {CYAN}; filter: drop-shadow(0 0 5px {CYAN}); }}
 
-      @keyframes loadBar {{ 0% {{ width: 0; }} 100% {{ width: 100%; }} }}
-      .progress {{ fill: {GREEN}; filter: drop-shadow(0 0 4px {GREEN}); animation: loadBar 1.5s ease-out forwards; }}
+      @keyframes loadBar {{ 0% {{ transform: scaleX(0); }} 100% {{ transform: scaleX(1); }} }}
+      .progress {{ fill: {GREEN}; filter: drop-shadow(0 0 4px {GREEN}); transform-origin: left center; animation: loadBar 1.5s ease-out forwards; }}
       .progress-bg {{ fill: #1f2937; }}
 
       @keyframes pulse {{ 0% {{ opacity: 0.7; }} 50% {{ opacity: 1; }} 100% {{ opacity: 0.7; }} }}
@@ -195,10 +196,10 @@ def generate_stats_svg(stats):
     <text class="label" x="0" y="0">STACK DISTRIBUTION</text>
     <rect class="progress-bg" x="180" y="-12" width="540" height="15" rx="5" />
     <!-- Segmented progress bars for languages -->
-    <rect fill="{CYAN}" x="180" y="-12" width="200" height="15" rx="5" filter="drop-shadow(0 0 2px {CYAN})" class="progress"/>
-    <rect fill="{GREEN}" x="380" y="-12" width="150" height="15" filter="drop-shadow(0 0 2px {GREEN})" class="progress"/>
-    <rect fill="#ffbd2e" x="530" y="-12" width="100" height="15" filter="drop-shadow(0 0 2px #ffbd2e)" class="progress"/>
-    <rect fill="#ff5f56" x="630" y="-12" width="90" height="15" rx="5" filter="drop-shadow(0 0 2px #ff5f56)" class="progress"/>
+    <rect fill="{CYAN}" x="180" y="-12" width="200" height="15" filter="drop-shadow(0 0 1px {CYAN})" class="progress"/>
+    <rect fill="{GREEN}" x="380" y="-12" width="150" height="15" filter="drop-shadow(0 0 1px {GREEN})" class="progress"/>
+    <rect fill="#ffbd2e" x="530" y="-12" width="100" height="15" filter="drop-shadow(0 0 1px #ffbd2e)" class="progress"/>
+    <rect fill="#ff5f56" x="630" y="-12" width="90" height="15" rx="5" filter="drop-shadow(0 0 1px #ff5f56)" class="progress"/>
   </g>
 </svg>"""
     with open("assets/stats.svg", "w") as f:
