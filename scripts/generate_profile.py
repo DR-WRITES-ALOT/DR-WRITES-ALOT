@@ -43,20 +43,20 @@ def get_github_stats():
     return stats
 
 def generate_hero_svg():
+    # A single-line, more compact ASCII format so it is visible and properly fits the SVG width
     ascii_art = [
-        r" ____  ____        __        ______  ___ _____ _____ ____        _    _     ___ _____ ",
-        r"|  _ \|  _ \       \ \      / /  _ \|_ _|_   _| ____/ ___|      / \  | |   / _ \_   _|",
-        r"| | | | |_) |  ____ \ \ /\ / /| |_) || |  | | |  _| \___ \     / _ \ | |  | | | || |  ",
-        r"| |_| |  _ <  |____| \ V  V / |  _ < | |  | | | |___ ___) |   / ___ \| |__| |_| || |  ",
-        r"|____/|_| \_\         \_/\_/  |_| \_\___| |_| |_____|____/   /_/   \_\_____\___/ |_|  "
+        r" ___  ___    _ _ _ ___ _ _____ ___ ___    ___ _    ___ _____ ",
+        r"|   \| _ \  | | | | _ \_|_   _| __/ __|  / _ \ |  / _ \_   _|",
+        r"| |) |   /  | V V |   / | | | | _|\__ \ |  _  || | (_) || |  ",
+        r"|___/|_|_\   \_/_/|_|_\_| |_| |___|___/ |_| |_|___\___/ |_|  "
     ]
 
     svg = f"""<svg width="840" height="250" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       .bg {{ fill: {BG_COLOR}; }}
-      .ascii {{ font-family: 'Courier New', Courier, monospace; font-size: 14px; font-weight: bold; fill: {GREEN}; }}
-      .sub {{ font-family: 'Courier New', Courier, monospace; font-size: 16px; font-weight: bold; fill: {CYAN}; }}
+      .ascii {{ font-family: 'Courier New', Courier, monospace; font-size: 18px; font-weight: bold; fill: {GREEN}; letter-spacing: 2px; }}
+      .sub {{ font-family: 'Courier New', Courier, monospace; font-size: 20px; font-weight: bold; fill: {CYAN}; letter-spacing: 4px; }}
       @keyframes reveal {{ 0% {{ opacity: 0; }} 100% {{ opacity: 1; }} }}
       @keyframes float {{
         0% {{ transform: translateY(-20px); opacity: 0; }}
@@ -80,10 +80,10 @@ def generate_hero_svg():
         duration = random.uniform(2, 5)
         svg += f'  <text x="{x}" y="{y}" fill="{color}" class="float-char" style="animation: float {duration}s linear {delay}s infinite;">{char}</text>\n'
 
-    svg += '  <g transform="translate(40, 60)">\n'
+    svg += '  <g transform="translate(20, 70)">\n'
     y_offset = 0
     for line in ascii_art:
-        svg += f'    <text x="0" y="{y_offset}" class="ascii">\n'
+        svg += f'    <text x="0" y="{y_offset}" class="ascii" text-anchor="start">\n'
         for i, char in enumerate(line):
             if char != ' ':
                 delay = (i * 0.02) + (y_offset * 0.005)
@@ -96,8 +96,8 @@ def generate_hero_svg():
         y_offset += 20
     svg += '  </g>\n'
 
-    subtitle = "Algorithmic Developer & Full-Stack Engineer in Training"
-    svg += '  <text x="420" y="200" class="sub" text-anchor="middle">\n'
+    subtitle = "Software Developer"
+    svg += '  <text x="420" y="220" class="sub" text-anchor="middle">\n'
     for i, char in enumerate(subtitle):
         delay = 2.0 + (i * 0.05)
         if char in '<>&':
