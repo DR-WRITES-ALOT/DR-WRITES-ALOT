@@ -2,59 +2,129 @@
   <defs>
     <style>
       .bg { fill: #0D1117; }
-      .ascii { font-family: 'Courier New', Courier, monospace; font-size: 18px; font-weight: bold; fill: #00FF66; letter-spacing: 2px; }
-      .sub { font-family: 'Courier New', Courier, monospace; font-size: 20px; font-weight: bold; fill: #00FFFF; letter-spacing: 4px; }
-      @keyframes reveal { 0% { opacity: 0; } 100% { opacity: 1; } }
+      .ascii { font-family: 'Courier New', Courier, monospace; font-size: 16px; font-weight: 900; fill: #00FF66; letter-spacing: 1px; filter: drop-shadow(0 0 8px #00FF66); }
+      .sub { font-family: 'Courier New', Courier, monospace; font-size: 20px; font-weight: bold; fill: #00FFFF; letter-spacing: 6px; filter: drop-shadow(0 0 8px #00FFFF); }
+
       @keyframes float {
         0% { transform: translateY(-20px); opacity: 0; }
         50% { opacity: 1; }
         100% { transform: translateY(100px); opacity: 0; }
       }
-      .reveal { animation: reveal 0.1s forwards; opacity: 0; filter: drop-shadow(0 0 5px #00FF66); }
-      .float-char { font-family: monospace; font-size: 12px; font-weight: bold; opacity: 0; }
+      .float-char { font-family: monospace; font-size: 14px; font-weight: bold; opacity: 0; }
+
+      /* Matrix Glitch Animation */
+      @keyframes glitch-anim-1 {
+        0% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 1px); }
+        20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); }
+        40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); }
+        60% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); }
+        80% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, 1px); }
+        100% { clip-path: inset(30% 0 50% 0); transform: translate(1px, -1px); }
+      }
+      @keyframes glitch-anim-2 {
+        0% { clip-path: inset(10% 0 60% 0); transform: translate(2px, -1px); }
+        20% { clip-path: inset(30% 0 20% 0); transform: translate(-2px, 1px); }
+        40% { clip-path: inset(70% 0 10% 0); transform: translate(2px, -2px); }
+        60% { clip-path: inset(20% 0 50% 0); transform: translate(-2px, 2px); }
+        80% { clip-path: inset(50% 0 30% 0); transform: translate(1px, -1px); }
+        100% { clip-path: inset(5% 0 80% 0); transform: translate(-1px, 1px); }
+      }
+
+      .glitch-layer { opacity: 0; }
+      .glitch-container:hover .glitch-layer { opacity: 0.8; }
+      .glitch-container .glitch-layer:nth-child(2) { animation: glitch-anim-1 2s infinite linear alternate-reverse; fill: #00FFFF; }
+      .glitch-container .glitch-layer:nth-child(3) { animation: glitch-anim-2 3s infinite linear alternate-reverse; fill: #ff007f; }
+
+      /* Base reveal animation for subtitle */
+      @keyframes reveal { 0% { opacity: 0; } 100% { opacity: 1; } }
+      .reveal { animation: reveal 0.1s forwards; opacity: 0; }
     </style>
   </defs>
   <rect class="bg" width="100%" height="100%" rx="10" />
-  <text x="49" y="84" fill="#ffff00" class="float-char" style="animation: float 2.692254688062363s linear 1.0164958107007669s infinite;">5</text>
-  <text x="788" y="44" fill="#bd93f9" class="float-char" style="animation: float 4.754245476488935s linear 1.245378045471143s infinite;">H</text>
-  <text x="791" y="133" fill="#00FF66" class="float-char" style="animation: float 3.4495238772126404s linear 1.9336589115728522s infinite;">D</text>
-  <text x="680" y="31" fill="#bd93f9" class="float-char" style="animation: float 4.150363589572321s linear 0.9100733687422267s infinite;">N</text>
-  <text x="257" y="92" fill="#ff007f" class="float-char" style="animation: float 2.076112833185042s linear 2.4299055265210425s infinite;">H</text>
-  <text x="109" y="142" fill="#ff007f" class="float-char" style="animation: float 4.407106947163214s linear 0.5076892439985862s infinite;">2</text>
-  <text x="351" y="98" fill="#ffff00" class="float-char" style="animation: float 4.21049320954018s linear 0.6945685040586345s infinite;">6</text>
-  <text x="240" y="70" fill="#00FFFF" class="float-char" style="animation: float 4.028127618085964s linear 2.420318989326908s infinite;">A</text>
-  <text x="436" y="34" fill="#00FF66" class="float-char" style="animation: float 3.1849436055859375s linear 1.661042263474191s infinite;">X</text>
-  <text x="599" y="49" fill="#ff007f" class="float-char" style="animation: float 2.341022046233748s linear 0.6515277452108683s infinite;">3</text>
-  <text x="290" y="132" fill="#ffff00" class="float-char" style="animation: float 4.622073013923353s linear 1.7382467431432498s infinite;">8</text>
-  <text x="482" y="107" fill="#00FF66" class="float-char" style="animation: float 4.059646748556682s linear 2.184805544360669s infinite;">#</text>
-  <text x="226" y="94" fill="#bd93f9" class="float-char" style="animation: float 3.9365036455265567s linear 0.8790520061552953s infinite;">C</text>
-  <text x="114" y="75" fill="#bd93f9" class="float-char" style="animation: float 4.182301895225305s linear 1.8991417387734708s infinite;">D</text>
-  <text x="94" y="124" fill="#00FF66" class="float-char" style="animation: float 3.9645318651026873s linear 0.7322193152440801s infinite;">1</text>
-  <text x="276" y="24" fill="#ff007f" class="float-char" style="animation: float 4.385108934179538s linear 1.7689235530557172s infinite;">V</text>
-  <text x="711" y="130" fill="#ff007f" class="float-char" style="animation: float 2.543867946320017s linear 0.2745104725033233s infinite;">Z</text>
-  <text x="294" y="137" fill="#00FFFF" class="float-char" style="animation: float 4.643617469153719s linear 1.8955685401023405s infinite;">5</text>
-  <text x="564" y="110" fill="#ff007f" class="float-char" style="animation: float 3.0084382212069127s linear 2.0486756038719127s infinite;">@</text>
-  <text x="370" y="132" fill="#00FF66" class="float-char" style="animation: float 4.224089259445808s linear 0.0036737093531303833s infinite;">%</text>
-  <text x="193" y="45" fill="#00FF66" class="float-char" style="animation: float 3.597858684061023s linear 0.9470543733835076s infinite;">B</text>
-  <text x="710" y="82" fill="#bd93f9" class="float-char" style="animation: float 2.6985860722058055s linear 0.8049656986000165s infinite;">D</text>
-  <text x="485" y="121" fill="#00FFFF" class="float-char" style="animation: float 4.588337449452844s linear 2.202898937073832s infinite;">B</text>
-  <text x="449" y="129" fill="#00FFFF" class="float-char" style="animation: float 4.134487808639419s linear 1.3052269510739447s infinite;">9</text>
-  <text x="71" y="31" fill="#ff007f" class="float-char" style="animation: float 2.2196376791571137s linear 2.489608035705772s infinite;">T</text>
-  <text x="42" y="70" fill="#bd93f9" class="float-char" style="animation: float 2.046746440027243s linear 2.4562562525224556s infinite;">N</text>
-  <text x="535" y="67" fill="#ffff00" class="float-char" style="animation: float 2.529775037739419s linear 0.8794041064032965s infinite;">3</text>
-  <text x="622" y="115" fill="#bd93f9" class="float-char" style="animation: float 2.9175972606575105s linear 2.8507688678498853s infinite;">9</text>
-  <text x="183" y="130" fill="#00FF66" class="float-char" style="animation: float 3.34515716498195s linear 1.39296852152793s infinite;">U</text>
-  <text x="47" y="86" fill="#ffff00" class="float-char" style="animation: float 3.1744579697831585s linear 0.5078222637984998s infinite;">6</text>
-  <g transform="translate(80, 70)">
-    <text x="0" y="0" class="ascii" text-anchor="start">
-      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.02s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.04s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.06s;">_</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.12s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.14s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.16s;">_</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.26s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.3s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.34s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.38s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.4s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.42s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.46s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.5s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.52s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.54s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.56s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.58s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.62s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.64s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.66s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.7000000000000001s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.72s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.74s;">_</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.84s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.86s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.88s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.92s;">_</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.02s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.04s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.06s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.1s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.12s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.1400000000000001s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.16s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.18s;">_</tspan>      <tspan> </tspan>    </text>
-    <text x="0" y="20" class="ascii" text-anchor="start">
-      <tspan class="reveal" style="animation-delay: 0.1s;">|</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.18s;">\</tspan>      <tspan class="reveal" style="animation-delay: 0.2s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.24000000000000002s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.28s;">\</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.33999999999999997s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.38s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.42000000000000004s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.45999999999999996s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.5s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.54s;">\</tspan>      <tspan class="reveal" style="animation-delay: 0.56s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.58s;">|</tspan>      <tspan class="reveal" style="animation-delay: 0.6s;">_</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.6799999999999999s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.7s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.74s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.76s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.78s;">/</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.82s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.84s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.86s;">|</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.92s;">/</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.96s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.0s;">\</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.04s;">|</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.1s;">/</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.1400000000000001s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.1800000000000002s;">\</tspan>      <tspan class="reveal" style="animation-delay: 1.2000000000000002s;">_</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.28s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.3s;">|</tspan>    </text>
-    <text x="0" y="40" class="ascii" text-anchor="start">
-      <tspan class="reveal" style="animation-delay: 0.2s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.24000000000000002s;">|</tspan>      <tspan class="reveal" style="animation-delay: 0.26s;">)</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.30000000000000004s;">|</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.38s;">/</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.44s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.48000000000000004s;">V</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.52s;">V</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.56s;">|</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.64s;">/</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.6799999999999999s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.72s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.76s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.8s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.8400000000000001s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.8600000000000001s;">|</tspan>      <tspan class="reveal" style="animation-delay: 0.8800000000000001s;">\</tspan>      <tspan class="reveal" style="animation-delay: 0.9000000000000001s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.9199999999999999s;">_</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.96s;">\</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.0s;">|</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.06s;">_</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.12s;">|</tspan>      <tspan class="reveal" style="animation-delay: 1.1400000000000001s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.18s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.22s;">(</tspan>      <tspan class="reveal" style="animation-delay: 1.24s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.26s;">)</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.3s;">|</tspan>      <tspan class="reveal" style="animation-delay: 1.32s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.3599999999999999s;">|</tspan>      <tspan> </tspan>      <tspan> </tspan>    </text>
-    <text x="0" y="60" class="ascii" text-anchor="start">
-      <tspan class="reveal" style="animation-delay: 0.3s;">|</tspan>      <tspan class="reveal" style="animation-delay: 0.32s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.33999999999999997s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.36s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.38s;">/</tspan>      <tspan class="reveal" style="animation-delay: 0.4s;">|</tspan>      <tspan class="reveal" style="animation-delay: 0.42s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.44s;">|</tspan>      <tspan class="reveal" style="animation-delay: 0.45999999999999996s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.48s;">\</tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.56s;">\</tspan>      <tspan class="reveal" style="animation-delay: 0.5800000000000001s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.6s;">/</tspan>      <tspan class="reveal" style="animation-delay: 0.62s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.64s;">/</tspan>      <tspan class="reveal" style="animation-delay: 0.6599999999999999s;">|</tspan>      <tspan class="reveal" style="animation-delay: 0.6799999999999999s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.7s;">|</tspan>      <tspan class="reveal" style="animation-delay: 0.72s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.74s;">\</tspan>      <tspan class="reveal" style="animation-delay: 0.76s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.78s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.8200000000000001s;">|</tspan>      <tspan class="reveal" style="animation-delay: 0.8400000000000001s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.8600000000000001s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 0.8999999999999999s;">|</tspan>      <tspan class="reveal" style="animation-delay: 0.9199999999999999s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.94s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.96s;">_</tspan>      <tspan class="reveal" style="animation-delay: 0.98s;">|</tspan>      <tspan class="reveal" style="animation-delay: 1.0s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.02s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.04s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.06s;">/</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.1s;">|</tspan>      <tspan class="reveal" style="animation-delay: 1.12s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.14s;">|</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.18s;">|</tspan>      <tspan class="reveal" style="animation-delay: 1.2s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.22s;">|</tspan>      <tspan class="reveal" style="animation-delay: 1.24s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.26s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.28s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.3s;">\</tspan>      <tspan class="reveal" style="animation-delay: 1.32s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.34s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.36s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.3800000000000001s;">/</tspan>      <tspan> </tspan>      <tspan class="reveal" style="animation-delay: 1.4200000000000002s;">|</tspan>      <tspan class="reveal" style="animation-delay: 1.4400000000000002s;">_</tspan>      <tspan class="reveal" style="animation-delay: 1.46s;">|</tspan>      <tspan> </tspan>      <tspan> </tspan>    </text>
+  <text x="39" y="67" fill="#ffff00" class="float-char" style="animation: float 3.862721933098663s linear 0.44682383793985747s infinite;">I</text>
+  <text x="24" y="141" fill="#00FF66" class="float-char" style="animation: float 4.821364876844051s linear 1.0078812242576294s infinite;">I</text>
+  <text x="333" y="74" fill="#00FF66" class="float-char" style="animation: float 2.4055280607176073s linear 0.31718824828077796s infinite;">@</text>
+  <text x="320" y="93" fill="#bd93f9" class="float-char" style="animation: float 4.708507986279992s linear 0.6819461163526831s infinite;">L</text>
+  <text x="344" y="55" fill="#bd93f9" class="float-char" style="animation: float 4.074230020937579s linear 2.988784436982832s infinite;">S</text>
+  <text x="564" y="50" fill="#ffff00" class="float-char" style="animation: float 3.8396840657738025s linear 1.5491103381540148s infinite;">O</text>
+  <text x="389" y="37" fill="#00FF66" class="float-char" style="animation: float 4.29075519652902s linear 1.749492845407226s infinite;">I</text>
+  <text x="70" y="65" fill="#bd93f9" class="float-char" style="animation: float 4.361577352632488s linear 0.4069759482711789s infinite;">3</text>
+  <text x="607" y="70" fill="#00FF66" class="float-char" style="animation: float 4.397632294410781s linear 1.0461094947100062s infinite;">Y</text>
+  <text x="22" y="117" fill="#00FFFF" class="float-char" style="animation: float 4.598154750084077s linear 0.4177906050279443s infinite;">5</text>
+  <text x="125" y="36" fill="#ff007f" class="float-char" style="animation: float 4.028366375775795s linear 1.9109483701860444s infinite;">O</text>
+  <text x="255" y="47" fill="#00FFFF" class="float-char" style="animation: float 4.792010998231467s linear 0.5457008151352162s infinite;">%</text>
+  <text x="621" y="101" fill="#00FFFF" class="float-char" style="animation: float 2.5211879661504986s linear 1.3205870608510835s infinite;">N</text>
+  <text x="295" y="73" fill="#00FF66" class="float-char" style="animation: float 4.353567745939404s linear 0.2457835969188935s infinite;">N</text>
+  <text x="569" y="38" fill="#ffff00" class="float-char" style="animation: float 3.91956547670659s linear 2.633566271422197s infinite;">&amp;</text>
+  <text x="582" y="77" fill="#ff007f" class="float-char" style="animation: float 4.034303802645678s linear 0.0816641383211858s infinite;">3</text>
+  <text x="769" y="93" fill="#ff007f" class="float-char" style="animation: float 2.1146124809633577s linear 2.932007665032109s infinite;">3</text>
+  <text x="106" y="114" fill="#00FF66" class="float-char" style="animation: float 2.8235647318868526s linear 1.3160052937711542s infinite;">C</text>
+  <text x="67" y="32" fill="#00FF66" class="float-char" style="animation: float 4.927590124128529s linear 1.6952404396982932s infinite;">0</text>
+  <text x="723" y="70" fill="#ffff00" class="float-char" style="animation: float 2.3755538841464254s linear 2.920260300861443s infinite;">I</text>
+  <text x="122" y="90" fill="#ffff00" class="float-char" style="animation: float 4.734533892038623s linear 0.9997762118949424s infinite;">P</text>
+  <text x="653" y="112" fill="#00FFFF" class="float-char" style="animation: float 4.594602451371294s linear 0.9263268579317968s infinite;">E</text>
+  <text x="251" y="89" fill="#00FF66" class="float-char" style="animation: float 4.307737275653471s linear 0.4424021211524293s infinite;">L</text>
+  <text x="192" y="20" fill="#bd93f9" class="float-char" style="animation: float 2.327925931629336s linear 2.7438246537305235s infinite;">6</text>
+  <text x="400" y="107" fill="#00FFFF" class="float-char" style="animation: float 3.4247693548671805s linear 0.7418570354398533s infinite;">A</text>
+  <text x="602" y="75" fill="#00FF66" class="float-char" style="animation: float 2.622424306294142s linear 0.49774330606318795s infinite;">&amp;</text>
+  <text x="431" y="119" fill="#bd93f9" class="float-char" style="animation: float 2.529651332309318s linear 1.7595180747262384s infinite;">M</text>
+  <text x="771" y="99" fill="#bd93f9" class="float-char" style="animation: float 4.625124740254593s linear 2.3391105416603986s infinite;">O</text>
+  <text x="187" y="138" fill="#ffff00" class="float-char" style="animation: float 3.843006602516169s linear 2.39172890747657s infinite;">K</text>
+  <text x="228" y="118" fill="#00FFFF" class="float-char" style="animation: float 2.4354831448421574s linear 0.5081537410038011s infinite;">G</text>
+  <text x="447" y="107" fill="#bd93f9" class="float-char" style="animation: float 3.3994371846325278s linear 2.8454968208405815s infinite;">&amp;</text>
+  <text x="709" y="46" fill="#00FFFF" class="float-char" style="animation: float 2.9012899696129715s linear 2.929515521326392s infinite;">W</text>
+  <text x="97" y="48" fill="#00FF66" class="float-char" style="animation: float 4.76675954614516s linear 0.4727116075745994s infinite;">G</text>
+  <text x="114" y="137" fill="#bd93f9" class="float-char" style="animation: float 2.7680527503178496s linear 2.492250270262587s infinite;">6</text>
+  <text x="277" y="82" fill="#00FFFF" class="float-char" style="animation: float 3.2863864086857553s linear 0.8931523005995667s infinite;">2</text>
+  <text x="719" y="78" fill="#bd93f9" class="float-char" style="animation: float 2.3225176853333664s linear 0.2688295078829954s infinite;">#</text>
+  <text x="42" y="118" fill="#ff007f" class="float-char" style="animation: float 4.097143356812397s linear 0.5149490587926459s infinite;">#</text>
+  <text x="479" y="66" fill="#00FF66" class="float-char" style="animation: float 3.7523431299081293s linear 2.14794624704748s infinite;">Z</text>
+  <text x="509" y="129" fill="#bd93f9" class="float-char" style="animation: float 4.49458806129256s linear 1.455825122996342s infinite;">Y</text>
+  <text x="96" y="132" fill="#bd93f9" class="float-char" style="animation: float 4.799675518653176s linear 0.18478881591292184s infinite;">N</text>
+  <g transform="translate(60, 70)" class="glitch-container">
+    <g class="ascii">
+      <text x="0" y="0" text-anchor="start" xml:space="preserve">
+         ___  ___   _      __ ___  ___  ___  ___  ___    _    _    ___  ___
+      </text>
+      <text x="0" y="20" text-anchor="start" xml:space="preserve">
+        |   \| _ \ | |    / /| _ \|_ _||_ _|| __|/ __|  /_\  | |  / _ \|_ _|
+      </text>
+      <text x="0" y="40" text-anchor="start" xml:space="preserve">
+        | |) |   / | |__ / / |   / | |  | | | _| \__ \ / _ \ | |_| (_) || |
+      </text>
+      <text x="0" y="60" text-anchor="start" xml:space="preserve">
+        |___/|_|_\ |____/_/  |_|_\ |___ |___|___||___//_/ \_\|____\___/ |_|
+      </text>
+    </g>
+    <g class="ascii glitch-layer">
+      <text x="0" y="0" text-anchor="start" xml:space="preserve">
+         ___  ___   _      __ ___  ___  ___  ___  ___    _    _    ___  ___
+      </text>
+      <text x="0" y="20" text-anchor="start" xml:space="preserve">
+        |   \| _ \ | |    / /| _ \|_ _||_ _|| __|/ __|  /_\  | |  / _ \|_ _|
+      </text>
+      <text x="0" y="40" text-anchor="start" xml:space="preserve">
+        | |) |   / | |__ / / |   / | |  | | | _| \__ \ / _ \ | |_| (_) || |
+      </text>
+      <text x="0" y="60" text-anchor="start" xml:space="preserve">
+        |___/|_|_\ |____/_/  |_|_\ |___ |___|___||___//_/ \_\|____\___/ |_|
+      </text>
+    </g>
+    <g class="ascii glitch-layer">
+      <text x="0" y="0" text-anchor="start" xml:space="preserve">
+         ___  ___   _      __ ___  ___  ___  ___  ___    _    _    ___  ___
+      </text>
+      <text x="0" y="20" text-anchor="start" xml:space="preserve">
+        |   \| _ \ | |    / /| _ \|_ _||_ _|| __|/ __|  /_\  | |  / _ \|_ _|
+      </text>
+      <text x="0" y="40" text-anchor="start" xml:space="preserve">
+        | |) |   / | |__ / / |   / | |  | | | _| \__ \ / _ \ | |_| (_) || |
+      </text>
+      <text x="0" y="60" text-anchor="start" xml:space="preserve">
+        |___/|_|_\ |____/_/  |_|_\ |___ |___|___||___//_/ \_\|____\___/ |_|
+      </text>
+    </g>
   </g>
   <text x="420" y="220" class="sub" text-anchor="middle">
-    <tspan class="reveal" style="animation-delay: 2.0s; filter: drop-shadow(0 0 5px #00FFFF);">S</tspan>    <tspan class="reveal" style="animation-delay: 2.05s; filter: drop-shadow(0 0 5px #00FFFF);">o</tspan>    <tspan class="reveal" style="animation-delay: 2.1s; filter: drop-shadow(0 0 5px #00FFFF);">f</tspan>    <tspan class="reveal" style="animation-delay: 2.15s; filter: drop-shadow(0 0 5px #00FFFF);">t</tspan>    <tspan class="reveal" style="animation-delay: 2.2s; filter: drop-shadow(0 0 5px #00FFFF);">w</tspan>    <tspan class="reveal" style="animation-delay: 2.25s; filter: drop-shadow(0 0 5px #00FFFF);">a</tspan>    <tspan class="reveal" style="animation-delay: 2.3s; filter: drop-shadow(0 0 5px #00FFFF);">r</tspan>    <tspan class="reveal" style="animation-delay: 2.35s; filter: drop-shadow(0 0 5px #00FFFF);">e</tspan>    <tspan class="reveal" style="animation-delay: 2.4s; filter: drop-shadow(0 0 5px #00FFFF);"> </tspan>    <tspan class="reveal" style="animation-delay: 2.45s; filter: drop-shadow(0 0 5px #00FFFF);">D</tspan>    <tspan class="reveal" style="animation-delay: 2.5s; filter: drop-shadow(0 0 5px #00FFFF);">e</tspan>    <tspan class="reveal" style="animation-delay: 2.55s; filter: drop-shadow(0 0 5px #00FFFF);">v</tspan>    <tspan class="reveal" style="animation-delay: 2.6s; filter: drop-shadow(0 0 5px #00FFFF);">e</tspan>    <tspan class="reveal" style="animation-delay: 2.65s; filter: drop-shadow(0 0 5px #00FFFF);">l</tspan>    <tspan class="reveal" style="animation-delay: 2.7s; filter: drop-shadow(0 0 5px #00FFFF);">o</tspan>    <tspan class="reveal" style="animation-delay: 2.75s; filter: drop-shadow(0 0 5px #00FFFF);">p</tspan>    <tspan class="reveal" style="animation-delay: 2.8s; filter: drop-shadow(0 0 5px #00FFFF);">e</tspan>    <tspan class="reveal" style="animation-delay: 2.85s; filter: drop-shadow(0 0 5px #00FFFF);">r</tspan>  </text>
+    <tspan class="reveal" style="animation-delay: 0.5s;">S</tspan>    <tspan class="reveal" style="animation-delay: 0.55s;">o</tspan>    <tspan class="reveal" style="animation-delay: 0.6s;">f</tspan>    <tspan class="reveal" style="animation-delay: 0.65s;">t</tspan>    <tspan class="reveal" style="animation-delay: 0.7s;">w</tspan>    <tspan class="reveal" style="animation-delay: 0.75s;">a</tspan>    <tspan class="reveal" style="animation-delay: 0.8s;">r</tspan>    <tspan class="reveal" style="animation-delay: 0.8500000000000001s;">e</tspan>    <tspan class="reveal" style="animation-delay: 0.9s;"> </tspan>    <tspan class="reveal" style="animation-delay: 0.95s;">D</tspan>    <tspan class="reveal" style="animation-delay: 1.0s;">e</tspan>    <tspan class="reveal" style="animation-delay: 1.05s;">v</tspan>    <tspan class="reveal" style="animation-delay: 1.1s;">e</tspan>    <tspan class="reveal" style="animation-delay: 1.15s;">l</tspan>    <tspan class="reveal" style="animation-delay: 1.2000000000000002s;">o</tspan>    <tspan class="reveal" style="animation-delay: 1.25s;">p</tspan>    <tspan class="reveal" style="animation-delay: 1.3s;">e</tspan>    <tspan class="reveal" style="animation-delay: 1.35s;">r</tspan>  </text>
 </svg>

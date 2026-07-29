@@ -43,35 +43,62 @@ def get_github_stats():
     return stats
 
 def generate_hero_svg():
-    # A single-line, more compact ASCII format so it is visible and properly fits the SVG width
+    # Big, blocky, highly legible ascii art
     ascii_art = [
-        r" ___  ___    _ _ _ ___ _ _____ ___ ___    ___ _    ___ _____ ",
-        r"|   \| _ \  | | | | _ \_|_   _| __/ __|  / _ \ |  / _ \_   _|",
-        r"| |) |   /  | V V |   / | | | | _|\__ \ |  _  || | (_) || |  ",
-        r"|___/|_|_\   \_/_/|_|_\_| |_| |___|___/ |_| |_|___\___/ |_|  "
+        r" ___  ___   _      __ ___  ___  ___  ___  ___    _    _    ___  ___ ",
+        r"|   \| _ \ | |    / /| _ \|_ _||_ _|| __|/ __|  /_\  | |  / _ \|_ _|",
+        r"| |) |   / | |__ / / |   / | |  | | | _| \__ \ / _ \ | |_| (_) || | ",
+        r"|___/|_|_\ |____/_/  |_|_\ |___ |___|___||___//_/ \_\|____\___/ |_| "
     ]
 
     svg = f"""<svg width="840" height="250" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       .bg {{ fill: {BG_COLOR}; }}
-      .ascii {{ font-family: 'Courier New', Courier, monospace; font-size: 18px; font-weight: bold; fill: {GREEN}; letter-spacing: 2px; }}
-      .sub {{ font-family: 'Courier New', Courier, monospace; font-size: 20px; font-weight: bold; fill: {CYAN}; letter-spacing: 4px; }}
-      @keyframes reveal {{ 0% {{ opacity: 0; }} 100% {{ opacity: 1; }} }}
+      .ascii {{ font-family: 'Courier New', Courier, monospace; font-size: 16px; font-weight: 900; fill: {GREEN}; letter-spacing: 1px; filter: drop-shadow(0 0 8px {GREEN}); }}
+      .sub {{ font-family: 'Courier New', Courier, monospace; font-size: 20px; font-weight: bold; fill: {CYAN}; letter-spacing: 6px; filter: drop-shadow(0 0 8px {CYAN}); }}
+
       @keyframes float {{
         0% {{ transform: translateY(-20px); opacity: 0; }}
         50% {{ opacity: 1; }}
         100% {{ transform: translateY(100px); opacity: 0; }}
       }}
-      .reveal {{ animation: reveal 0.1s forwards; opacity: 0; filter: drop-shadow(0 0 5px {GREEN}); }}
-      .float-char {{ font-family: monospace; font-size: 12px; font-weight: bold; opacity: 0; }}
+      .float-char {{ font-family: monospace; font-size: 14px; font-weight: bold; opacity: 0; }}
+
+      /* Matrix Glitch Animation */
+      @keyframes glitch-anim-1 {{
+        0% {{ clip-path: inset(20% 0 80% 0); transform: translate(-2px, 1px); }}
+        20% {{ clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); }}
+        40% {{ clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); }}
+        60% {{ clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); }}
+        80% {{ clip-path: inset(10% 0 70% 0); transform: translate(-1px, 1px); }}
+        100% {{ clip-path: inset(30% 0 50% 0); transform: translate(1px, -1px); }}
+      }}
+      @keyframes glitch-anim-2 {{
+        0% {{ clip-path: inset(10% 0 60% 0); transform: translate(2px, -1px); }}
+        20% {{ clip-path: inset(30% 0 20% 0); transform: translate(-2px, 1px); }}
+        40% {{ clip-path: inset(70% 0 10% 0); transform: translate(2px, -2px); }}
+        60% {{ clip-path: inset(20% 0 50% 0); transform: translate(-2px, 2px); }}
+        80% {{ clip-path: inset(50% 0 30% 0); transform: translate(1px, -1px); }}
+        100% {{ clip-path: inset(5% 0 80% 0); transform: translate(-1px, 1px); }}
+      }}
+
+      .glitch-layer {{ opacity: 0; }}
+      .glitch-container:hover .glitch-layer {{ opacity: 0.8; }}
+      .glitch-container .glitch-layer:nth-child(2) {{ animation: glitch-anim-1 2s infinite linear alternate-reverse; fill: {CYAN}; }}
+      .glitch-container .glitch-layer:nth-child(3) {{ animation: glitch-anim-2 3s infinite linear alternate-reverse; fill: #ff007f; }}
+
+      /* Base reveal animation for subtitle */
+      @keyframes reveal {{ 0% {{ opacity: 0; }} 100% {{ opacity: 1; }} }}
+      .reveal {{ animation: reveal 0.1s forwards; opacity: 0; }}
     </style>
   </defs>
   <rect class="bg" width="100%" height="100%" rx="10" />
 """
+    # Background floating characters
     colors = [CYAN, GREEN, "#ff007f", "#ffff00", "#bd93f9"]
     chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#%&"
-    for i in range(30):
+    for i in range(40):
         x = random.randint(20, 800)
         y = random.randint(20, 150)
         char = random.choice(chars)
@@ -79,32 +106,37 @@ def generate_hero_svg():
         delay = random.uniform(0, 3)
         duration = random.uniform(2, 5)
         if char == '&': char = '&amp;'
+        elif char == '<': char = '&lt;'
+        elif char == '>': char = '&gt;'
         svg += f'  <text x="{x}" y="{y}" fill="{color}" class="float-char" style="animation: float {duration}s linear {delay}s infinite;">{char}</text>\n'
 
-    # Center the ASCII art horizontally and vertically within the SVG viewbox
-    svg += '  <g transform="translate(80, 70)">\n'
-    y_offset = 0
-    for line in ascii_art:
-        svg += f'    <text x="0" y="{y_offset}" class="ascii" text-anchor="start">\n'
-        for i, char in enumerate(line):
-            if char != ' ':
-                delay = (i * 0.02) + (y_offset * 0.005)
-                if char in '<>&':
-                    char = char.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-                svg += f'      <tspan class="reveal" style="animation-delay: {delay}s;">{char}</tspan>'
-            else:
-                svg += f'      <tspan> </tspan>'
-        svg += '    </text>\n'
-        y_offset += 20
+    # Glitch Container for ASCII art
+    svg += '  <g transform="translate(60, 70)" class="glitch-container">\n'
+
+    # We render the ASCII art 3 times: Base layer, Glitch 1, Glitch 2
+    for layer in range(3):
+        layer_class = "ascii" if layer == 0 else "ascii glitch-layer"
+        svg += f'    <g class="{layer_class}">\n'
+        y_offset = 0
+        for line in ascii_art:
+            svg += f'      <text x="0" y="{y_offset}" text-anchor="start" xml:space="preserve">\n'
+            # Escaping for XML
+            line = line.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+            svg += f'        {line}\n'
+            svg += '      </text>\n'
+            y_offset += 20
+        svg += '    </g>\n'
+
     svg += '  </g>\n'
 
+    # Subtitle with typing effect
     subtitle = "Software Developer"
     svg += '  <text x="420" y="220" class="sub" text-anchor="middle">\n'
     for i, char in enumerate(subtitle):
-        delay = 2.0 + (i * 0.05)
+        delay = 0.5 + (i * 0.05)
         if char in '<>&':
             char = char.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-        svg += f'    <tspan class="reveal" style="animation-delay: {delay}s; filter: drop-shadow(0 0 5px {CYAN});">{char}</tspan>'
+        svg += f'    <tspan class="reveal" style="animation-delay: {delay}s;">{char}</tspan>'
     svg += '  </text>\n'
     svg += "</svg>"
     with open("assets/hero.svg", "w") as f:
