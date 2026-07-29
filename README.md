@@ -4,7 +4,7 @@
 -->
 
 <p align="center">
-  <img src="assets/hero.svg" width="840" alt="DR-WRITES-ALOT Algorithmic Developer">
+  <img src="https://github.com/DR-WRITES-ALOT/DR-WRITES-ALOT/blob/main/assets/hero.svg?raw=true" width="840" alt="DR-WRITES-ALOT Software Developer">
 </p>
 
 <br>
@@ -12,7 +12,7 @@
 `// IDENTITY_RESOLUTION . ./whoami --proof`
 
 <p align="center">
-  <img src="assets/terminal.svg" width="840" alt="dr-writes-alot@linux: ~/profile">
+  <img src="https://github.com/DR-WRITES-ALOT/DR-WRITES-ALOT/blob/main/assets/terminal.svg?raw=true" width="840" alt="dr-writes-alot@linux: ~/profile">
 </p>
 
 <br>
@@ -20,7 +20,7 @@
 `// SYSTEM_TELEMETRY . live-data-feed`
 
 <p align="center">
-  <img src="assets/stats.svg" width="840" alt="GitHub Stats Dashboard">
+  <img src="https://github.com/DR-WRITES-ALOT/DR-WRITES-ALOT/blob/main/assets/stats.svg?raw=true" width="840" alt="GitHub Stats Dashboard">
 </p>
 
 <br>

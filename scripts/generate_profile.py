@@ -43,67 +43,62 @@ def get_github_stats():
     return stats
 
 def generate_hero_svg():
-    # A single-line, more compact ASCII format so it is visible and properly fits the SVG width
-    ascii_art = [
-        r" ___  ___    _ _ _ ___ _ _____ ___ ___    ___ _    ___ _____ ",
-        r"|   \| _ \  | | | | _ \_|_   _| __/ __|  / _ \ |  / _ \_   _|",
-        r"| |) |   /  | V V |   / | | | | _|\__ \ |  _  || | (_) || |  ",
-        r"|___/|_|_\   \_/_/|_|_\_| |_| |___|___/ |_| |_|___\___/ |_|  "
-    ]
-
     svg = f"""<svg width="840" height="250" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       .bg {{ fill: {BG_COLOR}; }}
-      .ascii {{ font-family: 'Courier New', Courier, monospace; font-size: 18px; font-weight: bold; fill: {GREEN}; letter-spacing: 2px; }}
-      .sub {{ font-family: 'Courier New', Courier, monospace; font-size: 20px; font-weight: bold; fill: {CYAN}; letter-spacing: 4px; }}
-      @keyframes reveal {{ 0% {{ opacity: 0; }} 100% {{ opacity: 1; }} }}
+      .title {{ font-family: 'Courier New', Courier, monospace; font-size: 64px; font-weight: bold; fill: {GREEN}; filter: drop-shadow(0 0 10px {GREEN}) drop-shadow(0 0 20px {GREEN}); }}
+      .sub {{ font-family: 'Courier New', Courier, monospace; font-size: 16px; fill: #8b949e; }}
+
       @keyframes float {{
         0% {{ transform: translateY(-20px); opacity: 0; }}
         50% {{ opacity: 1; }}
         100% {{ transform: translateY(100px); opacity: 0; }}
       }}
-      .reveal {{ animation: reveal 0.1s forwards; opacity: 0; filter: drop-shadow(0 0 5px {GREEN}); }}
-      .float-char {{ font-family: monospace; font-size: 12px; font-weight: bold; opacity: 0; }}
+      .float-char {{ font-family: monospace; font-size: 14px; font-weight: bold; opacity: 0; }}
+
+      @keyframes blink {{ 0%, 100% {{ opacity: 1; }} 50% {{ opacity: 0; }} }}
+      .cursor-block {{ animation: blink 1s step-end infinite; fill: {GREEN}; filter: drop-shadow(0 0 10px {GREEN}); }}
+
+      /* Base reveal animation for subtitle */
+      @keyframes reveal {{ 0% {{ opacity: 0; }} 100% {{ opacity: 1; }} }}
+      .reveal {{ animation: reveal 0.1s forwards; opacity: 0; }}
     </style>
   </defs>
-  <rect class="bg" width="100%" height="100%" rx="10" />
+  <rect class="bg" width="100%" height="100%" rx="10" stroke="#1f2937" stroke-width="2"/>
 """
     colors = [CYAN, GREEN, "#ff007f", "#ffff00", "#bd93f9"]
     chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#%&"
-    for i in range(30):
+    for i in range(40):
         x = random.randint(20, 800)
         y = random.randint(20, 150)
         char = random.choice(chars)
         color = random.choice(colors)
         delay = random.uniform(0, 3)
         duration = random.uniform(2, 5)
+        if char == '&': char = '&amp;'
+        elif char == '<': char = '&lt;'
+        elif char == '>': char = '&gt;'
+
         svg += f'  <text x="{x}" y="{y}" fill="{color}" class="float-char" style="animation: float {duration}s linear {delay}s infinite;">{char}</text>\n'
 
-    # Center the ASCII art horizontally and vertically within the SVG viewbox
-    svg += '  <g transform="translate(80, 70)">\n'
-    y_offset = 0
-    for line in ascii_art:
-        svg += f'    <text x="0" y="{y_offset}" class="ascii" text-anchor="start">\n'
-        for i, char in enumerate(line):
-            if char != ' ':
-                delay = (i * 0.02) + (y_offset * 0.005)
-                if char in '<>&':
-                    char = char.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-                svg += f'      <tspan class="reveal" style="animation-delay: {delay}s;">{char}</tspan>'
-            else:
-                svg += f'      <tspan> </tspan>'
-        svg += '    </text>\n'
-        y_offset += 20
-    svg += '  </g>\n'
+    name = "Sreejith S H"
+    char_width = 39.5
+    text_width = len(name) * char_width
+    start_x = 80
+    cursor_x = start_x + text_width + 15
+
+    svg += f'  <text x="{start_x}" y="150" class="title" text-anchor="start">{name}</text>\n'
+    svg += f'  <rect x="{cursor_x}" y="100" width="30" height="60" class="cursor-block" />\n'
 
     subtitle = "Software Developer"
-    svg += '  <text x="420" y="220" class="sub" text-anchor="middle">\n'
+    svg += '  <text x="750" y="210" class="sub" text-anchor="end">\n'
+    svg += '    // SreejithSH • '
     for i, char in enumerate(subtitle):
-        delay = 2.0 + (i * 0.05)
+        delay = 0.5 + (i * 0.05)
         if char in '<>&':
             char = char.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-        svg += f'    <tspan class="reveal" style="animation-delay: {delay}s; filter: drop-shadow(0 0 5px {CYAN});">{char}</tspan>'
+        svg += f'    <tspan class="reveal" style="animation-delay: {delay}s;">{char}</tspan>'
     svg += '  </text>\n'
     svg += "</svg>"
     with open("assets/hero.svg", "w") as f:
