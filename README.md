@@ -9,7 +9,7 @@
 
 <br>
 
-`// IDENTITY_RESOLUTION . ./whoami --proof`
+<div style="background-color: #111827; padding: 5px 15px; border-radius: 5px; font-family: monospace; display: inline-block;"><code>// IDENTITY_RESOLUTION . ./whoami --proof</code></div>
 
 <p align="center">
   <img src="https://github.com/DR-WRITES-ALOT/DR-WRITES-ALOT/blob/main/assets/terminal.svg?raw=true" width="840" alt="dr-writes-alot@linux: ~/profile">
@@ -17,7 +17,7 @@
 
 <br>
 
-`// SYSTEM_TELEMETRY . live-data-feed`
+<div style="background-color: #111827; padding: 5px 15px; border-radius: 5px; font-family: monospace; display: inline-block;"><code>// SYSTEM_TELEMETRY . live-data-feed</code></div>
 
 <p align="center">
   <img src="https://github.com/DR-WRITES-ALOT/DR-WRITES-ALOT/blob/main/assets/stats.svg?raw=true" width="840" alt="GitHub Stats Dashboard">
@@ -25,7 +25,7 @@
 
 <br>
 
-`// CONTRIBUTION_MATRIX . ./scan --year`
+<div style="background-color: #111827; padding: 5px 15px; border-radius: 5px; font-family: monospace; display: inline-block;"><code>// CONTRIBUTION_MATRIX . ./scan --year</code></div>
 
 <div align="center">
   <!-- Keeping ghchart as it's the only reliable way to get a full year graph outside of local API limitations -->
@@ -34,7 +34,7 @@
 
 <br>
 
-`// CONNECTION_PROTOCOL . initialize`
+<div style="background-color: #111827; padding: 5px 15px; border-radius: 5px; font-family: monospace; display: inline-block;"><code>// CONNECTION_PROTOCOL . initialize</code></div>
 
 <div align="center">
   <a href="mailto:sreejithsh09@gmail.com">
