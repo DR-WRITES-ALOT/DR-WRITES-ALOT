@@ -78,6 +78,7 @@ def generate_hero_svg():
         color = random.choice(colors)
         delay = random.uniform(0, 3)
         duration = random.uniform(2, 5)
+        if char == '&': char = '&amp;'
         svg += f'  <text x="{x}" y="{y}" fill="{color}" class="float-char" style="animation: float {duration}s linear {delay}s infinite;">{char}</text>\n'
 
     # Center the ASCII art horizontally and vertically within the SVG viewbox
