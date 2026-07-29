@@ -2,8 +2,8 @@
   <defs>
     <style>
       .bg { fill: #0D1117; }
-      .ascii { font-family: 'Courier New', Courier, monospace; font-size: 16px; font-weight: 900; fill: #00FF66; letter-spacing: 1px; filter: drop-shadow(0 0 8px #00FF66); }
-      .sub { font-family: 'Courier New', Courier, monospace; font-size: 20px; font-weight: bold; fill: #00FFFF; letter-spacing: 6px; filter: drop-shadow(0 0 8px #00FFFF); }
+      .title { font-family: 'Courier New', Courier, monospace; font-size: 64px; font-weight: bold; fill: #00FF66; filter: drop-shadow(0 0 10px #00FF66) drop-shadow(0 0 20px #00FF66); }
+      .sub { font-family: 'Courier New', Courier, monospace; font-size: 16px; fill: #8b949e; }
 
       @keyframes float {
         0% { transform: translateY(-20px); opacity: 0; }
@@ -12,119 +12,57 @@
       }
       .float-char { font-family: monospace; font-size: 14px; font-weight: bold; opacity: 0; }
 
-      /* Matrix Glitch Animation */
-      @keyframes glitch-anim-1 {
-        0% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 1px); }
-        20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); }
-        40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); }
-        60% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); }
-        80% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, 1px); }
-        100% { clip-path: inset(30% 0 50% 0); transform: translate(1px, -1px); }
-      }
-      @keyframes glitch-anim-2 {
-        0% { clip-path: inset(10% 0 60% 0); transform: translate(2px, -1px); }
-        20% { clip-path: inset(30% 0 20% 0); transform: translate(-2px, 1px); }
-        40% { clip-path: inset(70% 0 10% 0); transform: translate(2px, -2px); }
-        60% { clip-path: inset(20% 0 50% 0); transform: translate(-2px, 2px); }
-        80% { clip-path: inset(50% 0 30% 0); transform: translate(1px, -1px); }
-        100% { clip-path: inset(5% 0 80% 0); transform: translate(-1px, 1px); }
-      }
-
-      .glitch-layer { opacity: 0; }
-      .glitch-container:hover .glitch-layer { opacity: 0.8; }
-      .glitch-container .glitch-layer:nth-child(2) { animation: glitch-anim-1 2s infinite linear alternate-reverse; fill: #00FFFF; }
-      .glitch-container .glitch-layer:nth-child(3) { animation: glitch-anim-2 3s infinite linear alternate-reverse; fill: #ff007f; }
+      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+      .cursor-block { animation: blink 1s step-end infinite; fill: #00FF66; filter: drop-shadow(0 0 10px #00FF66); }
 
       /* Base reveal animation for subtitle */
       @keyframes reveal { 0% { opacity: 0; } 100% { opacity: 1; } }
       .reveal { animation: reveal 0.1s forwards; opacity: 0; }
     </style>
   </defs>
-  <rect class="bg" width="100%" height="100%" rx="10" />
-  <text x="39" y="67" fill="#ffff00" class="float-char" style="animation: float 3.862721933098663s linear 0.44682383793985747s infinite;">I</text>
-  <text x="24" y="141" fill="#00FF66" class="float-char" style="animation: float 4.821364876844051s linear 1.0078812242576294s infinite;">I</text>
-  <text x="333" y="74" fill="#00FF66" class="float-char" style="animation: float 2.4055280607176073s linear 0.31718824828077796s infinite;">@</text>
-  <text x="320" y="93" fill="#bd93f9" class="float-char" style="animation: float 4.708507986279992s linear 0.6819461163526831s infinite;">L</text>
-  <text x="344" y="55" fill="#bd93f9" class="float-char" style="animation: float 4.074230020937579s linear 2.988784436982832s infinite;">S</text>
-  <text x="564" y="50" fill="#ffff00" class="float-char" style="animation: float 3.8396840657738025s linear 1.5491103381540148s infinite;">O</text>
-  <text x="389" y="37" fill="#00FF66" class="float-char" style="animation: float 4.29075519652902s linear 1.749492845407226s infinite;">I</text>
-  <text x="70" y="65" fill="#bd93f9" class="float-char" style="animation: float 4.361577352632488s linear 0.4069759482711789s infinite;">3</text>
-  <text x="607" y="70" fill="#00FF66" class="float-char" style="animation: float 4.397632294410781s linear 1.0461094947100062s infinite;">Y</text>
-  <text x="22" y="117" fill="#00FFFF" class="float-char" style="animation: float 4.598154750084077s linear 0.4177906050279443s infinite;">5</text>
-  <text x="125" y="36" fill="#ff007f" class="float-char" style="animation: float 4.028366375775795s linear 1.9109483701860444s infinite;">O</text>
-  <text x="255" y="47" fill="#00FFFF" class="float-char" style="animation: float 4.792010998231467s linear 0.5457008151352162s infinite;">%</text>
-  <text x="621" y="101" fill="#00FFFF" class="float-char" style="animation: float 2.5211879661504986s linear 1.3205870608510835s infinite;">N</text>
-  <text x="295" y="73" fill="#00FF66" class="float-char" style="animation: float 4.353567745939404s linear 0.2457835969188935s infinite;">N</text>
-  <text x="569" y="38" fill="#ffff00" class="float-char" style="animation: float 3.91956547670659s linear 2.633566271422197s infinite;">&amp;</text>
-  <text x="582" y="77" fill="#ff007f" class="float-char" style="animation: float 4.034303802645678s linear 0.0816641383211858s infinite;">3</text>
-  <text x="769" y="93" fill="#ff007f" class="float-char" style="animation: float 2.1146124809633577s linear 2.932007665032109s infinite;">3</text>
-  <text x="106" y="114" fill="#00FF66" class="float-char" style="animation: float 2.8235647318868526s linear 1.3160052937711542s infinite;">C</text>
-  <text x="67" y="32" fill="#00FF66" class="float-char" style="animation: float 4.927590124128529s linear 1.6952404396982932s infinite;">0</text>
-  <text x="723" y="70" fill="#ffff00" class="float-char" style="animation: float 2.3755538841464254s linear 2.920260300861443s infinite;">I</text>
-  <text x="122" y="90" fill="#ffff00" class="float-char" style="animation: float 4.734533892038623s linear 0.9997762118949424s infinite;">P</text>
-  <text x="653" y="112" fill="#00FFFF" class="float-char" style="animation: float 4.594602451371294s linear 0.9263268579317968s infinite;">E</text>
-  <text x="251" y="89" fill="#00FF66" class="float-char" style="animation: float 4.307737275653471s linear 0.4424021211524293s infinite;">L</text>
-  <text x="192" y="20" fill="#bd93f9" class="float-char" style="animation: float 2.327925931629336s linear 2.7438246537305235s infinite;">6</text>
-  <text x="400" y="107" fill="#00FFFF" class="float-char" style="animation: float 3.4247693548671805s linear 0.7418570354398533s infinite;">A</text>
-  <text x="602" y="75" fill="#00FF66" class="float-char" style="animation: float 2.622424306294142s linear 0.49774330606318795s infinite;">&amp;</text>
-  <text x="431" y="119" fill="#bd93f9" class="float-char" style="animation: float 2.529651332309318s linear 1.7595180747262384s infinite;">M</text>
-  <text x="771" y="99" fill="#bd93f9" class="float-char" style="animation: float 4.625124740254593s linear 2.3391105416603986s infinite;">O</text>
-  <text x="187" y="138" fill="#ffff00" class="float-char" style="animation: float 3.843006602516169s linear 2.39172890747657s infinite;">K</text>
-  <text x="228" y="118" fill="#00FFFF" class="float-char" style="animation: float 2.4354831448421574s linear 0.5081537410038011s infinite;">G</text>
-  <text x="447" y="107" fill="#bd93f9" class="float-char" style="animation: float 3.3994371846325278s linear 2.8454968208405815s infinite;">&amp;</text>
-  <text x="709" y="46" fill="#00FFFF" class="float-char" style="animation: float 2.9012899696129715s linear 2.929515521326392s infinite;">W</text>
-  <text x="97" y="48" fill="#00FF66" class="float-char" style="animation: float 4.76675954614516s linear 0.4727116075745994s infinite;">G</text>
-  <text x="114" y="137" fill="#bd93f9" class="float-char" style="animation: float 2.7680527503178496s linear 2.492250270262587s infinite;">6</text>
-  <text x="277" y="82" fill="#00FFFF" class="float-char" style="animation: float 3.2863864086857553s linear 0.8931523005995667s infinite;">2</text>
-  <text x="719" y="78" fill="#bd93f9" class="float-char" style="animation: float 2.3225176853333664s linear 0.2688295078829954s infinite;">#</text>
-  <text x="42" y="118" fill="#ff007f" class="float-char" style="animation: float 4.097143356812397s linear 0.5149490587926459s infinite;">#</text>
-  <text x="479" y="66" fill="#00FF66" class="float-char" style="animation: float 3.7523431299081293s linear 2.14794624704748s infinite;">Z</text>
-  <text x="509" y="129" fill="#bd93f9" class="float-char" style="animation: float 4.49458806129256s linear 1.455825122996342s infinite;">Y</text>
-  <text x="96" y="132" fill="#bd93f9" class="float-char" style="animation: float 4.799675518653176s linear 0.18478881591292184s infinite;">N</text>
-  <g transform="translate(60, 70)" class="glitch-container">
-    <g class="ascii">
-      <text x="0" y="0" text-anchor="start" xml:space="preserve">
-         ___  ___   _      __ ___  ___  ___  ___  ___    _    _    ___  ___
-      </text>
-      <text x="0" y="20" text-anchor="start" xml:space="preserve">
-        |   \| _ \ | |    / /| _ \|_ _||_ _|| __|/ __|  /_\  | |  / _ \|_ _|
-      </text>
-      <text x="0" y="40" text-anchor="start" xml:space="preserve">
-        | |) |   / | |__ / / |   / | |  | | | _| \__ \ / _ \ | |_| (_) || |
-      </text>
-      <text x="0" y="60" text-anchor="start" xml:space="preserve">
-        |___/|_|_\ |____/_/  |_|_\ |___ |___|___||___//_/ \_\|____\___/ |_|
-      </text>
-    </g>
-    <g class="ascii glitch-layer">
-      <text x="0" y="0" text-anchor="start" xml:space="preserve">
-         ___  ___   _      __ ___  ___  ___  ___  ___    _    _    ___  ___
-      </text>
-      <text x="0" y="20" text-anchor="start" xml:space="preserve">
-        |   \| _ \ | |    / /| _ \|_ _||_ _|| __|/ __|  /_\  | |  / _ \|_ _|
-      </text>
-      <text x="0" y="40" text-anchor="start" xml:space="preserve">
-        | |) |   / | |__ / / |   / | |  | | | _| \__ \ / _ \ | |_| (_) || |
-      </text>
-      <text x="0" y="60" text-anchor="start" xml:space="preserve">
-        |___/|_|_\ |____/_/  |_|_\ |___ |___|___||___//_/ \_\|____\___/ |_|
-      </text>
-    </g>
-    <g class="ascii glitch-layer">
-      <text x="0" y="0" text-anchor="start" xml:space="preserve">
-         ___  ___   _      __ ___  ___  ___  ___  ___    _    _    ___  ___
-      </text>
-      <text x="0" y="20" text-anchor="start" xml:space="preserve">
-        |   \| _ \ | |    / /| _ \|_ _||_ _|| __|/ __|  /_\  | |  / _ \|_ _|
-      </text>
-      <text x="0" y="40" text-anchor="start" xml:space="preserve">
-        | |) |   / | |__ / / |   / | |  | | | _| \__ \ / _ \ | |_| (_) || |
-      </text>
-      <text x="0" y="60" text-anchor="start" xml:space="preserve">
-        |___/|_|_\ |____/_/  |_|_\ |___ |___|___||___//_/ \_\|____\___/ |_|
-      </text>
-    </g>
-  </g>
-  <text x="420" y="220" class="sub" text-anchor="middle">
-    <tspan class="reveal" style="animation-delay: 0.5s;">S</tspan>    <tspan class="reveal" style="animation-delay: 0.55s;">o</tspan>    <tspan class="reveal" style="animation-delay: 0.6s;">f</tspan>    <tspan class="reveal" style="animation-delay: 0.65s;">t</tspan>    <tspan class="reveal" style="animation-delay: 0.7s;">w</tspan>    <tspan class="reveal" style="animation-delay: 0.75s;">a</tspan>    <tspan class="reveal" style="animation-delay: 0.8s;">r</tspan>    <tspan class="reveal" style="animation-delay: 0.8500000000000001s;">e</tspan>    <tspan class="reveal" style="animation-delay: 0.9s;"> </tspan>    <tspan class="reveal" style="animation-delay: 0.95s;">D</tspan>    <tspan class="reveal" style="animation-delay: 1.0s;">e</tspan>    <tspan class="reveal" style="animation-delay: 1.05s;">v</tspan>    <tspan class="reveal" style="animation-delay: 1.1s;">e</tspan>    <tspan class="reveal" style="animation-delay: 1.15s;">l</tspan>    <tspan class="reveal" style="animation-delay: 1.2000000000000002s;">o</tspan>    <tspan class="reveal" style="animation-delay: 1.25s;">p</tspan>    <tspan class="reveal" style="animation-delay: 1.3s;">e</tspan>    <tspan class="reveal" style="animation-delay: 1.35s;">r</tspan>  </text>
+  <rect class="bg" width="100%" height="100%" rx="10" stroke="#1f2937" stroke-width="2"/>
+  <text x="747" y="111" fill="#00FF66" class="float-char" style="animation: float 4.997593556758934s linear 0.692517917616229s infinite;">C</text>
+  <text x="100" y="66" fill="#ffff00" class="float-char" style="animation: float 2.0273538295841167s linear 2.3089701373758933s infinite;">M</text>
+  <text x="593" y="149" fill="#00FFFF" class="float-char" style="animation: float 4.368663015953844s linear 1.5714452743606926s infinite;">D</text>
+  <text x="367" y="135" fill="#bd93f9" class="float-char" style="animation: float 4.8325295919731355s linear 1.131066050966015s infinite;">8</text>
+  <text x="632" y="138" fill="#bd93f9" class="float-char" style="animation: float 4.407335257735487s linear 2.1387933234809444s infinite;">5</text>
+  <text x="72" y="58" fill="#00FFFF" class="float-char" style="animation: float 2.7413156199524753s linear 1.9776487299943037s infinite;">X</text>
+  <text x="582" y="35" fill="#00FFFF" class="float-char" style="animation: float 4.930829713632075s linear 2.9203278594110045s infinite;">R</text>
+  <text x="497" y="85" fill="#bd93f9" class="float-char" style="animation: float 2.8980742934799912s linear 2.8631992862770526s infinite;">M</text>
+  <text x="681" y="79" fill="#00FFFF" class="float-char" style="animation: float 4.644728409982178s linear 2.0876161636305577s infinite;">4</text>
+  <text x="182" y="94" fill="#ffff00" class="float-char" style="animation: float 3.2920314209571804s linear 1.7991540566478768s infinite;">D</text>
+  <text x="667" y="128" fill="#bd93f9" class="float-char" style="animation: float 2.82634492305678s linear 1.260850334807563s infinite;">S</text>
+  <text x="263" y="46" fill="#00FF66" class="float-char" style="animation: float 4.543690650314401s linear 2.615884202503156s infinite;">V</text>
+  <text x="394" y="88" fill="#ffff00" class="float-char" style="animation: float 2.0422452765113546s linear 0.09471878947156886s infinite;">%</text>
+  <text x="434" y="37" fill="#ff007f" class="float-char" style="animation: float 2.0711510468643795s linear 1.3049293887104434s infinite;">8</text>
+  <text x="409" y="52" fill="#ffff00" class="float-char" style="animation: float 3.2595415077305994s linear 2.2853232605690614s infinite;">W</text>
+  <text x="625" y="70" fill="#ff007f" class="float-char" style="animation: float 3.941057748817632s linear 2.4946194136726243s infinite;">I</text>
+  <text x="570" y="68" fill="#ff007f" class="float-char" style="animation: float 4.5747402500190715s linear 2.282557333448465s infinite;">7</text>
+  <text x="243" y="55" fill="#00FF66" class="float-char" style="animation: float 3.668834612570164s linear 0.26043085960876033s infinite;">M</text>
+  <text x="124" y="43" fill="#bd93f9" class="float-char" style="animation: float 4.603694057727447s linear 1.5824308659379427s infinite;">K</text>
+  <text x="224" y="22" fill="#ff007f" class="float-char" style="animation: float 2.612817328907978s linear 0.276256140895938s infinite;">%</text>
+  <text x="343" y="132" fill="#ffff00" class="float-char" style="animation: float 2.811808460782588s linear 1.5660827524041705s infinite;">6</text>
+  <text x="408" y="112" fill="#bd93f9" class="float-char" style="animation: float 2.94901330901161s linear 2.9123907351566487s infinite;">G</text>
+  <text x="431" y="109" fill="#ff007f" class="float-char" style="animation: float 3.7033510252015867s linear 0.8639448405066932s infinite;">B</text>
+  <text x="148" y="60" fill="#00FFFF" class="float-char" style="animation: float 3.4915934335833176s linear 2.747984001655648s infinite;">C</text>
+  <text x="567" y="26" fill="#00FFFF" class="float-char" style="animation: float 4.0872182629847575s linear 2.2171963229204863s infinite;">9</text>
+  <text x="206" y="57" fill="#00FFFF" class="float-char" style="animation: float 4.0312954984940434s linear 0.9646278056607639s infinite;">I</text>
+  <text x="480" y="92" fill="#bd93f9" class="float-char" style="animation: float 4.541889993326526s linear 1.9486985691116332s infinite;">0</text>
+  <text x="460" y="110" fill="#00FF66" class="float-char" style="animation: float 4.316410285242208s linear 0.6784653878448546s infinite;">E</text>
+  <text x="132" y="140" fill="#bd93f9" class="float-char" style="animation: float 3.163311098143124s linear 1.2104543409008688s infinite;">B</text>
+  <text x="723" y="140" fill="#ff007f" class="float-char" style="animation: float 2.278601955353439s linear 0.5355629687619177s infinite;">R</text>
+  <text x="703" y="48" fill="#ff007f" class="float-char" style="animation: float 4.729640120438784s linear 1.5154601261217766s infinite;">0</text>
+  <text x="61" y="40" fill="#00FF66" class="float-char" style="animation: float 2.8557284454303757s linear 2.9342313229828845s infinite;">4</text>
+  <text x="674" y="73" fill="#ffff00" class="float-char" style="animation: float 3.453580522080927s linear 0.07977453613642016s infinite;">G</text>
+  <text x="407" y="120" fill="#ff007f" class="float-char" style="animation: float 4.349864660902565s linear 2.457103913835789s infinite;">Y</text>
+  <text x="382" y="31" fill="#00FFFF" class="float-char" style="animation: float 4.2946592128952785s linear 2.2822751110871042s infinite;">&amp;</text>
+  <text x="370" y="95" fill="#00FFFF" class="float-char" style="animation: float 2.0950938932498837s linear 0.11502439625827487s infinite;">L</text>
+  <text x="491" y="146" fill="#ffff00" class="float-char" style="animation: float 2.308281549545646s linear 1.39223621921849s infinite;">V</text>
+  <text x="241" y="72" fill="#00FFFF" class="float-char" style="animation: float 3.1691332473474563s linear 2.075174993146703s infinite;">2</text>
+  <text x="769" y="71" fill="#bd93f9" class="float-char" style="animation: float 3.9168049053542484s linear 0.6196309424997838s infinite;">8</text>
+  <text x="241" y="70" fill="#bd93f9" class="float-char" style="animation: float 3.797097577472919s linear 2.293405532729815s infinite;">@</text>
+  <text x="80" y="150" class="title" text-anchor="start">Sreejith S H</text>
+  <rect x="569.0" y="100" width="30" height="60" class="cursor-block" />
+  <text x="750" y="210" class="sub" text-anchor="end">
+    // SreejithSH •     <tspan class="reveal" style="animation-delay: 0.5s;">S</tspan>    <tspan class="reveal" style="animation-delay: 0.55s;">o</tspan>    <tspan class="reveal" style="animation-delay: 0.6s;">f</tspan>    <tspan class="reveal" style="animation-delay: 0.65s;">t</tspan>    <tspan class="reveal" style="animation-delay: 0.7s;">w</tspan>    <tspan class="reveal" style="animation-delay: 0.75s;">a</tspan>    <tspan class="reveal" style="animation-delay: 0.8s;">r</tspan>    <tspan class="reveal" style="animation-delay: 0.8500000000000001s;">e</tspan>    <tspan class="reveal" style="animation-delay: 0.9s;"> </tspan>    <tspan class="reveal" style="animation-delay: 0.95s;">D</tspan>    <tspan class="reveal" style="animation-delay: 1.0s;">e</tspan>    <tspan class="reveal" style="animation-delay: 1.05s;">v</tspan>    <tspan class="reveal" style="animation-delay: 1.1s;">e</tspan>    <tspan class="reveal" style="animation-delay: 1.15s;">l</tspan>    <tspan class="reveal" style="animation-delay: 1.2000000000000002s;">o</tspan>    <tspan class="reveal" style="animation-delay: 1.25s;">p</tspan>    <tspan class="reveal" style="animation-delay: 1.3s;">e</tspan>    <tspan class="reveal" style="animation-delay: 1.35s;">r</tspan>  </text>
 </svg>
