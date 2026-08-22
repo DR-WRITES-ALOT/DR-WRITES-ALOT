@@ -22,10 +22,9 @@
       .float3 { animation: floatSlow 4s ease-in-out infinite alternate; animation-delay: -1s; }
       
       .bar-grow { transform-origin: left; animation: growBar 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
-      .bar-c { fill: #5D9CEC; }
-      .bar-cpp { fill: #4A90E2; }
-      .bar-java { fill: #ED5565; }
-      .bar-python { fill: #FFCE54; }
+      .bar-1 { fill: #4A90E2; }
+      .bar-2 { fill: #FFCE54; }
+      .bar-3 { fill: #ED5565; }
       
       @keyframes floatSlow {
         0% { transform: translateY(0px); }
@@ -54,15 +53,15 @@
       <text x="30" y="40" class="card-title" dominant-baseline="central">📊 Lifetime Stats</text>
       
       <!-- Stars -->
-      <text x="70" y="100" class="stat-num" text-anchor="middle" dominant-baseline="central">14</text>
+      <text x="70" y="100" class="stat-num" text-anchor="middle" dominant-baseline="central">0</text>
       <text x="70" y="140" class="stat-label" text-anchor="middle" dominant-baseline="central">⭐ Stars</text>
       
       <!-- Repos -->
-      <text x="190" y="100" class="stat-num" text-anchor="middle" dominant-baseline="central">22</text>
+      <text x="190" y="100" class="stat-num" text-anchor="middle" dominant-baseline="central">4</text>
       <text x="190" y="140" class="stat-label" text-anchor="middle" dominant-baseline="central">📦 Repos</text>
       
       <!-- Followers -->
-      <text x="310" y="100" class="stat-num" text-anchor="middle" dominant-baseline="central">34</text>
+      <text x="310" y="100" class="stat-num" text-anchor="middle" dominant-baseline="central">2</text>
       <text x="310" y="140" class="stat-label" text-anchor="middle" dominant-baseline="central">👥 Followers</text>
     </g>
   </g>
@@ -73,28 +72,28 @@
       <rect width="420" height="180" rx="28" fill="#FFFFFF" filter="url(#shadow)"/>
       <text x="30" y="40" class="card-title" dominant-baseline="central">💻 Language Distribution</text>
       
-      <!-- C++ Bar -->
+      <!-- Top Lang 1 -->
       <g transform="translate(30, 70)">
-        <text x="0" y="10" class="lang-label" dominant-baseline="central">C / C++</text>
-        <rect x="100" y="2" width="220" height="16" rx="8" fill="#F0F0F0"/>
-        <rect x="100" y="2" width="130" height="16" rx="8" class="bar-grow bar-cpp"/>
-        <text x="335" y="10" class="lang-pct" dominant-baseline="central">42%</text>
-      </g>
-      
-      <!-- Python Bar -->
-      <g transform="translate(30, 100)">
         <text x="0" y="10" class="lang-label" dominant-baseline="central">Python</text>
         <rect x="100" y="2" width="220" height="16" rx="8" fill="#F0F0F0"/>
-        <rect x="100" y="2" width="90" height="16" rx="8" class="bar-grow bar-python"/>
-        <text x="335" y="10" class="lang-pct" dominant-baseline="central">28%</text>
+        <rect x="100" y="2" width="73" height="16" rx="8" class="bar-grow bar-1"/>
+        <text x="335" y="10" class="lang-pct" dominant-baseline="central">33%</text>
       </g>
       
-      <!-- Java Bar -->
-      <g transform="translate(30, 130)">
-        <text x="0" y="10" class="lang-label" dominant-baseline="central">Java</text>
+      <!-- Top Lang 2 -->
+      <g transform="translate(30, 100)">
+        <text x="0" y="10" class="lang-label" dominant-baseline="central">CSS</text>
         <rect x="100" y="2" width="220" height="16" rx="8" fill="#F0F0F0"/>
-        <rect x="100" y="2" width="60" height="16" rx="8" class="bar-grow bar-java"/>
-        <text x="335" y="10" class="lang-pct" dominant-baseline="central">15%</text>
+        <rect x="100" y="2" width="73" height="16" rx="8" class="bar-grow bar-2"/>
+        <text x="335" y="10" class="lang-pct" dominant-baseline="central">33%</text>
+      </g>
+      
+      <!-- Top Lang 3 -->
+      <g transform="translate(30, 130)">
+        <text x="0" y="10" class="lang-label" dominant-baseline="central">TypeScript</text>
+        <rect x="100" y="2" width="220" height="16" rx="8" fill="#F0F0F0"/>
+        <rect x="100" y="2" width="73" height="16" rx="8" class="bar-grow bar-3"/>
+        <text x="335" y="10" class="lang-pct" dominant-baseline="central">33%</text>
       </g>
     </g>
   </g>
@@ -108,28 +107,28 @@
       <!-- Log 1 -->
       <g transform="translate(30, 75)">
         <rect width="8" height="8" rx="4" fill="#FFB347"/>
-        <text x="20" y="4" class="log-date" dominant-baseline="central">[Today]</text>
-        <text x="90" y="4" class="log-action" dominant-baseline="central">push</text>
-        <text x="140" y="4" class="log-repo" dominant-baseline="central">SnapHarbor</text>
-        <text x="250" y="4" class="log-desc" dominant-baseline="central">Updated Jules-inspired SVG assets and layout</text>
+        <text x="20" y="4" class="log-date" dominant-baseline="central">[Aug 22]</text>
+        <text x="110" y="4" class="log-action" dominant-baseline="central">push</text>
+        <text x="175" y="4" class="log-repo" dominant-baseline="central">DR-WRITES-ALOT</text>
+        <text x="340" y="4" class="log-desc" dominant-baseline="central">Pushed to branch</text>
       </g>
       
       <!-- Log 2 -->
       <g transform="translate(30, 105)">
         <rect width="8" height="8" rx="4" fill="#50E3C2"/>
-        <text x="20" y="4" class="log-date" dominant-baseline="central">[Yesterday]</text>
-        <text x="110" y="4" class="log-action" dominant-baseline="central">commit</text>
-        <text x="175" y="4" class="log-repo" dominant-baseline="central">Unity Sandbox</text>
-        <text x="295" y="4" class="log-desc" dominant-baseline="central">Tweaked jump physics and added particle trails</text>
+        <text x="20" y="4" class="log-date" dominant-baseline="central">[Aug 22]</text>
+        <text x="110" y="4" class="log-action" dominant-baseline="central">push</text>
+        <text x="175" y="4" class="log-repo" dominant-baseline="central">DR-WRITES-ALOT</text>
+        <text x="340" y="4" class="log-desc" dominant-baseline="central">Pushed to branch</text>
       </g>
       
       <!-- Log 3 -->
       <g transform="translate(30, 135)">
         <rect width="8" height="8" rx="4" fill="#4A90E2"/>
-        <text x="20" y="4" class="log-date" dominant-baseline="central">[Last Week]</text>
-        <text x="115" y="4" class="log-action" dominant-baseline="central">push</text>
-        <text x="165" y="4" class="log-repo" dominant-baseline="central">Data Structs Lab</text>
-        <text x="310" y="4" class="log-desc" dominant-baseline="central">Implemented red-black tree in C++</text>
+        <text x="20" y="4" class="log-date" dominant-baseline="central">[Aug 21]</text>
+        <text x="110" y="4" class="log-action" dominant-baseline="central">create</text>
+        <text x="175" y="4" class="log-repo" dominant-baseline="central">SnapHarbor</text>
+        <text x="340" y="4" class="log-desc" dominant-baseline="central">Created branch</text>
       </g>
     </g>
   </g>
