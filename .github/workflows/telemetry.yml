@@ -10,6 +10,9 @@ on:
       - main
       - master
 
+permissions:
+  contents: write
+
 jobs:
   update-telemetry:
     runs-on: ubuntu-latest
