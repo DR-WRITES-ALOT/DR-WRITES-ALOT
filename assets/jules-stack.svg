@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" width="100%" height="100%">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Outfit:wght@600;700&amp;display=swap');
+
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+
+        .container {
+          width: 100%;
+          height: 250px;
+          background: #FDFBF7;
+          border-radius: 36px;
+          border: 4px solid #FFEBE6;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          font-family: 'Fredoka', sans-serif;
+          overflow: hidden;
+        }
+
+        .title {
+          font-family: 'Outfit', sans-serif;
+          font-size: 24px;
+          font-weight: 700;
+          color: #333;
+          margin-bottom: 24px;
+          background: #FFFFFF;
+          padding: 8px 24px;
+          border-radius: 20px;
+          box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+          border: 2px solid #F0F0F0;
+          z-index: 10;
+        }
+
+        .stack-grid {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 16px;
+          justify-content: center;
+          max-width: 750px;
+          z-index: 10;
+        }
+
+        .pill {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 10px 20px;
+          border-radius: 99px;
+          font-size: 16px;
+          font-weight: 600;
+          color: #FFF;
+          box-shadow: 
+            0px 8px 16px rgba(0,0,0,0.1),
+            inset 0px -4px 8px rgba(0,0,0,0.1),
+            inset 0px 4px 8px rgba(255,255,255,0.4);
+          animation: bouncyFloat 3s ease-in-out infinite alternate;
+        }
+
+        .pill-icon {
+          font-size: 18px;
+          background: rgba(255,255,255,0.25);
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: inset 0px 2px 4px rgba(255,255,255,0.4);
+        }
+
+        /* Clay Colors */
+        .c-c { background: #5D9CEC; animation-delay: 0s; }
+        .c-cpp { background: #4A90E2; animation-delay: 0.2s; }
+        .c-python { background: #FFCE54; color: #8A6D3B; animation-delay: 0.4s; }
+        .c-java { background: #ED5565; animation-delay: 0.6s; }
+        .c-csharp { background: #AC92EC; animation-delay: 0.8s; }
+        
+        .c-web { background: #FC6E51; animation-delay: 1.0s; }
+        .c-sql { background: #4FC1E9; animation-delay: 1.2s; }
+        .c-unity { background: #656D78; animation-delay: 1.4s; }
+        .c-git { background: #EC87C0; animation-delay: 1.6s; }
+
+        @keyframes bouncyFloat {
+          0% { transform: translateY(0px) scale(1); }
+          100% { transform: translateY(-8px) scale(1.02); }
+        }
+
+        /* Background decors */
+        .decor {
+          position: absolute;
+          border-radius: 50%;
+          background: #F0F0F0;
+        }
+        .d1 { width: 100px; height: 100px; top: -30px; left: 50px; }
+        .d2 { width: 150px; height: 150px; bottom: -50px; right: 80px; }
+        .d3 { width: 60px; height: 60px; top: 80px; right: 200px; }
+      </style>
+
+      <div class="container">
+        <div class="decor d1"></div>
+        <div class="decor d2"></div>
+        <div class="decor d3"></div>
+
+        <div class="title">🛠️ My Toybox (Tech Stack)</div>
+        
+        <div class="stack-grid">
+          <div class="pill c-c">
+            <div class="pill-icon">C</div> <span>C</span>
+          </div>
+          <div class="pill c-cpp">
+            <div class="pill-icon">++</div> <span>C++</span>
+          </div>
+          <div class="pill c-python">
+            <div class="pill-icon">🐍</div> <span>Python</span>
+          </div>
+          <div class="pill c-java">
+            <div class="pill-icon">☕</div> <span>Java</span>
+          </div>
+          <div class="pill c-csharp">
+            <div class="pill-icon">#</div> <span>C#</span>
+          </div>
+          
+          <div class="pill c-web">
+            <div class="pill-icon">🌐</div> <span>Web Basics</span>
+          </div>
+          <div class="pill c-sql">
+            <div class="pill-icon">🗄️</div> <span>SQL</span>
+          </div>
+          <div class="pill c-unity">
+            <div class="pill-icon">🎮</div> <span>Unity</span>
+          </div>
+          <div class="pill c-git">
+            <div class="pill-icon">🐙</div> <span>Git</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>

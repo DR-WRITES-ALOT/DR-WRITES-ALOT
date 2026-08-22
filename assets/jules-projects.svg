@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350" width="100%" height="100%">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Outfit:wght@500;700&amp;display=swap');
+
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+
+        .container {
+          width: 100%;
+          height: 350px;
+          background: #FDFBF7;
+          border-radius: 36px;
+          border: 4px solid #FFEBE6;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 24px;
+          padding: 0 40px;
+          font-family: 'Fredoka', sans-serif;
+          position: relative;
+        }
+
+        /* Playful Cards */
+        .card {
+          flex: 1;
+          height: 250px;
+          border-radius: 28px;
+          padding: 24px;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          box-shadow: 
+            0px 15px 30px rgba(0,0,0,0.06),
+            inset 0px -6px 12px rgba(0,0,0,0.05),
+            inset 0px 6px 12px rgba(255,255,255,0.5);
+          animation: bouncyFloat 4s ease-in-out infinite alternate;
+        }
+
+        .card-1 {
+          background: #E8F4FF;
+          border: 2px solid #D4E9FF;
+          animation-delay: 0s;
+        }
+
+        .card-2 {
+          background: #FFF0E8;
+          border: 2px solid #FFE0D4;
+          animation-delay: -2s;
+          animation-direction: alternate-reverse;
+        }
+
+        .card-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 16px;
+        }
+
+        .icon-box {
+          width: 50px;
+          height: 50px;
+          border-radius: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 24px;
+          color: #FFF;
+          box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+        }
+        .c1-icon { background: #4A90E2; }
+        .c2-icon { background: #FFB347; }
+
+        .tag {
+          font-size: 12px;
+          font-weight: 700;
+          padding: 6px 12px;
+          border-radius: 99px;
+          background: #FFF;
+          box-shadow: 0px 4px 8px rgba(0,0,0,0.05);
+        }
+        .tag-1 { color: #4A90E2; }
+        .tag-2 { color: #FFB347; }
+
+        .title {
+          font-family: 'Outfit', sans-serif;
+          font-size: 24px;
+          font-weight: 700;
+          color: #333;
+          margin-bottom: 8px;
+        }
+
+        .desc {
+          font-size: 15px;
+          color: #666;
+          line-height: 1.4;
+          flex-grow: 1;
+        }
+
+        .card-footer {
+          display: flex;
+          gap: 8px;
+        }
+        
+        .mini-pill {
+          background: rgba(255,255,255,0.7);
+          font-size: 12px;
+          font-weight: 600;
+          padding: 4px 10px;
+          border-radius: 8px;
+          color: #555;
+        }
+
+        @keyframes bouncyFloat {
+          0% { transform: translateY(0px) rotate(0deg); }
+          100% { transform: translateY(-10px) rotate(1deg); }
+        }
+      </style>
+
+      <div class="container">
+        
+        <!-- SnapHarbor Card -->
+        <div class="card card-1">
+          <div class="card-header">
+            <div class="icon-box c1-icon">⚓</div>
+            <div class="tag tag-1">Featured Lab</div>
+          </div>
+          <div class="title">SnapHarbor</div>
+          <div class="desc">
+            A playful personal web project exploring smooth interfaces, layouts, and organizing assets perfectly.
+          </div>
+          <div class="card-footer">
+            <div class="mini-pill">Web Dev</div>
+            <div class="mini-pill">CSS Magic</div>
+          </div>
+        </div>
+
+        <!-- Unity Quests Card -->
+        <div class="card card-2">
+          <div class="card-header">
+            <div class="icon-box c2-icon">🎮</div>
+            <div class="tag tag-2">Side Quest</div>
+          </div>
+          <div class="title">Unity Sandbox</div>
+          <div class="desc">
+            Bouncing around with physics, game loops, and C# mechanics just to see what happens!
+          </div>
+          <div class="card-footer">
+            <div class="mini-pill">Unity 3D</div>
+            <div class="mini-pill">C# Scripts</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </foreignObject>
+</svg>
