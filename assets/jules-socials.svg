@@ -1,73 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 150" width="100%" height="100%">
-  <foreignObject width="100%" height="100%">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600&amp;display=swap');
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600&amp;display=swap');
+      
+      .text { font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600; fill: #333333; }
+      .text-linkedin { fill: #4A90E2; }
+      .text-email { fill: #FF6B6B; }
+      
+      .btn1 { animation: pulseBtn 3s infinite alternate; }
+      .btn2 { animation: pulseBtn 3s infinite alternate; animation-delay: 0.5s; }
+      .btn3 { animation: pulseBtn 3s infinite alternate; animation-delay: 1s; }
+      
+      @keyframes pulseBtn {
+        0% { transform: scale(1) translateY(0px); }
+        100% { transform: scale(1.05) translateY(-5px); }
+      }
+    </style>
+    <filter id="shadow-btn" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-opacity="0.08"/>
+    </filter>
+  </defs>
 
-        * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-        }
+  <!-- LinkedIn -->
+  <g transform="translate(180, 50)">
+    <g class="btn1">
+      <rect width="160" height="56" rx="28" fill="#FFFFFF" stroke="#D4E9FF" stroke-width="3" filter="url(#shadow-btn)"/>
+      <text x="30" y="34" font-family="Arial, sans-serif" font-size="22" dominant-baseline="central">💼</text>
+      <text x="65" y="34" class="text text-linkedin" dominant-baseline="central">LinkedIn</text>
+    </g>
+  </g>
 
-        .container {
-          width: 100%;
-          height: 150px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 24px;
-          font-family: 'Fredoka', sans-serif;
-        }
+  <!-- Email -->
+  <g transform="translate(370, 50)">
+    <g class="btn2">
+      <rect width="160" height="56" rx="28" fill="#FFFFFF" stroke="#FFE0D4" stroke-width="3" filter="url(#shadow-btn)"/>
+      <text x="25" y="34" font-family="Arial, sans-serif" font-size="22" dominant-baseline="central">✉️</text>
+      <text x="65" y="34" class="text text-email" dominant-baseline="central">Email Me</text>
+    </g>
+  </g>
 
-        .social-btn {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          background: #FFFFFF;
-          padding: 16px 32px;
-          border-radius: 99px;
-          font-size: 20px;
-          font-weight: 600;
-          color: #333;
-          text-decoration: none;
-          box-shadow: 
-            0px 10px 20px rgba(0,0,0,0.08),
-            inset 0px -5px 10px rgba(0,0,0,0.05),
-            inset 0px 5px 10px rgba(255,255,255,1);
-          border: 3px solid #F0F0F0;
-          animation: pulseBtn 3s infinite alternate;
-        }
-
-        .b-linkedin { border-color: #D4E9FF; color: #4A90E2; animation-delay: 0s; }
-        .b-email { border-color: #FFE0D4; color: #FF6B6B; animation-delay: 0.5s; }
-        .b-github { border-color: #E2E2E2; color: #333; animation-delay: 1s; }
-
-        .icon {
-          font-size: 24px;
-        }
-
-        @keyframes pulseBtn {
-          0% { transform: scale(1) translateY(0px); }
-          100% { transform: scale(1.05) translateY(-5px); }
-        }
-      </style>
-
-      <div class="container">
-        
-        <div class="social-btn b-linkedin">
-          <span class="icon">💼</span> LinkedIn
-        </div>
-        
-        <div class="social-btn b-email">
-          <span class="icon">✉️</span> Email Me
-        </div>
-        
-        <div class="social-btn b-github">
-          <span class="icon">🐙</span> GitHub
-        </div>
-
-      </div>
-    </div>
-  </foreignObject>
+  <!-- GitHub -->
+  <g transform="translate(560, 50)">
+    <g class="btn3">
+      <rect width="150" height="56" rx="28" fill="#FFFFFF" stroke="#E2E2E2" stroke-width="3" filter="url(#shadow-btn)"/>
+      <text x="30" y="34" font-family="Arial, sans-serif" font-size="22" dominant-baseline="central">🐙</text>
+      <text x="65" y="34" class="text" dominant-baseline="central">GitHub</text>
+    </g>
+  </g>
 </svg>

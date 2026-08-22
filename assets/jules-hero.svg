@@ -1,214 +1,139 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="100%" height="100%">
-  <foreignObject width="100%" height="100%">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Outfit:wght@400;600;800;900&amp;display=swap');
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Outfit:wght@400;600;800;900&amp;display=swap');
+      
+      .title { font-family: 'Fredoka', 'Outfit', sans-serif; font-size: 64px; font-weight: 700; fill: #333333; letter-spacing: -1.5px; }
+      .title-name { fill: #FF6B6B; }
+      
+      .badge-text { font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 600; fill: #4A90E2; }
+      
+      .desc { font-family: 'Outfit', sans-serif; font-size: 18px; fill: #7A7A7A; }
+      .desc-bold { font-weight: 700; fill: #FF6B6B; }
 
-        * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-        }
+      .anim-blob-1 { animation: floatSlow 10s ease-in-out infinite alternate; }
+      .anim-blob-2 { animation: floatSlow 10s ease-in-out infinite alternate-reverse; animation-delay: -3s; }
+      .anim-blob-3 { animation: floatSlow 10s ease-in-out infinite alternate; animation-delay: -6s; }
 
-        .container {
-          width: 100%;
-          height: 400px;
-          background: #FDFBF7; /* Soft creamy off-white */
-          position: relative;
-          overflow: hidden;
-          font-family: 'Fredoka', 'Outfit', sans-serif;
-          border-radius: 36px;
-          border: 4px solid #FFEBE6;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: inset 0px -10px 20px rgba(0,0,0,0.02);
-        }
+      .float-1 { animation: floatGentle 4s ease-in-out infinite alternate; }
+      .float-2 { animation: floatGentle 4s ease-in-out infinite alternate-reverse; animation-delay: -1.5s; }
+      .float-3 { animation: floatGentle 4s ease-in-out infinite alternate; animation-delay: -3s; }
 
-        /* Soft Animated Background Blobs */
-        .blob {
-          position: absolute;
-          border-radius: 50%;
-          filter: blur(40px);
-          opacity: 0.7;
-          animation: floatSlow 10s ease-in-out infinite alternate;
-        }
-        .blob-1 { width: 350px; height: 350px; background: #FFD4E5; top: -50px; left: -100px; }
-        .blob-2 { width: 400px; height: 400px; background: #D4F0FF; bottom: -100px; right: -50px; animation-delay: -3s; animation-direction: alternate-reverse; }
-        .blob-3 { width: 300px; height: 300px; background: #FFF4D4; top: 20px; right: 250px; animation-delay: -6s; }
+      .bounce-title { animation: bounceIn 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; opacity: 0; }
+      .bounce-title-2 { animation: bounceIn 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; animation-delay: 0.1s; opacity: 0; }
+      .pop-badge { animation: popUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; animation-delay: 0.5s; opacity: 0; }
+      .fade-desc { animation: fadeIn 1s ease-out forwards; animation-delay: 0.8s; opacity: 0; }
 
-        .content {
-          position: relative;
-          z-index: 10;
-          text-align: center;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 16px;
-        }
+      @keyframes floatSlow {
+        0% { transform: translate(0, 0) scale(1); }
+        100% { transform: translate(30px, -30px) scale(1.1); }
+      }
+      @keyframes floatGentle {
+        0% { transform: translateY(0px) rotate(0deg); }
+        100% { transform: translateY(-20px) rotate(5deg); }
+      }
+      @keyframes bounceIn {
+        0% { opacity: 0; transform: translateY(40px) scale(0.9); }
+        100% { opacity: 1; transform: translateY(0px) scale(1); }
+      }
+      @keyframes popUp {
+        0% { opacity: 0; transform: scale(0.5); }
+        100% { opacity: 1; transform: scale(1); }
+      }
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+    </style>
+    
+    <filter id="blur-blob" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    
+    <filter id="badge-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#4A90E2" flood-opacity="0.15"/>
+    </filter>
+    
+    <filter id="float-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="15" stdDeviation="15" flood-opacity="0.1"/>
+    </filter>
+  </defs>
 
-        /* Bouncy Title */
-        .title {
-          font-size: 64px;
-          font-weight: 700;
-          color: #333333;
-          letter-spacing: -1.5px;
-          line-height: 1.1;
-        }
-        .title span {
-          display: inline-block;
-          animation: bounceIn 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-          opacity: 0;
-          transform: translateY(40px);
-        }
-        .title span:nth-child(1) { animation-delay: 0.1s; }
-        .title span:nth-child(2) { animation-delay: 0.2s; color: #FF6B6B; } /* "Sreejith" */
-        
-        /* Claymorphic Pill Badge */
-        .badge {
-          background: #FFFFFF;
-          color: #4A90E2;
-          font-size: 18px;
-          font-weight: 600;
-          padding: 12px 32px;
-          border-radius: 999px;
-          box-shadow: 
-            0px 10px 20px rgba(74, 144, 226, 0.15),
-            inset 0px -4px 8px rgba(0,0,0,0.05),
-            inset 0px 4px 8px #FFFFFF;
-          border: 2px solid #E8F4FF;
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          opacity: 0;
-          animation: popUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-          animation-delay: 0.5s;
-        }
+  <g clip-path="url(#clip)">
+    <clipPath id="clip">
+      <rect x="2" y="2" width="896" height="396" rx="36"/>
+    </clipPath>
+    
+    <rect x="2" y="2" width="896" height="396" rx="36" fill="#FDFBF7" stroke="#FFEBE6" stroke-width="4"/>
 
-        .badge-icon {
-          background: #4A90E2;
-          color: #FFF;
-          width: 28px;
-          height: 28px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 14px;
-        }
+    <!-- Blobs -->
+    <g transform="translate(50, 50)">
+      <circle cx="0" cy="0" r="175" fill="#FFD4E5" class="anim-blob-1" filter="url(#blur-blob)" opacity="0.7"/>
+    </g>
+    <g transform="translate(850, 450)">
+      <circle cx="0" cy="0" r="200" fill="#D4F0FF" class="anim-blob-2" filter="url(#blur-blob)" opacity="0.7"/>
+    </g>
+    <g transform="translate(650, 100)">
+      <circle cx="0" cy="0" r="150" fill="#FFF4D4" class="anim-blob-3" filter="url(#blur-blob)" opacity="0.7"/>
+    </g>
 
-        /* Description */
-        .desc {
-          font-family: 'Outfit', sans-serif;
-          font-size: 18px;
-          color: #7A7A7A;
-          max-width: 550px;
-          line-height: 1.5;
-          opacity: 0;
-          animation: fadeIn 1s ease-out forwards;
-          animation-delay: 0.8s;
-        }
-        .desc strong {
-          color: #FF6B6B;
-          font-weight: 700;
-        }
+    <!-- Floating Icons -->
+    <g transform="translate(100, 80) rotate(-15)">
+      <g class="float-1">
+        <rect x="-45" y="-45" width="90" height="90" rx="24" fill="#FFB347" filter="url(#float-shadow)"/>
+        <text x="0" y="5" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle" dominant-baseline="central">💻</text>
+      </g>
+    </g>
 
-        /* Floating 3D Elements */
-        .float-item {
-          position: absolute;
-          border-radius: 24px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 48px;
-          box-shadow: 
-            0px 20px 40px rgba(0,0,0,0.1),
-            inset 0px -6px 12px rgba(0,0,0,0.1),
-            inset 0px 6px 12px rgba(255,255,255,0.6);
-          animation: floatGentle 4s ease-in-out infinite alternate;
-        }
-        
-        .float-1 {
-          background: #FFB347; /* Orange */
-          width: 90px; height: 90px;
-          top: 50px; left: 80px;
-          transform: rotate(-15deg);
-          animation-delay: 0s;
-        }
-        
-        .float-2 {
-          background: #4A90E2; /* Blue */
-          width: 100px; height: 100px;
-          bottom: 60px; right: 90px;
-          transform: rotate(20deg);
-          animation-delay: -1.5s;
-          animation-direction: alternate-reverse;
-        }
-        
-        .float-3 {
-          background: #50E3C2; /* Teal */
-          width: 70px; height: 70px;
-          top: 70px; right: 120px;
-          transform: rotate(10deg);
-          animation-delay: -3s;
-          font-size: 36px;
-        }
+    <g transform="translate(750, 300) rotate(20)">
+      <g class="float-2">
+        <rect x="-50" y="-50" width="100" height="100" rx="24" fill="#4A90E2" filter="url(#float-shadow)"/>
+        <text x="0" y="5" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle" dominant-baseline="central">🎮</text>
+      </g>
+    </g>
 
-        /* Animations */
-        @keyframes floatSlow {
-          0% { transform: translate(0, 0) scale(1); }
-          100% { transform: translate(30px, -30px) scale(1.1); }
-        }
+    <g transform="translate(730, 80) rotate(10)">
+      <g class="float-3">
+        <rect x="-35" y="-35" width="70" height="70" rx="24" fill="#50E3C2" filter="url(#float-shadow)"/>
+        <text x="0" y="5" font-family="Arial, sans-serif" font-size="36" fill="white" text-anchor="middle" dominant-baseline="central">⚓</text>
+      </g>
+    </g>
 
-        @keyframes floatGentle {
-          0% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
-          100% { transform: translateY(-20px) rotate(var(--rot, 5deg)); }
-        }
+    <!-- Main Content -->
+    <!-- Title -->
+    <g transform="translate(450, 130)">
+      <text text-anchor="middle" dominant-baseline="central" class="title">
+        <tspan x="-120" class="bounce-title">Hi,</tspan>
+        <tspan x="90" class="title-name bounce-title-2">I'm Sreejith!</tspan>
+      </text>
+    </g>
 
-        @keyframes bounceIn {
-          0% { opacity: 0; transform: translateY(40px) scale(0.9); }
-          100% { opacity: 1; transform: translateY(0px) scale(1); }
-        }
+    <!-- Badge -->
+    <g transform="translate(450, 210)">
+      <!-- Badge container centered horizontally -->
+      <g transform="translate(-160, -25)">
+        <g class="pop-badge">
+          <rect width="320" height="50" rx="25" fill="#FFFFFF" stroke="#E8F4FF" stroke-width="2" filter="url(#badge-shadow)"/>
+          <rect x="10" y="10" width="30" height="30" rx="15" fill="#4A90E2"/>
+          <text x="25" y="27" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" dominant-baseline="central">✌️</text>
+          <text x="175" y="27" class="badge-text" text-anchor="middle" dominant-baseline="central">Student &amp; Web Developer</text>
+        </g>
+      </g>
+    </g>
 
-        @keyframes popUp {
-          0% { opacity: 0; transform: scale(0.5); }
-          100% { opacity: 1; transform: scale(1); }
-        }
-
-        @keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-      </style>
-
-      <div class="container">
-        <!-- Blobs -->
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-
-        <!-- Floating Objects -->
-        <div class="float-item float-1" style="--rot: -15deg">💻</div>
-        <div class="float-item float-2" style="--rot: 20deg">🎮</div>
-        <div class="float-item float-3" style="--rot: 10deg">⚓</div>
-
-        <!-- Main Content -->
-        <div class="content">
-          <h1 class="title">
-            <span>Hi,</span> <span>I'm Sreejith!</span>
-          </h1>
-          
-          <div class="badge">
-            <div class="badge-icon">✌️</div>
-            Student &amp; Web Developer
-          </div>
-          
-          <p class="desc">
-            B.Tech CSE student at <strong>VIT ('29)</strong>. I love building playful web experiences, mastering core algorithms, and tinkering with game dev on the side! ✨
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </foreignObject>
+    <!-- Description -->
+    <g transform="translate(450, 275)">
+      <g class="fade-desc">
+        <text x="0" y="0" class="desc" text-anchor="middle">
+          B.Tech CSE student at <tspan class="desc-bold">VIT ('29)</tspan>. I love building playful web
+        </text>
+        <text x="0" y="25" class="desc" text-anchor="middle">
+          experiences, mastering core algorithms, and tinkering
+        </text>
+        <text x="0" y="50" class="desc" text-anchor="middle">
+          with game dev on the side! ✨
+        </text>
+      </g>
+    </g>
+  </g>
 </svg>

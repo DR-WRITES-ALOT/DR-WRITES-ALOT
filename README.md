@@ -5,8 +5,8 @@
 
   <br/><br/>
 
-  <!-- Activity Tagline -->
-  <img src="./assets/jules-activity.svg" alt="Activity Status" width="100%" />
+  <!-- Telemetry Dashboard -->
+  <img src="./assets/jules-telemetry.svg" alt="Telemetry Dashboard" width="100%" />
 
   <br/><br/>
 
