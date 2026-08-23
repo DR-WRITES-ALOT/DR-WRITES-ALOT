@@ -57,7 +57,7 @@
       <text x="70" y="140" class="stat-label" text-anchor="middle" dominant-baseline="central">⭐ Stars</text>
       
       <!-- Repos -->
-      <text x="190" y="100" class="stat-num" text-anchor="middle" dominant-baseline="central">4</text>
+      <text x="190" y="100" class="stat-num" text-anchor="middle" dominant-baseline="central">3</text>
       <text x="190" y="140" class="stat-label" text-anchor="middle" dominant-baseline="central">📦 Repos</text>
       
       <!-- Followers -->
@@ -76,24 +76,24 @@
       <g transform="translate(30, 70)">
         <text x="0" y="10" class="lang-label" dominant-baseline="central">Python</text>
         <rect x="100" y="2" width="220" height="16" rx="8" fill="#F0F0F0"/>
-        <rect x="100" y="2" width="73" height="16" rx="8" class="bar-grow bar-1"/>
-        <text x="335" y="10" class="lang-pct" dominant-baseline="central">33%</text>
+        <rect x="100" y="2" width="110" height="16" rx="8" class="bar-grow bar-1"/>
+        <text x="335" y="10" class="lang-pct" dominant-baseline="central">50%</text>
       </g>
       
       <!-- Top Lang 2 -->
       <g transform="translate(30, 100)">
-        <text x="0" y="10" class="lang-label" dominant-baseline="central">CSS</text>
+        <text x="0" y="10" class="lang-label" dominant-baseline="central">TypeScript</text>
         <rect x="100" y="2" width="220" height="16" rx="8" fill="#F0F0F0"/>
-        <rect x="100" y="2" width="73" height="16" rx="8" class="bar-grow bar-2"/>
-        <text x="335" y="10" class="lang-pct" dominant-baseline="central">33%</text>
+        <rect x="100" y="2" width="110" height="16" rx="8" class="bar-grow bar-2"/>
+        <text x="335" y="10" class="lang-pct" dominant-baseline="central">50%</text>
       </g>
       
       <!-- Top Lang 3 -->
       <g transform="translate(30, 130)">
-        <text x="0" y="10" class="lang-label" dominant-baseline="central">TypeScript</text>
+        <text x="0" y="10" class="lang-label" dominant-baseline="central">N/A</text>
         <rect x="100" y="2" width="220" height="16" rx="8" fill="#F0F0F0"/>
-        <rect x="100" y="2" width="73" height="16" rx="8" class="bar-grow bar-3"/>
-        <text x="335" y="10" class="lang-pct" dominant-baseline="central">33%</text>
+        <rect x="100" y="2" width="0" height="16" rx="8" class="bar-grow bar-3"/>
+        <text x="335" y="10" class="lang-pct" dominant-baseline="central">0%</text>
       </g>
     </g>
   </g>
