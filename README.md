@@ -5,11 +5,6 @@
 
   <br/><br/>
 
-  <!-- Telemetry Dashboard -->
-  <img src="./assets/jules-telemetry.svg" alt="Telemetry Dashboard" width="100%" />
-
-  <br/><br/>
-
   <!-- The Toybox (Tech Stack) -->
   <img src="./assets/jules-stack.svg" alt="My Toybox (Tech Stack)" width="100%" />
 
@@ -19,6 +14,11 @@
   <a href="https://github.com/DR-WRITES-ALOT/SnapHarbor">
     <img src="./assets/jules-projects.svg" alt="In The Lab (Projects)" width="100%" />
   </a>
+
+  <br/><br/>
+
+  <!-- Telemetry Dashboard -->
+  <img src="./assets/jules-telemetry.svg" alt="Telemetry Dashboard" width="100%" />
 
   <br/><br/>
 

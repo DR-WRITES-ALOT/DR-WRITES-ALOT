@@ -49,18 +49,19 @@
 
       <!-- Texts -->
       <text x="24" y="110" class="title">SnapHarbor</text>
-      <text x="24" y="140" class="desc">A playful personal web project</text>
-      <text x="24" y="160" class="desc">exploring smooth interfaces, layouts,</text>
-      <text x="24" y="180" class="desc">and organizing assets perfectly.</text>
+      <text x="24" y="135" class="desc">A high-performance, local-first</text>
+      <text x="24" y="155" class="desc">media vault with SHA-256 dedupe,</text>
+      <text x="24" y="175" class="desc">timeline galleries, automation, &amp;</text>
+      <text x="24" y="195" class="desc">modern glassmorphism aesthetics.</text>
 
       <!-- Footer Pills -->
-      <g transform="translate(24, 205)">
-        <rect width="70" height="24" rx="8" fill="rgba(255,255,255,0.7)"/>
-        <text x="35" y="12" class="mini-pill-text" text-anchor="middle" dominant-baseline="central">Web Dev</text>
+      <g transform="translate(24, 212)">
+        <rect width="85" height="24" rx="8" fill="rgba(255,255,255,0.7)"/>
+        <text x="42.5" y="12" class="mini-pill-text" text-anchor="middle" dominant-baseline="central">Rust + Tauri</text>
       </g>
-      <g transform="translate(104, 205)">
-        <rect width="80" height="24" rx="8" fill="rgba(255,255,255,0.7)"/>
-        <text x="40" y="12" class="mini-pill-text" text-anchor="middle" dominant-baseline="central">CSS Magic</text>
+      <g transform="translate(117, 212)">
+        <rect width="70" height="24" rx="8" fill="rgba(255,255,255,0.7)"/>
+        <text x="35" y="12" class="mini-pill-text" text-anchor="middle" dominant-baseline="central">React 19</text>
       </g>
     </g>
   </g>
