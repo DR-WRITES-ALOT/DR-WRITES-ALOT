@@ -57,7 +57,7 @@
       <text x="70" y="140" class="stat-label" text-anchor="middle" dominant-baseline="central">⭐ Stars</text>
       
       <!-- Repos -->
-      <text x="190" y="100" class="stat-num" text-anchor="middle" dominant-baseline="central">5</text>
+      <text x="190" y="100" class="stat-num" text-anchor="middle" dominant-baseline="central">4</text>
       <text x="190" y="140" class="stat-label" text-anchor="middle" dominant-baseline="central">📦 Repos</text>
       
       <!-- Followers -->
@@ -108,18 +108,18 @@
       <g transform="translate(30, 75)">
         <rect width="8" height="8" rx="4" fill="#FFB347"/>
         <text x="20" y="4" class="log-date" dominant-baseline="central">[Aug 27]</text>
-        <text x="110" y="4" class="log-action" dominant-baseline="central">issue</text>
+        <text x="110" y="4" class="log-action" dominant-baseline="central">push</text>
         <text x="175" y="4" class="log-repo" dominant-baseline="central">SnapHarbor</text>
-        <text x="340" y="4" class="log-desc" dominant-baseline="central">unsyncing doesnt work</text>
+        <text x="340" y="4" class="log-desc" dominant-baseline="central">Pushed to branch</text>
       </g>
       
       <!-- Log 2 -->
       <g transform="translate(30, 105)">
         <rect width="8" height="8" rx="4" fill="#50E3C2"/>
         <text x="20" y="4" class="log-date" dominant-baseline="central">[Aug 27]</text>
-        <text x="110" y="4" class="log-action" dominant-baseline="central">issue</text>
-        <text x="175" y="4" class="log-repo" dominant-baseline="central">SnapHarbor</text>
-        <text x="340" y="4" class="log-desc" dominant-baseline="central">unsyncing doesnt work</text>
+        <text x="110" y="4" class="log-action" dominant-baseline="central">push</text>
+        <text x="175" y="4" class="log-repo" dominant-baseline="central">DR-WRITES-ALOT</text>
+        <text x="340" y="4" class="log-desc" dominant-baseline="central">Pushed to branch</text>
       </g>
       
       <!-- Log 3 -->
@@ -128,7 +128,7 @@
         <text x="20" y="4" class="log-date" dominant-baseline="central">[Aug 27]</text>
         <text x="110" y="4" class="log-action" dominant-baseline="central">issue</text>
         <text x="175" y="4" class="log-repo" dominant-baseline="central">SnapHarbor</text>
-        <text x="340" y="4" class="log-desc" dominant-baseline="central">change device does not work</text>
+        <text x="340" y="4" class="log-desc" dominant-baseline="central">unsyncing doesnt work</text>
       </g>
     </g>
   </g>
