@@ -61,7 +61,7 @@
       <text x="190" y="140" class="stat-label" text-anchor="middle" dominant-baseline="central">📦 Repos</text>
       
       <!-- Followers -->
-      <text x="310" y="100" class="stat-num" text-anchor="middle" dominant-baseline="central">4</text>
+      <text x="310" y="100" class="stat-num" text-anchor="middle" dominant-baseline="central">5</text>
       <text x="310" y="140" class="stat-label" text-anchor="middle" dominant-baseline="central">👥 Followers</text>
     </g>
   </g>
