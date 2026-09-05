@@ -3,132 +3,47 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sreejith SH · Dreamy GitHub profile preview</title>
+  <title>Sreejith SH · Profile console preview</title>
   <style>
-    :root {
-      color-scheme: dark;
-      --ink: #f8eee7;
-      --muted: #d7becb;
-      --page: #100d1f;
-      --panel: #191329;
-      --line: rgba(220, 168, 216, .24);
-      --accent: #f6d6b8;
-    }
-
+    :root { color-scheme: dark; --bg: #070b17; --panel: #0e1427; --line: #273552; --text: #edf2ff; --muted: #71809e; --mint: #8cf7d6; }
     * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      padding: 36px 18px 72px;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 14% 0%, rgba(220, 168, 216, .16), transparent 28rem),
-        radial-gradient(circle at 88% 18%, rgba(229, 157, 169, .13), transparent 24rem),
-        var(--page);
-      font-family: ui-rounded, "Trebuchet MS", system-ui, sans-serif;
-      line-height: 1.6;
-    }
-
-    main {
-      width: min(100%, 980px);
-      margin: auto;
-      padding: 24px;
-      background: rgba(25, 19, 41, .78);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      box-shadow: 0 26px 80px rgba(0, 0, 0, .35);
-      backdrop-filter: blur(10px);
-    }
-
+    body { margin: 0; min-height: 100vh; padding: 32px 16px 72px; color: var(--text); background: radial-gradient(circle at 20% 0%, #25204a 0, transparent 32rem), radial-gradient(circle at 90% 15%, #18334a 0, transparent 28rem), var(--bg); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    main { width: min(100%, 920px); margin: auto; padding: 20px; background: rgba(14, 20, 39, .88); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 30px 100px rgba(0,0,0,.42); }
     img { display: block; max-width: 100%; height: auto; }
     .wide { width: 100%; }
-    .center { text-align: center; }
-    .divider { margin: 12px 0; }
-    .eyebrow { margin: 8px 0 4px; color: var(--accent); font: 700 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 2px; }
-    h1, h2, h3 { line-height: 1.2; }
-    h2 { margin: 32px 0 12px; color: var(--accent); }
-    h3 { margin-bottom: 8px; color: #f4cdd0; }
-    p { color: var(--muted); }
-    a { color: var(--accent); }
-    .nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 18px 0 2px; }
-    .nav a { padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); text-decoration: none; font-size: 13px; }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-    .card { padding: 18px; background: rgba(23, 19, 43, .7); border: 1px solid var(--line); border-radius: 16px; }
-    .card p { margin: 0 0 8px; font-size: 14px; }
-    .contact { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 20px 0 28px; }
-    .contact a { padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); text-decoration: none; background: rgba(42, 33, 67, .7); }
-    small { color: var(--muted); }
-    @media (max-width: 680px) {
-      body { padding: 12px 8px 32px; }
-      main { padding: 12px; border-radius: 18px; }
-      .grid { grid-template-columns: 1fr; }
-    }
+    .small { width: min(100%, 860px); margin: 0 auto; }
+    .hero { width: 100%; }
+    .tagline { margin: 14px 0 26px; text-align: center; color: var(--muted); font-size: 13px; }
+    code { color: var(--mint); }
+    .split { display: flex; align-items: flex-start; justify-content: center; gap: 6px; }
+    .split img { width: 50%; }
+    .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 22px 0; }
+    .links a { padding: 9px 13px; color: var(--text); text-decoration: none; border: 1px solid var(--line); border-radius: 5px; background: #141d35; font-size: 12px; }
+    .links a:hover { border-color: var(--mint); color: var(--mint); }
+    .note { margin: 20px auto 0; max-width: 760px; color: var(--muted); text-align: center; font-size: 12px; line-height: 1.7; }
+    @media (max-width: 700px) { body { padding: 8px 5px 40px; } main { padding: 8px; } .split { flex-direction: column; gap: 12px; } .split img { width: 100%; } }
   </style>
 </head>
 <body>
   <main>
-    <img class="wide" src="./assets/storybook-hero.svg" alt="Dreamy Sreejith SH profile hero" />
-    <nav class="nav" aria-label="Preview navigation">
-      <a href="#about">about</a>
-      <a href="#satchel">satchel</a>
-      <a href="#pages">selected pages</a>
-      <a href="#observatory">observatory</a>
-      <a href="#signal">send a signal</a>
-    </nav>
-
-    <img class="wide divider" src="./assets/storybook-divider.svg" alt="" />
-
-    <section id="about">
-      <p class="eyebrow">ABOUT THE AUTHOR</p>
-      <h2>A small corner of the internet</h2>
-      <p>Hi, I’m <strong>Sreejith SH</strong> — a Computer Science student at VIT, class of 2029, and an aspiring web developer who likes turning curious ideas into useful little worlds.</p>
-      <img class="wide" src="./assets/storybook-chapter.svg" alt="Current chapter cards" />
-    </section>
-
-    <img class="wide divider" src="./assets/storybook-divider.svg" alt="" />
-
-    <section id="satchel">
-      <p class="eyebrow">THE SATCHEL</p>
-      <h2>A few of the tools I carry</h2>
-      <img class="wide" src="./assets/storybook-satchel.svg" alt="Developer toolkit cards" />
-    </section>
-
-    <img class="wide divider" src="./assets/storybook-divider.svg" alt="" />
-
-    <section id="pages">
-      <p class="eyebrow">SELECTED PAGES</p>
-      <h2>Projects from the workshop</h2>
-      <img class="wide" src="./assets/storybook-projects.svg" alt="Project cards" />
-      <div class="grid">
-        <article class="card"><h3>⚓ SnapHarbor</h3><p>A local-first media vault with smart deduplication, device sync, timeline galleries, and automation.</p><small>Rust · Tauri · React · TypeScript · SQLite</small></article>
-        <article class="card"><h3>🧭 FLOW</h3><p>A transit simulation that watches connection confidence and recovers routes before a journey falls apart.</p><small>Next.js · TypeScript · Tailwind · Prisma</small></article>
-        <article class="card"><h3>🚁 Drone Mapper</h3><p>A hackathon experiment turning drone imagery into disaster assessments, severity scores, and an incident map.</p><small>Python · Streamlit · Gemma 4 · Pandas</small></article>
-        <article class="card"><h3>🎮 Unity side quests</h3><p>Small experiments for game loops, physics, and C# mechanics.</p><small>Learn the mechanic · break it · understand it</small></article>
-      </div>
-    </section>
-
-    <img class="wide divider" src="./assets/storybook-divider.svg" alt="" />
-
-    <section id="observatory">
-      <p class="eyebrow">GITHUB OBSERVATORY</p>
-      <h2>A few numbers from the night sky</h2>
-      <img class="wide" src="./assets/storybook-telemetry.svg" alt="GitHub telemetry dashboard" />
-    </section>
-
-    <img class="wide divider" src="./assets/storybook-divider.svg" alt="" />
-
-    <section id="signal" class="center">
-      <p class="eyebrow">SEND A SIGNAL</p>
-      <h2>Let’s make the next chapter together.</h2>
-      <p>If you found something useful, have an idea, or want to talk about building things, say hello.</p>
-      <div class="contact">
-        <a href="https://www.linkedin.com/in/sreejith-s-h-810803243/">LinkedIn</a>
-        <a href="https://github.com/DR-WRITES-ALOT">GitHub</a>
-        <a href="https://github.com/DR-WRITES-ALOT?tab=repositories">Repositories</a>
-      </div>
-      <img class="wide" src="./assets/storybook-footer.svg" alt="Dreamy profile footer" />
-    </section>
+    <img class="hero" src="./assets/hero.svg" alt="Dreamy terminal hero" />
+    <p class="tagline"><code>builds useful things</code> · <code>learns in public</code> · <code>keeps a side quest open</code></p>
+    <img class="wide" src="./assets/banner_work.svg" alt="Selected work" />
+    <a href="https://github.com/DR-WRITES-ALOT/SnapHarbor"><img class="wide" src="./assets/card_snapharbor.svg" alt="SnapHarbor" /></a>
+    <a href="https://github.com/DR-WRITES-ALOT/FLOW"><img class="wide" src="./assets/card_flow.svg" alt="FLOW" /></a>
+    <a href="https://github.com/DR-WRITES-ALOT/rapid-response-dronemapper"><img class="wide" src="./assets/card_drone_mapper.svg" alt="Rapid Response Drone Mapper" /></a>
+    <img class="wide" src="./assets/divider.svg" alt="" />
+    <img class="wide" src="./assets/banner_telemetry.svg" alt="Telemetry" />
+    <div class="split"><img src="./assets/stats.svg" alt="Live stats" /><img src="./assets/ops.svg" alt="Recent activity" /></div>
+    <img class="small" src="./assets/contrib.svg" alt="Contribution scan" />
+    <img class="wide" src="./assets/divider.svg" alt="" />
+    <img class="wide" src="./assets/banner_stack.svg" alt="Loadout" />
+    <img class="wide" src="./assets/stack.svg" alt="Technology stack" />
+    <img class="wide" src="./assets/divider.svg" alt="" />
+    <img class="wide" src="./assets/banner_contact.svg" alt="Contact" />
+    <img class="wide" src="./assets/contact.svg" alt="Contact console" />
+    <div class="links"><a href="https://github.com/DR-WRITES-ALOT">GitHub</a><a href="https://www.linkedin.com/in/sreejith-s-h-810803243/">LinkedIn</a><a href="https://github.com/DR-WRITES-ALOT?tab=repositories">Repositories</a></div>
+    <p class="note">This local preview uses the same generated assets as the GitHub profile README. The panels are rebuilt from public GitHub data by the profile workflow.</p>
   </main>
 </body>
 </html>

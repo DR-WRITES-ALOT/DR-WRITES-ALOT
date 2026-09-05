@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="174" viewBox="0 0 860 174" role="img" aria-label="FLOW — (&#x27;deterministic transit simulation that watches connection confidence&#x27;, &#x27;and recovers a safer route before the journey falls apart.&#x27;)">
+  <defs>
+    <linearGradient id="sweep02" x1="0" x2="1"><stop offset="0" stop-color="#8cf7d6" stop-opacity="0"/><stop offset=".5" stop-color="#8cf7d6" stop-opacity=".07"/><stop offset="1" stop-color="#8cf7d6" stop-opacity="0"/></linearGradient>
+    <clipPath id="clip02"><rect x="1" y="1" width="858" height="172" rx="11"/></clipPath>
+    <filter id="iconGlow"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <rect x="1" y="1" width="858" height="172" rx="11" fill="#090d1b" stroke="#273552" stroke-width="1.5"/>
+  <rect x="2" y="2" width="5" height="168" fill="#8cf7d6"><animate attributeName="opacity" values=".9;.35;.9" dur="3s" repeatCount="indefinite"/></rect>
+  <g opacity=".16" filter="url(#iconGlow)" fill="none" stroke="#c9a8ff" stroke-width="5"><path d="M122 112c45-74 94 72 143-2 40-62 94-31 147-67" fill="none" stroke="#8cf7d6" stroke-width="4" stroke-linecap="round" stroke-dasharray="9 8"/><circle cx="120" cy="112" r="9" fill="none" stroke="#8cf7d6" stroke-width="3"/><path d="m406 37 9 6-7 9" fill="none" stroke="#8cf7d6" stroke-width="3" stroke-linecap="round"/></g>
+  <g opacity=".10" fill="none" stroke="#8cf7d6" stroke-width="2"><path d="M122 112c45-74 94 72 143-2 40-62 94-31 147-67" fill="none" stroke="#8cf7d6" stroke-width="4" stroke-linecap="round" stroke-dasharray="9 8"/><circle cx="120" cy="112" r="9" fill="none" stroke="#8cf7d6" stroke-width="3"/><path d="m406 37 9 6-7 9" fill="none" stroke="#8cf7d6" stroke-width="3" stroke-linecap="round"/></g>
+  <text x="34" y="90" font-size="48" font-weight="700" fill="#8cf7d6" fill-opacity=".13" font-family="'SFMono-Regular',ui-monospace,'JetBrains Mono','Fira Code','Cascadia Code',Consolas,'Liberation Mono',Menlo,monospace">02</text>
+  <text x="92" y="50" font-size="22" font-weight="700" fill="#8cf7d6" font-family="'SFMono-Regular',ui-monospace,'JetBrains Mono','Fira Code','Cascadia Code',Consolas,'Liberation Mono',Menlo,monospace">FLOW</text>
+  <text x="92" y="72" font-size="12" fill="#71809e" font-family="'SFMono-Regular',ui-monospace,'JetBrains Mono','Fira Code','Cascadia Code',Consolas,'Liberation Mono',Menlo,monospace">› github.com/DR-WRITES-ALOT/FLOW</text>
+  <text x="92" y="98" font-size="13" fill="#edf2ff" font-family="'SFMono-Regular',ui-monospace,'JetBrains Mono','Fira Code','Cascadia Code',Consolas,'Liberation Mono',Menlo,monospace">deterministic transit simulation that watches connection confidence</text>
+  <text x="92" y="116" font-size="13" fill="#edf2ff" font-family="'SFMono-Regular',ui-monospace,'JetBrains Mono','Fira Code','Cascadia Code',Consolas,'Liberation Mono',Menlo,monospace">and recovers a safer route before the journey falls apart.</text>
+  <rect x="92.0" y="131" width="42.0" height="20" rx="4" fill="#8ec9ff" fill-opacity=".08" stroke="#8ec9ff" stroke-opacity=".55"/>
+  <text x="113.0" y="145" text-anchor="middle" font-size="11" fill="#8ec9ff" font-family="'SFMono-Regular',ui-monospace,'JetBrains Mono','Fira Code','Cascadia Code',Consolas,'Liberation Mono',Menlo,monospace">0★</text><rect x="142.0" y="131" width="68.4" height="20" rx="4" fill="#8cf7d6" fill-opacity=".08" stroke="#8cf7d6" stroke-opacity=".55"/>
+  <text x="176.2" y="145" text-anchor="middle" font-size="11" fill="#8cf7d6" font-family="'SFMono-Regular',ui-monospace,'JetBrains Mono','Fira Code','Cascadia Code',Consolas,'Liberation Mono',Menlo,monospace">next.js</text><rect x="218.4" y="131" width="90.0" height="20" rx="4" fill="#8cf7d6" fill-opacity=".08" stroke="#8cf7d6" stroke-opacity=".55"/>
+  <text x="263.4" y="145" text-anchor="middle" font-size="11" fill="#8cf7d6" font-family="'SFMono-Regular',ui-monospace,'JetBrains Mono','Fira Code','Cascadia Code',Consolas,'Liberation Mono',Menlo,monospace">typescript</text><rect x="316.4" y="131" width="61.2" height="20" rx="4" fill="#8cf7d6" fill-opacity=".08" stroke="#8cf7d6" stroke-opacity=".55"/>
+  <text x="347.0" y="145" text-anchor="middle" font-size="11" fill="#8cf7d6" font-family="'SFMono-Regular',ui-monospace,'JetBrains Mono','Fira Code','Cascadia Code',Consolas,'Liberation Mono',Menlo,monospace">prisma</text>
+  <text x="830" y="28" text-anchor="end" font-size="11" fill="#ffd6a7" font-family="'SFMono-Regular',ui-monospace,'JetBrains Mono','Fira Code','Cascadia Code',Consolas,'Liberation Mono',Menlo,monospace">WEB / LIVE DEMO</text>
+  <path d="M14 16 V8 H26 M846 150 V162 H834" fill="none" stroke="#8cf7d6" stroke-opacity=".52"/>
+  <g clip-path="url(#clip02)"><rect x="-210" y="1" width="210" height="172" fill="url(#sweep02)"><animate attributeName="x" values="-210;860;860" keyTimes="0;.62;1" dur="6s" begin="2.2s" repeatCount="indefinite"/></rect></g>
+</svg>
