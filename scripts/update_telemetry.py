@@ -1,160 +1,171 @@
-import os
-import json
-import urllib.request
-import urllib.error
-import math
-from datetime import datetime
+"""Refresh the generated GitHub observatory card used by the profile README."""
 
-def fetch_json(url, token):
-    req = urllib.request.Request(url)
-    req.add_header("Authorization", f"token {token}")
-    req.add_header("Accept", "application/vnd.github.v3+json")
+import html
+import json
+import os
+import urllib.error
+import urllib.request
+from datetime import datetime
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+TEMPLATE_PATH = ROOT / "assets" / "storybook-telemetry-template.svg"
+OUTPUT_PATH = ROOT / "assets" / "storybook-telemetry.svg"
+
+
+def fetch_json(url: str, token: str | None):
+    request = urllib.request.Request(url)
+    if token:
+        request.add_header("Authorization", f"Bearer {token}")
+    request.add_header("Accept", "application/vnd.github+json")
+    request.add_header("X-GitHub-Api-Version", "2022-11-28")
+
     try:
-        with urllib.request.urlopen(req) as response:
-            return json.loads(response.read().decode())
-    except urllib.error.URLError as e:
-        print(f"Error fetching {url}: {e}")
+        with urllib.request.urlopen(request, timeout=30) as response:
+            return json.loads(response.read().decode("utf-8"))
+    except (urllib.error.URLError, json.JSONDecodeError) as error:
+        print(f"Could not fetch {url}: {error}")
         return None
 
-def main():
+
+def xml_text(value) -> str:
+    """Escape values before placing API data into an SVG text node."""
+    return html.escape(str(value), quote=False)
+
+
+def short(value: str, limit: int) -> str:
+    value = (value or "").splitlines()[0].strip()
+    return value if len(value) <= limit else f"{value[: limit - 3]}..."
+
+
+def main() -> None:
     token = os.environ.get("GITHUB_TOKEN")
-    if not token:
-        print("GITHUB_TOKEN not found. Exiting.")
-        return
+    repository = os.environ.get("GITHUB_REPOSITORY", "DR-WRITES-ALOT/DR-WRITES-ALOT")
+    username = repository.split("/", 1)[0]
 
-    # In GitHub actions, GITHUB_REPOSITORY is "username/repo"
-    repo_name = os.environ.get("GITHUB_REPOSITORY", "DR-WRITES-ALOT/DR-WRITES-ALOT")
-    username = repo_name.split("/")[0]
-
-    print(f"Fetching data for {username}...")
-
-    # 1. User Profile Stats
+    print(f"Refreshing observatory data for {username}...")
     user_data = fetch_json(f"https://api.github.com/users/{username}", token)
     if not user_data:
+        print("Profile data was unavailable; keeping the existing telemetry card.")
         return
 
     followers = user_data.get("followers", 0)
     public_repos = user_data.get("public_repos", 0)
 
-    # 2. Fetch Repos for Stars and Languages
-    repos = fetch_json(f"https://api.github.com/users/{username}/repos?per_page=100&type=owner", token)
-    if not repos:
-        repos = []
+    repos = fetch_json(
+        f"https://api.github.com/users/{username}/repos?per_page=100&type=owner&sort=updated",
+        token,
+    ) or []
 
     total_stars = sum(repo.get("stargazers_count", 0) for repo in repos)
-    
-    # Calculate Language Distribution
-    langs = {}
+
+    # Count the primary language of each non-fork repository. This keeps the
+    # chart legible and matches the language snapshot shown on GitHub profiles.
+    languages: dict[str, int] = {}
     for repo in repos:
-        if repo.get("fork"): continue
-        lang = repo.get("language")
-        if lang:
-            langs[lang] = langs.get(lang, 0) + 1
+        if repo.get("fork"):
+            continue
+        language = repo.get("language")
+        if language:
+            languages[language] = languages.get(language, 0) + 1
 
-    # Sort languages by count
-    sorted_langs = sorted(langs.items(), key=lambda item: item[1], reverse=True)
-    
-    # Fallbacks if < 3 languages
-    while len(sorted_langs) < 3:
-        sorted_langs.append(("N/A", 0))
+    sorted_languages = sorted(languages.items(), key=lambda item: item[1], reverse=True)
+    while len(sorted_languages) < 3:
+        sorted_languages.append(("N/A", 0))
+    top_languages = sorted_languages[:3]
+    total_language_repos = sum(count for _, count in sorted_languages) or 1
 
-    top_3_langs = sorted_langs[:3]
-    total_lang_repos = sum(count for _, count in sorted_langs) or 1 # avoid div by zero
+    events = fetch_json(f"https://api.github.com/users/{username}/events/public?per_page=30", token) or []
+    recent_logs: list[dict[str, str]] = []
+    interesting_events = {
+        "PushEvent",
+        "IssuesEvent",
+        "PullRequestEvent",
+        "CreateEvent",
+        "WatchEvent",
+    }
 
-    # 3. Fetch Recent Activity
-    events = fetch_json(f"https://api.github.com/users/{username}/events/public?per_page=20", token)
-    recent_logs = []
-    
-    if events:
-        for event in events:
-            # We want meaningful events like PushEvent, IssuesEvent, PullRequestEvent, CreateEvent
-            if event["type"] in ["PushEvent", "IssuesEvent", "PullRequestEvent", "CreateEvent", "WatchEvent"]:
-                repo_name = event["repo"]["name"].split("/")[-1]
-                created_at = event["created_at"]
-                
-                # Format Date nicely
-                try:
-                    dt = datetime.strptime(created_at, "%Y-%m-%dT%H:%M:%SZ")
-                    date_str = dt.strftime("%b %d")
-                except:
-                    date_str = created_at.split("T")[0]
+    for event in events:
+        event_type = event.get("type")
+        if event_type not in interesting_events:
+            continue
 
-                # Determine action and description
-                event_type = event["type"]
-                if event_type == "PushEvent":
-                    action = "push"
-                    commits = event.get("payload", {}).get("commits", [])
-                    desc = commits[0]["message"] if commits else "Pushed to branch"
-                elif event_type == "IssuesEvent":
-                    action = "issue"
-                    desc = event.get("payload", {}).get("issue", {}).get("title", "Opened issue")
-                elif event_type == "PullRequestEvent":
-                    action = "pr"
-                    desc = event.get("payload", {}).get("pull_request", {}).get("title", "Opened PR")
-                elif event_type == "CreateEvent":
-                    action = "create"
-                    desc = f"Created {event.get('payload', {}).get('ref_type', 'repo')}"
-                elif event_type == "WatchEvent":
-                    action = "star"
-                    desc = "Starred the repository"
-                
-                # Clean up description (truncate if too long)
-                desc = desc.split("\n")[0]
-                if len(desc) > 35: desc = desc[:32] + "..."
+        repo_name = event.get("repo", {}).get("name", "").split("/")[-1] or "N/A"
+        created_at = event.get("created_at", "")
+        try:
+            date_value = datetime.strptime(created_at, "%Y-%m-%dT%H:%M:%SZ")
+            date_label = date_value.strftime("%b %d")
+        except ValueError:
+            date_label = created_at.split("T")[0] if created_at else "N/A"
 
-                recent_logs.append({
-                    "date": date_str,
-                    "action": action,
-                    "repo": repo_name,
-                    "desc": desc
-                })
+        payload = event.get("payload", {})
+        if event_type == "PushEvent":
+            action = "push"
+            commits = payload.get("commits", [])
+            description = commits[0].get("message", "Pushed to branch") if commits else "Pushed to branch"
+        elif event_type == "IssuesEvent":
+            action = "issue"
+            description = payload.get("issue", {}).get("title", "Opened issue")
+        elif event_type == "PullRequestEvent":
+            action = "pr"
+            description = payload.get("pull_request", {}).get("title", "Opened pull request")
+        elif event_type == "CreateEvent":
+            action = "create"
+            description = f"Created {payload.get('ref_type', 'repository')}"
+        else:
+            action = "star"
+            description = "Starred a repository"
 
-                if len(recent_logs) >= 3:
-                    break
+        recent_logs.append(
+            {
+                "date": date_label,
+                "action": action,
+                "repo": short(repo_name, 16),
+                "desc": short(description, 35),
+            }
+        )
+        if len(recent_logs) == 3:
+            break
 
-    # Fallbacks if < 3 logs
     while len(recent_logs) < 3:
-        recent_logs.append({"date": "N/A", "action": "none", "repo": "N/A", "desc": "No recent activity"})
+        recent_logs.append(
+            {"date": "N/A", "action": "quiet", "repo": "N/A", "desc": "No recent public activity"}
+        )
 
-    # 4. Inject into Template
-    template_path = "assets/jules-telemetry-template.svg"
-    output_path = "assets/jules-telemetry.svg"
-    
-    with open(template_path, "r", encoding="utf-8") as f:
-        svg_content = f.read()
+    svg = TEMPLATE_PATH.read_text(encoding="utf-8")
+    replacements = {
+        "{{STARS}}": xml_text(total_stars),
+        "{{REPOS}}": xml_text(public_repos),
+        "{{FOLLOWERS}}": xml_text(followers),
+    }
 
-    # Replacements
-    svg_content = svg_content.replace("{{STARS}}", str(total_stars))
-    svg_content = svg_content.replace("{{REPOS}}", str(public_repos))
-    svg_content = svg_content.replace("{{FOLLOWERS}}", str(followers))
+    for index, (language, count) in enumerate(top_languages, start=1):
+        percentage = (count / total_language_repos) * 100 if count else 0
+        bar_width = round((percentage / 100) * 312) if percentage else 0
+        replacements.update(
+            {
+                f"{{{{LANG{index}_NAME}}}}": xml_text(language),
+                f"{{{{LANG{index}_PCT}}}}": str(round(percentage)),
+                f"{{{{LANG{index}_WIDTH}}}}": str(bar_width),
+            }
+        )
 
-    for i in range(3):
-        lang_name, lang_count = top_3_langs[i]
-        pct = (lang_count / total_lang_repos) * 100 if lang_count > 0 else 0
-        
-        # Max width of the SVG bar is 220px
-        bar_width = max(10, int((pct / 100) * 220)) if pct > 0 else 0
-        
-        svg_content = svg_content.replace(f"{{{{LANG{i+1}_NAME}}}}", lang_name)
-        svg_content = svg_content.replace(f"{{{{LANG{i+1}_PCT}}}}", str(int(pct)))
-        svg_content = svg_content.replace(f"{{{{LANG{i+1}_WIDTH}}}}", str(bar_width))
+    for index, log in enumerate(recent_logs, start=1):
+        replacements.update(
+            {
+                f"{{{{LOG{index}_DATE}}}}": xml_text(log["date"]),
+                f"{{{{LOG{index}_TYPE}}}}": xml_text(log["action"]),
+                f"{{{{LOG{index}_REPO}}}}": xml_text(log["repo"]),
+                f"{{{{LOG{index}_MSG}}}}": xml_text(log["desc"]),
+            }
+        )
 
-    for i in range(3):
-        log = recent_logs[i]
-        svg_content = svg_content.replace(f"{{{{LOG{i+1}_DATE}}}}", log["date"])
-        svg_content = svg_content.replace(f"{{{{LOG{i+1}_TYPE}}}}", log["action"])
-        
-        # Ensure repo name isn't too long to break layout
-        repo_disp = log["repo"]
-        if len(repo_disp) > 16: repo_disp = repo_disp[:14] + ".."
-        svg_content = svg_content.replace(f"{{{{LOG{i+1}_REPO}}}}", repo_disp)
-        
-        svg_content = svg_content.replace(f"{{{{LOG{i+1}_MSG}}}}", log["desc"])
+    for placeholder, value in replacements.items():
+        svg = svg.replace(placeholder, value)
 
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write(svg_content)
-        
-    print("Telemetry SVG generated successfully!")
+    OUTPUT_PATH.write_text(svg, encoding="utf-8")
+    print(f"Observatory SVG generated at {OUTPUT_PATH.relative_to(ROOT)}")
+
 
 if __name__ == "__main__":
     main()

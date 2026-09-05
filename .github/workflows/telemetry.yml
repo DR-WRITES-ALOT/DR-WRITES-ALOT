@@ -1,8 +1,8 @@
-name: Update Telemetry Dashboard
+name: Refresh profile observatory
 
 on:
   schedule:
-    # Run at midnight every day
+    # Keep the profile snapshot fresh once a day.
     - cron: "0 0 * * *"
   workflow_dispatch:
   push:
@@ -14,27 +14,26 @@ permissions:
   contents: write
 
 jobs:
-  update-telemetry:
+  update-observatory:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Check out profile
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Generate Telemetry SVG
+      - name: Generate observatory SVG
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python scripts/update_telemetry.py
+        run: python scripts/update_telemetry.py
 
-      - name: Commit and Push changes
+      - name: Commit refreshed snapshot
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/jules-telemetry.svg
-          git commit -m "chore: auto-update telemetry dashboard" || exit 0
+          git add assets/storybook-telemetry.svg
+          git commit -m "chore: refresh profile observatory" || exit 0
           git push
