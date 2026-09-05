@@ -1,4 +1,4 @@
-name: Rebuild profile console
+name: Rebuild moonlit atlas
 
 on:
   schedule:
@@ -40,6 +40,6 @@ jobs:
           if git diff --quiet && git diff --staged --quiet; then
             echo "No generated asset changes"
           else
-            git commit -m "chore: refresh profile console [skip ci]"
+            git commit -m "chore: refresh moonlit atlas [skip ci]"
             git push origin main
           fi

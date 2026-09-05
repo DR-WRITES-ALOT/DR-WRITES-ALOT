@@ -1,4 +1,4 @@
-"""Public-profile data for the generated README console.
+"""Public-profile data for the generated README artwork.
 
 The profile deliberately uses GitHub's public REST endpoints and the public
 contribution calendar only. All callers get deterministic, non-empty layout
@@ -37,7 +37,7 @@ def _request(url: str, accept: str = "application/vnd.github+json") -> str:
     request = urllib.request.Request(
         url,
         headers={
-            "User-Agent": "DR-WRITES-ALOT-profile-console",
+            "User-Agent": "DR-WRITES-ALOT-moonlit-atlas",
             "Accept": accept,
         },
     )

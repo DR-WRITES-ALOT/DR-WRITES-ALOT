@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="34" viewBox="0 0 900 34" role="img" aria-label="animated constellation divider">
+  <defs><linearGradient id="trail" x1="0" x2="1"><stop stop-color="#f4a9c5" stop-opacity="0"/><stop offset=".5" stop-color="#ffd69a"/><stop offset="1" stop-color="#c7a7ff" stop-opacity="0"/></linearGradient></defs>
+  <path d="M0 17 C150 4 250 30 370 17 S620 4 900 17" fill="none" stroke="url(#trail)" stroke-width="1.5" stroke-dasharray="2 12"><animate attributeName="stroke-dashoffset" from="0" to="-220" dur="9s" repeatCount="indefinite"/></path>
+  <path d="M440 17 l10 -8 10 8-10 8z" fill="#0c0a22" stroke="#ffd69a" stroke-opacity=".8"/>
+  <circle cx="130" cy="14" r="2" fill="#a9ddff" class="twinkle"/><circle cx="770" cy="21" r="2" fill="#f4a9c5" class="twinkle alt"/>
+</svg>

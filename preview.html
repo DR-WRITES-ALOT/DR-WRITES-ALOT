@@ -3,47 +3,47 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sreejith SH · Profile console preview</title>
+  <title>Sreejith SH · Moonlit atlas preview</title>
   <style>
-    :root { color-scheme: dark; --bg: #070b17; --panel: #0e1427; --line: #273552; --text: #edf2ff; --muted: #71809e; --mint: #8cf7d6; }
+    :root { color-scheme: dark; --night: #0b0920; --panel: #181334; --line: #514375; --text: #f6f1ff; --muted: #b7acce; --gold: #ffd69a; --pink: #f4a9c5; }
     * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; padding: 32px 16px 72px; color: var(--text); background: radial-gradient(circle at 20% 0%, #25204a 0, transparent 32rem), radial-gradient(circle at 90% 15%, #18334a 0, transparent 28rem), var(--bg); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    main { width: min(100%, 920px); margin: auto; padding: 20px; background: rgba(14, 20, 39, .88); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 30px 100px rgba(0,0,0,.42); }
+    body { margin: 0; min-height: 100vh; padding: 30px 14px 76px; color: var(--text); background: radial-gradient(circle at 15% 0%, #35265b 0, transparent 34rem), radial-gradient(circle at 90% 10%, #26385a 0, transparent 30rem), var(--night); font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.55; }
+    main { width: min(100%, 940px); margin: auto; padding: 18px; background: rgba(24, 19, 52, .72); border: 1px solid rgba(199, 167, 255, .28); border-radius: 28px; box-shadow: 0 35px 100px rgba(0, 0, 0, .38); backdrop-filter: blur(12px); }
     img { display: block; max-width: 100%; height: auto; }
     .wide { width: 100%; }
-    .small { width: min(100%, 860px); margin: 0 auto; }
     .hero { width: 100%; }
-    .tagline { margin: 14px 0 26px; text-align: center; color: var(--muted); font-size: 13px; }
-    code { color: var(--mint); }
-    .split { display: flex; align-items: flex-start; justify-content: center; gap: 6px; }
-    .split img { width: 50%; }
-    .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 22px 0; }
-    .links a { padding: 9px 13px; color: var(--text); text-decoration: none; border: 1px solid var(--line); border-radius: 5px; background: #141d35; font-size: 12px; }
-    .links a:hover { border-color: var(--mint); color: var(--mint); }
-    .note { margin: 20px auto 0; max-width: 760px; color: var(--muted); text-align: center; font-size: 12px; line-height: 1.7; }
-    @media (max-width: 700px) { body { padding: 8px 5px 40px; } main { padding: 8px; } .split { flex-direction: column; gap: 12px; } .split img { width: 100%; } }
+    .nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 18px 0 8px; }
+    .nav a { padding: 5px 12px; border: 1px solid rgba(199, 167, 255, .3); border-radius: 999px; color: var(--muted); text-decoration: none; font-size: 13px; }
+    .nav a:hover { color: var(--gold); border-color: var(--gold); }
+    h2 { margin: 28px 0 10px; color: var(--gold); font: 700 24px Georgia, serif; }
+    p { color: var(--muted); }
+    .projects a { display: block; margin: 10px 0; }
+    .note { max-width: 760px; margin: 24px auto 4px; color: var(--muted); text-align: center; font-size: 12px; }
+    .contact { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+    .contact a { padding: 8px 14px; color: var(--text); border: 1px solid var(--line); border-radius: 999px; text-decoration: none; }
+    @media (max-width: 700px) { body { padding: 8px 5px 40px; } main { padding: 8px; border-radius: 20px; } }
   </style>
 </head>
 <body>
   <main>
-    <img class="hero" src="./assets/hero.svg" alt="Dreamy terminal hero" />
-    <p class="tagline"><code>builds useful things</code> · <code>learns in public</code> · <code>keeps a side quest open</code></p>
-    <img class="wide" src="./assets/banner_work.svg" alt="Selected work" />
-    <a href="https://github.com/DR-WRITES-ALOT/SnapHarbor"><img class="wide" src="./assets/card_snapharbor.svg" alt="SnapHarbor" /></a>
-    <a href="https://github.com/DR-WRITES-ALOT/FLOW"><img class="wide" src="./assets/card_flow.svg" alt="FLOW" /></a>
-    <a href="https://github.com/DR-WRITES-ALOT/rapid-response-dronemapper"><img class="wide" src="./assets/card_drone_mapper.svg" alt="Rapid Response Drone Mapper" /></a>
-    <img class="wide" src="./assets/divider.svg" alt="" />
-    <img class="wide" src="./assets/banner_telemetry.svg" alt="Telemetry" />
-    <div class="split"><img src="./assets/stats.svg" alt="Live stats" /><img src="./assets/ops.svg" alt="Recent activity" /></div>
-    <img class="small" src="./assets/contrib.svg" alt="Contribution scan" />
-    <img class="wide" src="./assets/divider.svg" alt="" />
-    <img class="wide" src="./assets/banner_stack.svg" alt="Loadout" />
-    <img class="wide" src="./assets/stack.svg" alt="Technology stack" />
-    <img class="wide" src="./assets/divider.svg" alt="" />
-    <img class="wide" src="./assets/banner_contact.svg" alt="Contact" />
-    <img class="wide" src="./assets/contact.svg" alt="Contact console" />
-    <div class="links"><a href="https://github.com/DR-WRITES-ALOT">GitHub</a><a href="https://www.linkedin.com/in/sreejith-s-h-810803243/">LinkedIn</a><a href="https://github.com/DR-WRITES-ALOT?tab=repositories">Repositories</a></div>
-    <p class="note">This local preview uses the same generated assets as the GitHub profile README. The panels are rebuilt from public GitHub data by the profile workflow.</p>
+    <img class="hero" src="./assets/atlas-hero.svg" alt="Moonlit atlas hero" />
+    <nav class="nav" aria-label="Preview navigation"><a href="#notes">field notes</a><a href="#work">selected work</a><a href="#observatory">observatory</a><a href="#coordinates">coordinates</a></nav>
+    <img class="wide" src="./assets/atlas-divider.svg" alt="" />
+
+    <section id="notes"><h2>✦ Field notes</h2><p>I’m Sreejith SH, a Computer Science student at VIT, class of 2029, and an aspiring web developer.</p><img class="wide" src="./assets/atlas-field-notes.svg" alt="Current orbit" /></section>
+    <img class="wide" src="./assets/atlas-divider.svg" alt="" />
+
+    <section id="work" class="projects"><h2>✦ Selected work</h2><a href="https://github.com/DR-WRITES-ALOT/SnapHarbor"><img class="wide" src="./assets/atlas-project-snapharbor.svg" alt="SnapHarbor" /></a><a href="https://github.com/DR-WRITES-ALOT/FLOW"><img class="wide" src="./assets/atlas-project-flow.svg" alt="FLOW" /></a><a href="https://github.com/DR-WRITES-ALOT/rapid-response-dronemapper"><img class="wide" src="./assets/atlas-project-drone.svg" alt="Rapid Response Drone Mapper" /></a></section>
+    <img class="wide" src="./assets/atlas-divider.svg" alt="" />
+
+    <section id="observatory"><h2>✦ Observatory</h2><img class="wide" src="./assets/atlas-observatory.svg" alt="GitHub observatory" /><img class="wide" src="./assets/atlas-activity.svg" alt="Recent activity" /><img class="wide" src="./assets/atlas-contributions.svg" alt="Contribution constellation" /></section>
+    <img class="wide" src="./assets/atlas-divider.svg" alt="" />
+
+    <section><h2>✦ Constellation of tools</h2><img class="wide" src="./assets/atlas-stack.svg" alt="Technology constellation" /></section>
+    <img class="wide" src="./assets/atlas-divider.svg" alt="" />
+
+    <section id="coordinates"><h2>✦ Coordinates</h2><img class="wide" src="./assets/atlas-contact.svg" alt="Contact coordinates" /><div class="contact"><a href="https://github.com/DR-WRITES-ALOT">GitHub</a><a href="https://www.linkedin.com/in/sreejith-s-h-810803243/">LinkedIn</a><a href="https://github.com/DR-WRITES-ALOT?tab=repositories">Repositories</a></div></section>
+    <p class="note">This preview uses the same generated artwork as the GitHub README. The profile panels are refreshed by GitHub Actions.</p>
   </main>
 </body>
 </html>

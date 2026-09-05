@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">Sreejith SH — moonlit atlas</title>
+  <desc id="desc">A celestial editorial hero introducing Sreejith SH, a VIT computer science student and aspiring web developer.</desc>
+  <defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0c0a22"/><stop offset=".58" stop-color="#211842"/><stop offset="1" stop-color="#4d2859"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#302866" stop-opacity=".9"/><stop offset="1" stop-color="#1a153b" stop-opacity=".9"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff1bf"/><stop offset="1" stop-color="#ffd69a"/></linearGradient>
+  <linearGradient id="rose" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f4a9c5"/><stop offset="1" stop-color="#c7a7ff"/></linearGradient>
+  <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="16"/></filter>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .twinkle { animation: twinkle 3.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .twinkle.alt { animation-delay: -1.4s; }
+    .twinkle.late { animation-delay: -2.7s; }
+    .float { animation: float 6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .float.alt { animation-delay: -2.3s; }
+    .float.late { animation-delay: -4.1s; }
+    .orbit { animation: orbit 18s linear infinite; transform-box: fill-box; transform-origin: 700px 176px; }
+    .orbit.slow { animation-duration: 28s; animation-direction: reverse; }
+    .reveal { animation: reveal 1.1s ease-out both; }
+    .reveal.late { animation-delay: .22s; }
+    .pulse { animation: pulse 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .pulse.alt { animation-delay: -1.6s; }
+    @keyframes twinkle { 0%,100% { opacity:.28; transform:scale(.7); } 48% { opacity:1; transform:scale(1.22); } }
+    @keyframes float { 0%,100% { transform:translateY(0) rotate(0deg); } 50% { transform:translateY(-7px) rotate(1deg); } }
+    @keyframes orbit { to { transform:rotate(360deg); } }
+    @keyframes reveal { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes pulse { 0%,100% { opacity:.42; transform:scale(.86); } 50% { opacity:1; transform:scale(1.08); } }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; } }
+  </style>
+</defs>
+  <rect x="2" y="2" width="896" height="416" rx="30" fill="url(#sky)" stroke="#806ca8" stroke-opacity=".55" stroke-width="2"/>
+  <circle cx="162" cy="80" r="118" fill="#f4a9c5" opacity=".08" filter="url(#blur)"/>
+  <circle cx="760" cy="342" r="160" fill="#c7a7ff" opacity=".12" filter="url(#blur)"/>
+  <circle cx="615" cy="16" r="100" fill="#a9ddff" opacity=".06" filter="url(#blur)"/>
+  <g aria-hidden="true"><path d="M46 42.5 l1.54 3.9600000000000004 l3.9600000000000004 1.54 l-3.9600000000000004 1.54 l-1.54 3.9600000000000004 l-1.54 -3.9600000000000004 l-3.9600000000000004 -1.54 l3.9600000000000004 -1.54z" fill="#ffd69a" class="twinkle " style="animation-delay:-0.00s"/>
+  <path d="M98 112.25 l1.0499999999999998 2.7 l2.7 1.0499999999999998 l-2.7 1.0499999999999998 l-1.0499999999999998 2.7 l-1.0499999999999998 -2.7 l-2.7 -1.0499999999999998 l2.7 -1.0499999999999998z" fill="#ffd69a" class="twinkle alt" style="animation-delay:-0.37s"/>
+  <path d="M171 35.5 l1.26 3.24 l3.24 1.26 l-3.24 1.26 l-1.26 3.24 l-1.26 -3.24 l-3.24 -1.26 l3.24 -1.26z" fill="#ffd69a" class="twinkle late" style="animation-delay:-0.74s"/>
+  <path d="M244 95.75 l1.47 3.7800000000000002 l3.7800000000000002 1.47 l-3.7800000000000002 1.47 l-1.47 3.7800000000000002 l-1.47 -3.7800000000000002 l-3.7800000000000002 -1.47 l3.7800000000000002 -1.47z" fill="#ffd69a" class="twinkle alt" style="animation-delay:-1.11s"/>
+  <path d="M315 48.5 l0.9799999999999999 2.52 l2.52 0.9799999999999999 l-2.52 0.9799999999999999 l-0.9799999999999999 2.52 l-0.9799999999999999 -2.52 l-2.52 -0.9799999999999999 l2.52 -0.9799999999999999z" fill="#ffd69a" class="twinkle " style="animation-delay:-1.48s"/>
+  <path d="M389 121.75 l1.19 3.06 l3.06 1.19 l-3.06 1.19 l-1.19 3.06 l-1.19 -3.06 l-3.06 -1.19 l3.06 -1.19z" fill="#ffd69a" class="twinkle late" style="animation-delay:-1.85s"/>
+  <path d="M480 33.75 l1.47 3.7800000000000002 l3.7800000000000002 1.47 l-3.7800000000000002 1.47 l-1.47 3.7800000000000002 l-1.47 -3.7800000000000002 l-3.7800000000000002 -1.47 l3.7800000000000002 -1.47z" fill="#ffd69a" class="twinkle alt" style="animation-delay:-2.22s"/>
+  <path d="M547 88.25 l1.0499999999999998 2.7 l2.7 1.0499999999999998 l-2.7 1.0499999999999998 l-1.0499999999999998 2.7 l-1.0499999999999998 -2.7 l-2.7 -1.0499999999999998 l2.7 -1.0499999999999998z" fill="#ffd69a" class="twinkle " style="animation-delay:-0.00s"/>
+  <path d="M602 38.5 l1.26 3.24 l3.24 1.26 l-3.24 1.26 l-1.26 3.24 l-1.26 -3.24 l-3.24 -1.26 l3.24 -1.26z" fill="#ffd69a" class="twinkle late" style="animation-delay:-0.37s"/>
+  <path d="M805 41.25 l1.0499999999999998 2.7 l2.7 1.0499999999999998 l-2.7 1.0499999999999998 l-1.0499999999999998 2.7 l-1.0499999999999998 -2.7 l-2.7 -1.0499999999999998 l2.7 -1.0499999999999998z" fill="#ffd69a" class="twinkle " style="animation-delay:-0.74s"/>
+  <path d="M853 113.75 l1.47 3.7800000000000002 l3.7800000000000002 1.47 l-3.7800000000000002 1.47 l-1.47 3.7800000000000002 l-1.47 -3.7800000000000002 l-3.7800000000000002 -1.47 l3.7800000000000002 -1.47z" fill="#ffd69a" class="twinkle alt" style="animation-delay:-1.11s"/>
+  <path d="M52 301.0 l1.1199999999999999 2.8800000000000003 l2.8800000000000003 1.1199999999999999 l-2.8800000000000003 1.1199999999999999 l-1.1199999999999999 2.8800000000000003 l-1.1199999999999999 -2.8800000000000003 l-2.8800000000000003 -1.1199999999999999 l2.8800000000000003 -1.1199999999999999z" fill="#ffd69a" class="twinkle late" style="animation-delay:-1.48s"/>
+  <path d="M200 342.5 l1.26 3.24 l3.24 1.26 l-3.24 1.26 l-1.26 3.24 l-1.26 -3.24 l-3.24 -1.26 l3.24 -1.26z" fill="#ffd69a" class="twinkle " style="animation-delay:-1.85s"/>
+  <path d="M422 318.25 l1.0499999999999998 2.7 l2.7 1.0499999999999998 l-2.7 1.0499999999999998 l-1.0499999999999998 2.7 l-1.0499999999999998 -2.7 l-2.7 -1.0499999999999998 l2.7 -1.0499999999999998z" fill="#ffd69a" class="twinkle alt" style="animation-delay:-2.22s"/>
+  <path d="M558 348.75 l1.47 3.7800000000000002 l3.7800000000000002 1.47 l-3.7800000000000002 1.47 l-1.47 3.7800000000000002 l-1.47 -3.7800000000000002 l-3.7800000000000002 -1.47 l3.7800000000000002 -1.47z" fill="#ffd69a" class="twinkle late" style="animation-delay:-0.00s"/>
+  <path d="M833 324.0 l1.1199999999999999 2.8800000000000003 l2.8800000000000003 1.1199999999999999 l-2.8800000000000003 1.1199999999999999 l-1.1199999999999999 2.8800000000000003 l-1.1199999999999999 -2.8800000000000003 l-2.8800000000000003 -1.1199999999999999 l2.8800000000000003 -1.1199999999999999z" fill="#ffd69a" class="twinkle alt" style="animation-delay:-0.37s"/></g>
+  <path d="M48 270 C165 220 255 302 362 251 S557 220 650 266 S789 313 866 247" fill="none" stroke="url(#rose)" stroke-opacity=".28" stroke-width="1.5" stroke-dasharray="2 10"/>
+  <path d="M80 210 L171 168 L244 205 L315 139 L389 176" fill="none" stroke="#a9ddff" stroke-opacity=".24" stroke-width="1"/>
+  <g fill="#ffd69a" class="pulse"><circle cx="80" cy="210" r="3"/><circle cx="171" cy="168" r="2.5"/><circle cx="244" cy="205" r="3"/><circle cx="315" cy="139" r="2.5"/><circle cx="389" cy="176" r="3"/></g>
+
+  <g class="reveal" transform="translate(58 55)">
+    <text x="0" y="0" fill="#ffd69a" font-size="11" font-weight="700" letter-spacing="2.7" font-family="'SFMono-Regular',ui-monospace,'JetBrains Mono',Consolas,monospace">FIELD NOTE 01 / 04 · SREEJITH SH</text>
+    <text x="0" y="76" fill="#f6f1ff" font-size="48" font-weight="700" font-family="Georgia,'Times New Roman',serif">Building small worlds</text>
+    <text x="0" y="130" fill="url(#rose)" font-size="48" font-weight="700" font-family="Georgia,'Times New Roman',serif">with curious edges.</text>
+    <text x="0" y="174" fill="#f6f1ff" opacity=".9" font-size="17" font-family="'Avenir Next','Segoe UI',Arial,sans-serif">Computer Science student at VIT ’29 · aspiring web developer</text>
+    <text x="0" y="202" fill="#b7acce" font-size="15" font-family="'Avenir Next','Segoe UI',Arial,sans-serif">Turning questions into interfaces, tools, simulations, and side quests.</text>
+    <rect x="0" y="230" width="187" height="30" rx="15" fill="#ffffff" fill-opacity=".07" stroke="#f4a9c5" stroke-opacity=".52"/>
+    <text x="93.5" y="250" text-anchor="middle" fill="#f6f1ff" font-size="12" font-weight="600" font-family="'Avenir Next','Segoe UI',Arial,sans-serif">web · systems · wonder</text>
+    <text x="0" y="310" fill="#b7acce" font-size="11" letter-spacing="1" font-family="'SFMono-Regular',ui-monospace,'JetBrains Mono',Consolas,monospace">DR-WRITES-ALOT / 2026</text>
+  </g>
+
+  <g transform="translate(700 177)" aria-hidden="true">
+    <ellipse rx="143" ry="68" fill="none" stroke="#c7a7ff" stroke-opacity=".25" stroke-width="1.5" transform="rotate(-18)"/>
+    <ellipse rx="116" ry="49" fill="none" stroke="#a9ddff" stroke-opacity=".2" stroke-width="1" transform="rotate(33)"/>
+    <circle r="68" fill="url(#gold)" filter="url(#glow)" class="float"/>
+    <circle cx="25" cy="-21" r="68" fill="#2b2352"/>
+    <circle cx="-21" cy="22" r="7" fill="#d3b68d" opacity=".27"/>
+    <circle cx="-38" cy="-20" r="4" fill="#d3b68d" opacity=".23"/>
+    <circle cx="12" cy="31" r="3" fill="#d3b68d" opacity=".3"/>
+    <g class="orbit"><circle cx="143" cy="0" r="7" fill="#f4a9c5" stroke="#f6f1ff" stroke-opacity=".7"/></g>
+    <g class="orbit slow"><circle cx="-116" cy="0" r="5" fill="#a9ddff"/></g>
+    <path d="M-8 91 q18 13 36 0" fill="none" stroke="#ffd69a" stroke-opacity=".65" stroke-width="1.5"/>
+    <text x="0" y="118" text-anchor="middle" fill="#b7acce" font-size="11" letter-spacing="1.7" font-family="'SFMono-Regular',ui-monospace,'JetBrains Mono',Consolas,monospace">MOONLIT ATLAS</text>
+  </g>
+  <path d="M30 386 H870" stroke="url(#rose)" stroke-opacity=".38"/>
+  <circle cx="449" cy="386" r="4" fill="#ffd69a" class="twinkle"/>
+</svg>
