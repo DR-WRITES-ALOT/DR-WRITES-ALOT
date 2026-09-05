@@ -3,47 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sreejith SH · Moonlit atlas preview</title>
+  <title>Sreejith SH · Moonlit atlas</title>
   <style>
-    :root { color-scheme: dark; --night: #0b0920; --panel: #181334; --line: #514375; --text: #f6f1ff; --muted: #b7acce; --gold: #ffd69a; --pink: #f4a9c5; }
+    :root { color-scheme: dark; --night: #0b0920; --panel: #181334; --line: #514375; }
     * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; padding: 30px 14px 76px; color: var(--text); background: radial-gradient(circle at 15% 0%, #35265b 0, transparent 34rem), radial-gradient(circle at 90% 10%, #26385a 0, transparent 30rem), var(--night); font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.55; }
+    body { margin: 0; min-height: 100vh; padding: 30px 14px 70px; background: radial-gradient(circle at 15% 0%, #35265b 0, transparent 34rem), radial-gradient(circle at 90% 10%, #26385a 0, transparent 30rem), var(--night); }
     main { width: min(100%, 940px); margin: auto; padding: 18px; background: rgba(24, 19, 52, .72); border: 1px solid rgba(199, 167, 255, .28); border-radius: 28px; box-shadow: 0 35px 100px rgba(0, 0, 0, .38); backdrop-filter: blur(12px); }
     img { display: block; max-width: 100%; height: auto; }
     .wide { width: 100%; }
-    .hero { width: 100%; }
-    .nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 18px 0 8px; }
-    .nav a { padding: 5px 12px; border: 1px solid rgba(199, 167, 255, .3); border-radius: 999px; color: var(--muted); text-decoration: none; font-size: 13px; }
-    .nav a:hover { color: var(--gold); border-color: var(--gold); }
-    h2 { margin: 28px 0 10px; color: var(--gold); font: 700 24px Georgia, serif; }
-    p { color: var(--muted); }
-    .projects a { display: block; margin: 10px 0; }
-    .note { max-width: 760px; margin: 24px auto 4px; color: var(--muted); text-align: center; font-size: 12px; }
-    .contact { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
-    .contact a { padding: 8px 14px; color: var(--text); border: 1px solid var(--line); border-radius: 999px; text-decoration: none; }
+    .button { display: inline-block; vertical-align: middle; margin: 4px; }
     @media (max-width: 700px) { body { padding: 8px 5px 40px; } main { padding: 8px; border-radius: 20px; } }
   </style>
 </head>
 <body>
   <main>
-    <img class="hero" src="./assets/atlas-hero.svg" alt="Moonlit atlas hero" />
-    <nav class="nav" aria-label="Preview navigation"><a href="#notes">field notes</a><a href="#work">selected work</a><a href="#observatory">observatory</a><a href="#coordinates">coordinates</a></nav>
+    <img class="wide" src="./assets/atlas-hero.svg" alt="" />
     <img class="wide" src="./assets/atlas-divider.svg" alt="" />
-
-    <section id="notes"><h2>✦ Field notes</h2><p>I’m Sreejith SH, a Computer Science student at VIT, class of 2029, and an aspiring web developer.</p><img class="wide" src="./assets/atlas-field-notes.svg" alt="Current orbit" /></section>
+    <img class="wide" src="./assets/atlas-field-notes.svg" alt="" />
     <img class="wide" src="./assets/atlas-divider.svg" alt="" />
-
-    <section id="work" class="projects"><h2>✦ Selected work</h2><a href="https://github.com/DR-WRITES-ALOT/SnapHarbor"><img class="wide" src="./assets/atlas-project-snapharbor.svg" alt="SnapHarbor" /></a><a href="https://github.com/DR-WRITES-ALOT/FLOW"><img class="wide" src="./assets/atlas-project-flow.svg" alt="FLOW" /></a><a href="https://github.com/DR-WRITES-ALOT/rapid-response-dronemapper"><img class="wide" src="./assets/atlas-project-drone.svg" alt="Rapid Response Drone Mapper" /></a></section>
+    <a href="https://github.com/DR-WRITES-ALOT/SnapHarbor"><img class="wide" src="./assets/atlas-project-snapharbor.svg" alt="" /></a>
+    <a href="https://github.com/DR-WRITES-ALOT/FLOW"><img class="wide" src="./assets/atlas-project-flow.svg" alt="" /></a>
+    <a href="https://github.com/DR-WRITES-ALOT/rapid-response-dronemapper"><img class="wide" src="./assets/atlas-project-drone.svg" alt="" /></a>
     <img class="wide" src="./assets/atlas-divider.svg" alt="" />
-
-    <section id="observatory"><h2>✦ Observatory</h2><img class="wide" src="./assets/atlas-observatory.svg" alt="GitHub observatory" /><img class="wide" src="./assets/atlas-activity.svg" alt="Recent activity" /><img class="wide" src="./assets/atlas-contributions.svg" alt="Contribution constellation" /></section>
+    <img class="wide" src="./assets/atlas-observatory.svg" alt="" />
+    <img class="wide" src="./assets/atlas-activity.svg" alt="" />
+    <img class="wide" src="./assets/atlas-contributions.svg" alt="" />
     <img class="wide" src="./assets/atlas-divider.svg" alt="" />
-
-    <section><h2>✦ Constellation of tools</h2><img class="wide" src="./assets/atlas-stack.svg" alt="Technology constellation" /></section>
+    <img class="wide" src="./assets/atlas-stack.svg" alt="" />
     <img class="wide" src="./assets/atlas-divider.svg" alt="" />
-
-    <section id="coordinates"><h2>✦ Coordinates</h2><img class="wide" src="./assets/atlas-contact.svg" alt="Contact coordinates" /><div class="contact"><a href="https://github.com/DR-WRITES-ALOT">GitHub</a><a href="https://www.linkedin.com/in/sreejith-s-h-810803243/">LinkedIn</a><a href="https://github.com/DR-WRITES-ALOT?tab=repositories">Repositories</a></div></section>
-    <p class="note">This preview uses the same generated artwork as the GitHub README. The profile panels are refreshed by GitHub Actions.</p>
+    <img class="wide" src="./assets/atlas-contact.svg" alt="" />
+    <div style="text-align:center">
+      <a class="button" href="https://github.com/DR-WRITES-ALOT"><img src="./assets/atlas-link-github.svg" alt="" /></a>
+      <a class="button" href="https://www.linkedin.com/in/sreejith-s-h-810803243/"><img src="./assets/atlas-link-linkedin.svg" alt="" /></a>
+      <a class="button" href="https://github.com/DR-WRITES-ALOT?tab=repositories"><img src="./assets/atlas-link-repos.svg" alt="" /></a>
+    </div>
   </main>
 </body>
 </html>

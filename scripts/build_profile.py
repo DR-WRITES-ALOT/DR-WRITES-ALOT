@@ -422,6 +422,20 @@ def build_contact() -> None:
     write_svg("atlas-contact.svg", svg)
 
 
+def build_link_button(filename: str, label: str, detail: str, color: str) -> None:
+    width = 250 if len(label) < 12 else 310
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="58" viewBox="0 0 {width} 58" role="img" aria-label="{esc(label)} {esc(detail)}">
+  {common_defs()}
+  <rect x="2" y="2" width="{width - 4}" height="54" rx="27" fill="url(#glass)" stroke="{color}" stroke-opacity=".5" stroke-width="1.5"/>
+  <circle cx="31" cy="29" r="10" fill="{color}" fill-opacity=".13" stroke="{color}" stroke-opacity=".65"/>
+  <circle cx="31" cy="29" r="3" fill="{color}" class="pulse"/>
+  <text x="55" y="27" fill="{TEXT}" font-size="13" font-weight="700" font-family="{SANS}">{esc(label)}</text>
+  <text x="55" y="42" fill="{MUTED}" font-size="10" font-family="{MONO}">{esc(detail)}</text>
+</svg>
+'''
+    write_svg(filename, svg)
+
+
 def main() -> None:
     data = collect()
     print("== building moonlit atlas profile ==")
@@ -434,6 +448,9 @@ def main() -> None:
     build_contributions(data)
     build_stack()
     build_contact()
+    build_link_button("atlas-link-github.svg", "GitHub", "@DR-WRITES-ALOT", PINK)
+    build_link_button("atlas-link-linkedin.svg", "LinkedIn", "sreejith-s-h-810803243", LILAC)
+    build_link_button("atlas-link-repos.svg", "Repositories", "explore the archive", GOLD)
     print("== moonlit atlas ready ==")
 
 
