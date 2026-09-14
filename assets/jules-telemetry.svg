@@ -107,28 +107,28 @@
       <!-- Log 1 -->
       <g transform="translate(30, 75)">
         <rect width="8" height="8" rx="4" fill="#FFB347"/>
-        <text x="20" y="4" class="log-date" dominant-baseline="central">[Sep 05]</text>
-        <text x="110" y="4" class="log-action" dominant-baseline="central">push</text>
-        <text x="175" y="4" class="log-repo" dominant-baseline="central">Portfolio</text>
-        <text x="340" y="4" class="log-desc" dominant-baseline="central">Pushed to branch</text>
+        <text x="20" y="4" class="log-date" dominant-baseline="central">[Sep 12]</text>
+        <text x="110" y="4" class="log-action" dominant-baseline="central">star</text>
+        <text x="175" y="4" class="log-repo" dominant-baseline="central">FizzBuzzEnterp..</text>
+        <text x="340" y="4" class="log-desc" dominant-baseline="central">Starred the repository</text>
       </g>
       
       <!-- Log 2 -->
       <g transform="translate(30, 105)">
         <rect width="8" height="8" rx="4" fill="#50E3C2"/>
-        <text x="20" y="4" class="log-date" dominant-baseline="central">[Sep 07]</text>
-        <text x="110" y="4" class="log-action" dominant-baseline="central">star</text>
-        <text x="175" y="4" class="log-repo" dominant-baseline="central">Manware-s-AI-L..</text>
-        <text x="340" y="4" class="log-desc" dominant-baseline="central">Starred the repository</text>
+        <text x="20" y="4" class="log-date" dominant-baseline="central">[Sep 05]</text>
+        <text x="110" y="4" class="log-action" dominant-baseline="central">push</text>
+        <text x="175" y="4" class="log-repo" dominant-baseline="central">Portfolio</text>
+        <text x="340" y="4" class="log-desc" dominant-baseline="central">Pushed to branch</text>
       </g>
       
       <!-- Log 3 -->
       <g transform="translate(30, 135)">
         <rect width="8" height="8" rx="4" fill="#4A90E2"/>
-        <text x="20" y="4" class="log-date" dominant-baseline="central">[Sep 05]</text>
-        <text x="110" y="4" class="log-action" dominant-baseline="central">push</text>
-        <text x="175" y="4" class="log-repo" dominant-baseline="central">Portfolio</text>
-        <text x="340" y="4" class="log-desc" dominant-baseline="central">Pushed to branch</text>
+        <text x="20" y="4" class="log-date" dominant-baseline="central">[Sep 07]</text>
+        <text x="110" y="4" class="log-action" dominant-baseline="central">star</text>
+        <text x="175" y="4" class="log-repo" dominant-baseline="central">Manware-s-AI-L..</text>
+        <text x="340" y="4" class="log-desc" dominant-baseline="central">Starred the repository</text>
       </g>
     </g>
   </g>
