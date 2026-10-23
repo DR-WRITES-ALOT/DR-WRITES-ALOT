@@ -57,7 +57,7 @@
       <text x="70" y="140" class="stat-label" text-anchor="middle" dominant-baseline="central">⭐ Stars</text>
       
       <!-- Repos -->
-      <text x="190" y="100" class="stat-num" text-anchor="middle" dominant-baseline="central">6</text>
+      <text x="190" y="100" class="stat-num" text-anchor="middle" dominant-baseline="central">7</text>
       <text x="190" y="140" class="stat-label" text-anchor="middle" dominant-baseline="central">📦 Repos</text>
       
       <!-- Followers -->
@@ -107,28 +107,28 @@
       <!-- Log 1 -->
       <g transform="translate(30, 75)">
         <rect width="8" height="8" rx="4" fill="#FFB347"/>
-        <text x="20" y="4" class="log-date" dominant-baseline="central">[N/A]</text>
-        <text x="110" y="4" class="log-action" dominant-baseline="central">none</text>
-        <text x="175" y="4" class="log-repo" dominant-baseline="central">N/A</text>
-        <text x="340" y="4" class="log-desc" dominant-baseline="central">No recent activity</text>
+        <text x="20" y="4" class="log-date" dominant-baseline="central">[Oct 22]</text>
+        <text x="110" y="4" class="log-action" dominant-baseline="central">create</text>
+        <text x="175" y="4" class="log-repo" dominant-baseline="central">VR-FIRE-SAFETY</text>
+        <text x="340" y="4" class="log-desc" dominant-baseline="central">Created branch</text>
       </g>
       
       <!-- Log 2 -->
       <g transform="translate(30, 105)">
         <rect width="8" height="8" rx="4" fill="#50E3C2"/>
-        <text x="20" y="4" class="log-date" dominant-baseline="central">[N/A]</text>
-        <text x="110" y="4" class="log-action" dominant-baseline="central">none</text>
-        <text x="175" y="4" class="log-repo" dominant-baseline="central">N/A</text>
-        <text x="340" y="4" class="log-desc" dominant-baseline="central">No recent activity</text>
+        <text x="20" y="4" class="log-date" dominant-baseline="central">[Oct 22]</text>
+        <text x="110" y="4" class="log-action" dominant-baseline="central">push</text>
+        <text x="175" y="4" class="log-repo" dominant-baseline="central">VR-FIRE-SAFETY</text>
+        <text x="340" y="4" class="log-desc" dominant-baseline="central">Pushed to branch</text>
       </g>
       
       <!-- Log 3 -->
       <g transform="translate(30, 135)">
         <rect width="8" height="8" rx="4" fill="#4A90E2"/>
-        <text x="20" y="4" class="log-date" dominant-baseline="central">[N/A]</text>
-        <text x="110" y="4" class="log-action" dominant-baseline="central">none</text>
-        <text x="175" y="4" class="log-repo" dominant-baseline="central">N/A</text>
-        <text x="340" y="4" class="log-desc" dominant-baseline="central">No recent activity</text>
+        <text x="20" y="4" class="log-date" dominant-baseline="central">[Oct 22]</text>
+        <text x="110" y="4" class="log-action" dominant-baseline="central">push</text>
+        <text x="175" y="4" class="log-repo" dominant-baseline="central">VR-FIRE-SAFETY</text>
+        <text x="340" y="4" class="log-desc" dominant-baseline="central">Pushed to branch</text>
       </g>
     </g>
   </g>
