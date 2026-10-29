@@ -76,24 +76,24 @@
       <g transform="translate(30, 70)">
         <text x="0" y="10" class="lang-label" dominant-baseline="central">TypeScript</text>
         <rect x="100" y="2" width="220" height="16" rx="8" fill="#F0F0F0"/>
-        <rect x="100" y="2" width="165" height="16" rx="8" class="bar-grow bar-1"/>
-        <text x="335" y="10" class="lang-pct" dominant-baseline="central">75%</text>
+        <rect x="100" y="2" width="132" height="16" rx="8" class="bar-grow bar-1"/>
+        <text x="335" y="10" class="lang-pct" dominant-baseline="central">60%</text>
       </g>
       
       <!-- Top Lang 2 -->
       <g transform="translate(30, 100)">
-        <text x="0" y="10" class="lang-label" dominant-baseline="central">Python</text>
+        <text x="0" y="10" class="lang-label" dominant-baseline="central">Java</text>
         <rect x="100" y="2" width="220" height="16" rx="8" fill="#F0F0F0"/>
-        <rect x="100" y="2" width="55" height="16" rx="8" class="bar-grow bar-2"/>
-        <text x="335" y="10" class="lang-pct" dominant-baseline="central">25%</text>
+        <rect x="100" y="2" width="44" height="16" rx="8" class="bar-grow bar-2"/>
+        <text x="335" y="10" class="lang-pct" dominant-baseline="central">20%</text>
       </g>
       
       <!-- Top Lang 3 -->
       <g transform="translate(30, 130)">
-        <text x="0" y="10" class="lang-label" dominant-baseline="central">N/A</text>
+        <text x="0" y="10" class="lang-label" dominant-baseline="central">Python</text>
         <rect x="100" y="2" width="220" height="16" rx="8" fill="#F0F0F0"/>
-        <rect x="100" y="2" width="0" height="16" rx="8" class="bar-grow bar-3"/>
-        <text x="335" y="10" class="lang-pct" dominant-baseline="central">0%</text>
+        <rect x="100" y="2" width="44" height="16" rx="8" class="bar-grow bar-3"/>
+        <text x="335" y="10" class="lang-pct" dominant-baseline="central">20%</text>
       </g>
     </g>
   </g>
