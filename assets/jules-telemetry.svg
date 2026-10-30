@@ -107,16 +107,16 @@
       <!-- Log 1 -->
       <g transform="translate(30, 75)">
         <rect width="8" height="8" rx="4" fill="#FFB347"/>
-        <text x="20" y="4" class="log-date" dominant-baseline="central">[Oct 23]</text>
-        <text x="110" y="4" class="log-action" dominant-baseline="central">push</text>
-        <text x="175" y="4" class="log-repo" dominant-baseline="central">VR-FIRE-SAFETY</text>
-        <text x="340" y="4" class="log-desc" dominant-baseline="central">Pushed to branch</text>
+        <text x="20" y="4" class="log-date" dominant-baseline="central">[Oct 28]</text>
+        <text x="110" y="4" class="log-action" dominant-baseline="central">create</text>
+        <text x="175" y="4" class="log-repo" dominant-baseline="central">android-memory..</text>
+        <text x="340" y="4" class="log-desc" dominant-baseline="central">Created branch</text>
       </g>
       
       <!-- Log 2 -->
       <g transform="translate(30, 105)">
         <rect width="8" height="8" rx="4" fill="#50E3C2"/>
-        <text x="20" y="4" class="log-date" dominant-baseline="central">[Oct 23]</text>
+        <text x="20" y="4" class="log-date" dominant-baseline="central">[Oct 28]</text>
         <text x="110" y="4" class="log-action" dominant-baseline="central">push</text>
         <text x="175" y="4" class="log-repo" dominant-baseline="central">VR-FIRE-SAFETY</text>
         <text x="340" y="4" class="log-desc" dominant-baseline="central">Pushed to branch</text>
@@ -125,10 +125,10 @@
       <!-- Log 3 -->
       <g transform="translate(30, 135)">
         <rect width="8" height="8" rx="4" fill="#4A90E2"/>
-        <text x="20" y="4" class="log-date" dominant-baseline="central">[Oct 23]</text>
-        <text x="110" y="4" class="log-action" dominant-baseline="central">push</text>
-        <text x="175" y="4" class="log-repo" dominant-baseline="central">VR-FIRE-SAFETY</text>
-        <text x="340" y="4" class="log-desc" dominant-baseline="central">Pushed to branch</text>
+        <text x="20" y="4" class="log-date" dominant-baseline="central">[Oct 28]</text>
+        <text x="110" y="4" class="log-action" dominant-baseline="central">create</text>
+        <text x="175" y="4" class="log-repo" dominant-baseline="central">android-memory..</text>
+        <text x="340" y="4" class="log-desc" dominant-baseline="central">Created branch</text>
       </g>
     </g>
   </g>
